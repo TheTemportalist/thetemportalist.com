@@ -1,0 +1,149 @@
+<html>
+	<head>
+		<title>Weeping Angels Mod</title>
+		<link type="text/css" rel="stylesheet" href="style.css" />
+		<font color="#BFBFBF" />
+	</head>
+	<body>
+		<!-- Header -->
+		<div id="header">
+			<h1>Weeping Angels</h1>
+		</div>
+		<!-- SideBar -->
+		<div id="sidebar">
+			<!-- Author -->
+			<p>Author: TheCountryGamer (Country_Gamer)</p>
+			<p>Original author: a_dizzle (permission given)</p>
+			<!-- Mod Links -->
+			<div id="modlinks">
+				<button id="button" onclick="window.open('https://github.com/TheCountryGamer/WeepingAngels')">Github Source</button>
+				<button id="button" onclick="window.open('http://jenkins.dries007.net/view/TheCountryGamer/job/WeepingAngels/')">Developement Builds</button>
+			</div>
+
+			<br />
+			<!-- Dependencies -->
+			<div>
+				<p id="deps">Requirements:</p>
+				<a id="tab1" href="">CGOrigin (3.1.+) (broken link)</a>
+			</div>
+		</div>
+		<!-- Main -->
+		<div id="main">
+			
+			<h4>Blocks</h4>
+			<div id="tab1">
+				<a name="Blocks.AngelPlinth"></a>
+				<p id="contentHeader">Angel Plinth</p>
+				<p id="tab1">
+					A statue which comes to life when given any redstone signal (strong or weak).
+					<br />
+					When right clicked, will open a GUI (Graphical User Interface), which allows the user to enter a rotation of the rendered angel's pitch. Can also be used to specify the state the angel is in. This ranges from Hding, Peaking or Angry arm/wing positions, or Calm or Angry facial expressions.
+					<br />
+					This block is a rare drop from the <a href="#Entities.WeepingAngel">Weeping Angel</a> entity, and can be found in <a href="#WorldGen.Vault">Vaults</a>.
+				</p>
+
+			</div>
+
+			<h4>Items</h4>
+			<div id="tab1">
+				<a name="Items.AngelsTear"></a>
+				<p id="contentHeader">Angel's Tear</p>
+				<p id="tab1">
+					The Angel's Tear is a semi-rare drop (20% chance) from a <a href="#Entities.WeepingAngel">Weeping Angel</a> entity.
+					<br />
+					When dropped, the tear will have 1 of 2 effect types, along with a certain amount of uses. When these uses are up, the Tear will disintegrate.
+					<br />
+					When combined with a normal vanilla Minecraft <a href="http://minecraft.gamepedia.com/Arrow">Arrow</a> in a crafting table, you will get an <a href="#Items.Arrow">Angel Arrow</a>.
+					<br />
+					<OL>
+						<LI>Teleportation
+							<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							When right clicked, you will be teleported to the exact block you are currently looking at (the block where the crosshairs lay). This will take 1 use per teleportation.
+						</LI>
+						<LI>Time Manipulation
+							<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							When right clicked, you will open a GUI which specifies a preset time. When one of the presets is selected, the gui will exit, set the world time to that time, and take 1
+						</LI>
+					</OL>
+				</p>
+
+				<a name="Items.Arrow"></a>
+				<p id="contentHeader">Arrow</p>
+				<p id="tab1">
+					The Arrow (Sometimes called the "Angel Arrow"), is a special kind of arrow. Fire-able from any <a href="http://minecraft.gamepedia.com/Bow">Bow</a>, this arrow can be used to frighten your opponent, or troll a player (as per request from <a href="https://twitter.com/FireBall1725">Fireball1725</a>).
+					<br />
+					Uses:
+					<br />
+					<OL>
+						<LI>Player Conversion
+							On impact with any other player entity, the arrow will fall apart and the tear ingrained in the arrow's tip will cause the impacted player to start being <a href="#Entities.WeepingAngel.Conversion">converted</a>.
+						</LI>
+						<LI>Ender Dragon Troll
+							As per <a href="https://twitter.com/FireBall1725">Fireball1725</a> and <a href="https://twitter.com/glasspelicanfis">GlassPelican</a> 's request, we have a special thing! On impact with the Ender Dragon, all Endermen in loaded chunks in the dimension will turn into <a href="#Entities.WeepingAngel">Weeping Angel</a> entities.
+						</LI>
+						<LI>Any other impacts will act like a normal arrow and cause normal arrow damage :D</LI>
+					</OL>
+				</p>
+
+			</div>
+
+			<h4>Entities</h4>
+			<div id="tab1">
+				<a name="Entities.WeepingAngel"></a>
+				<p id="contentHeader">Weeping Angel</p>
+				<p id="tab1">
+					Oh the joy. The joy of terrorizing the players and testificates of Minecraftia. Here is what you need to know about Weeping Angels:
+					<br /><br />
+					Don't Blink. Whatever you do, Don't Blink. Blink and your dead. They are faster then you can believe. However, take assurance in the fact that they are Quantum locked life forms. They literally, cannot moved while they are being observed. They turn to stone.
+					<br /><br />
+					OK! So here is the break down!
+					<br />
+					<UL>
+						<LI>Cannot move while any other player/angel can see them</LI>
+						<LI>Extremely Fast, when able to move</LI>
+						<LI>Loves to go after players and either:
+							<br />
+							<OL>
+								<LI><a href="#Entities.WeepingAngel.Conversion">Convert</a> them into a Weeping Angel</LI>
+								<LI>Teleport them to another 'time'</LI>
+								<LI>Kill them</LI>
+							</OL>
+						</LI>
+						<LI>Will get old and decrepit over time, causing them to decay</LI>
+						<LI>When extremely old, will a-ceullularly procreate, spawning a baby angel
+							<br />
+							- Baby Angels are 1/2 the height, and twice the speed of a normal angel
+						</LI>
+						<LI>When teleporting or converting a player (mentioned above), can take some of the player's energy and become slightly younger</LI>
+					</UL>
+					<div id="tab1">
+						<a name="Entities.WeepingAngel.Conversion"></a>
+						<p id="contentHeader">Angel Conversion</p>
+						<p id="tab1">
+							When a player is infected by a dormant Weeping Angel, they only have so long to live. As the angel inside you grows bigger and stronger, you will find that your sight gets dimmer. By they time the angel is ready to emerge, you will have lost all sight, and hope most likely. At this point, the angel will emerge will full health (20/20), and immediately kill teh player.
+							<br />
+							Also, when that occurs, the angel has the opportunity to copy your name, and steal any inventory you had at the time, so be careful out there.
+							<br />
+							PS: There is no way to be cured of an Angel Conversion yet.
+						</p>
+					</div>
+				</p>
+
+			</div>
+
+			<h4>World Gen</h4>
+			<div id="tab1">
+				<a name="WorldGen.Vault"></a>
+				<p id="contentHeader">Vaults</p>
+				<p id="tab1">
+					Vaults are special world generated dungeons. They can contain up to 2 loot chests and 1 mob spawner (which spawns <a href="#Entities.WeepingAngel">Weeping Angels</a>). They are constructed out of various stone-like materials, and hold 7 <a href="#Blocks.AngelPlinth">Plinths</a>.
+				</p>
+
+			</div>
+		
+		</div>
+	</body>
+
+</html>
