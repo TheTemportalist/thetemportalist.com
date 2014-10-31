@@ -63,6 +63,11 @@ div {
     height: calc(100% - 120px);
 }
 
+#citeRights {
+    margin-left: calc(85%);
+    width: calc(15%);
+}
+
 #tab1 {
     padding-left: 2em;
 }
