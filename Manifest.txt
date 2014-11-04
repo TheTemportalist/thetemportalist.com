@@ -1,7 +1,6 @@
 background.png
 cors.js
 index.html
-LICENSE
 mcfghelper.html
 morphadditions.html
 origin.html
