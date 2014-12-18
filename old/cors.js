@@ -9,7 +9,7 @@
  */
 function xdr(url, method, data, callback, errback) {
     var req;
-    
+
     if(XMLHttpRequest) {
         req = new XMLHttpRequest();
 
