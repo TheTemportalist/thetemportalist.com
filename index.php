@@ -30,7 +30,7 @@
 		?>
 
 		<div>
-			<img src="resources/TheTemportalist.png" style="width:1750px;height:450px">
+			<img src="resources/TheTemportalist.png" style="width:875px;height:225px">
 		</div>
 
 	</body>
