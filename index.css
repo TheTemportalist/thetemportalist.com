@@ -1,13 +1,14 @@
 
 div {
 	/*debug code*/
-	border: 2px solid;
+	border-style: solid;
+    border-width: 2px;
 
 }
 
 #sidebar {
 	width: 25%;
-	height:  calc(100% - 112.5%);
+	height: calc(100% - 112.5%);
 
 }
 
