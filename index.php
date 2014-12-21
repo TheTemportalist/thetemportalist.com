@@ -19,7 +19,7 @@
 		<?php
 			foreach ($GLOBALS["mods"] as $modName => $modsubname) {
 				echo "<button onclick=
-					\"window.open(\"" . $GLOBALS["download:" . $modsubname] . "\", '_self')\"
+					\"window.open('" . $GLOBALS["download:" . $modsubname] . "', '_self')\"
 				>" . $modName . "</button><br />";
 			}
 
