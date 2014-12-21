@@ -34,7 +34,7 @@
 		?>
 
 		<div id="logo">
-			<img src="resources/TheTemportalist.png">
+			<img src="resources/TheTemportalist.png" id="logoimg">
 		</div>
 
 	</body>

@@ -1,8 +1,13 @@
 
 #logo {
-	width:437.5px;
-	height:112.5px;
-	background-color: 0000FF;
+	width: 437.5px;
+	height: 112.5px;
+	background-color: #0000FF;
 
+}
+
+#logoimg {
+	width: inherit;
+	height: inherit;
 }
 
