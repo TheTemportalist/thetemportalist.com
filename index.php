@@ -10,7 +10,7 @@
 	foreach ($GLOBALS["mods"] as $mod) {
 		$url = "http://widget.mcf.li/mc-mods/minecraft/" . $mod . ".json";
 		$modJson = json_decode(file_get_contents($url), true);
-		$GLOBALS["download:" . $mod] = $modJson["download"]["url"];
+		$GLOBALS["download:" . $mod] = $modJson["download"]["url"] . "#";
 	}
 ?>
 <!DOCTYPE html>
