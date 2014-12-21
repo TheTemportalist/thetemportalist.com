@@ -17,6 +17,10 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>The Temportalist</title>
+		<link type="text/css" rel="stylesheet" href="index.css" />
+	</head>
 	<body>
 		<?php
 			// iterate through all mods and create buttons for them
@@ -29,8 +33,8 @@
 			*/
 		?>
 
-		<div>
-			<img src="resources/TheTemportalist.png" style="width:437.5px;height:112.5px">
+		<div style="width:437.5px; height:112.5px;">
+			<img src="resources/TheTemportalist.png" style="width:437.5px; height:112.5px;">
 		</div>
 
 	</body>
