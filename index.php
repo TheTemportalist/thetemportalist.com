@@ -3,7 +3,8 @@
 	$mods = array("countrygamer_core");
 	echo "for loop<br />";
 	foreach ($mods as $mod) {
-		echo $mod . "<br />";
+		$url = "http://widget.mcf.li/mc-mods/minecraft/" . $mod . ".json";
+		echo $url . "<br />;
 	}
 	$GLOBALS["origin"] = "origin download url";
 
