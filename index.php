@@ -1,8 +1,8 @@
 <?php
 	$prefix = "http://minecraft.curseforge.com/mc-mods/";
 	$mods = array("countrygamer_core");
-	echo "for loop";
-	foreach ($mod as $mods) {
+	echo "for loop<br />";
+	foreach ($mods as $mod) {
 		echo $mod . "<br />";
 	}
 	$GLOBALS["origin"] = "origin download url";
