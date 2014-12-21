@@ -6,7 +6,7 @@
 		"Races For Minecraft" => "racesforminecraft",
 		"Owner Emitter" => "owner-emitter",
 		"Morph Additions" => "morphadditions",
-		"Not Enough Keys" => "notenoughkeys";
+		"Not Enough Keys" => "notenoughkeys"
 	);
 	echo "for loop<br />";
 	foreach ($mods as $mod) {
