@@ -1,6 +1,7 @@
 <?php
 	$prefix = "http://minecraft.curseforge.com/mc-mods/";
 	$mods = array("countrygamer_core");
+	echo "for loop";
 	foreach ($mod as $mods) {
 		echo $mod . "<br />";
 	}
