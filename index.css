@@ -2,11 +2,12 @@
 div {
 	/*debug code*/
 	border: 2px solid;
-    border-radius: 25px;
 
 }
 
 #sidebar {
+	width: 25%;
+	height:  calc(100% - 112.5%);
 
 }
 
@@ -14,5 +15,6 @@ div {
 	width: 75%;
 	height: calc(100% - 112.5px);
 	background-color: #000000;
+
 }
 
