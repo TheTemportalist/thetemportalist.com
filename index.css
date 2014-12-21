@@ -1,13 +1,11 @@
 
-#logo {
-	width: 437.5px;
-	height: 112.5px;
-	color: #0000FF;
+#sidebar {
 
 }
 
-#logoimg {
-	width: inherit;
-	height: inherit;
+#body {
+	width: 75%;
+	height: calc(100% - 112.5px);
+	background-color: #000000;
 }
 

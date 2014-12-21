@@ -33,8 +33,16 @@
 			*/
 		?>
 
-		<div id="logo">
+		<div>
 			<img src="resources/TheTemportalist.png" style="width:437.5px; height:112.5px;">
+		</div>
+
+		<div id="sidebar">
+
+		</div>
+
+		<div id="body">
+			this is the body
 		</div>
 
 	</body>
