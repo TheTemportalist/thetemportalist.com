@@ -1,9 +1,10 @@
 <?php
-	echo "php start";
+	$GLOBALS["origin"] = "origin download url";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-	abc
+		<?php echo $GLOBALS["origin"]; ?>
 	</body>
 </html>
