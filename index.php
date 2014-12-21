@@ -20,11 +20,18 @@
 	<body>
 		<?php
 			// iterate through all mods and create buttons for them
+			/*
 			foreach ($GLOBALS["mods"] as $modName => $modsubname) {
 				echo "<button onclick=
 					\"window.open('" . $GLOBALS["download:" . $modsubname] . "')\"
 				>" . $modName . "</button><br />";
 			}
+			*/
 		?>
+
+		<div>
+			<img src="resources/TheTemportalist.png" style="width:1750px;height:450px">
+		</div>
+
 	</body>
 </html>
