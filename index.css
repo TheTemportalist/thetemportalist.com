@@ -8,14 +8,14 @@ div {
 
 #sidebar {
 	width: 25%;
-	height: calc(100% - 112.5%);
+	/*height: calc(100% - 112.5%);*/
 
 }
 
 #body {
 	width: 75%;
-	height: calc(100% - 112.5px);
-	background-color: #000000;
+	/*height: calc(100% - 112.5px);
+	background-color: #000000;*/
 
 }
 
