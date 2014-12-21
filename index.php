@@ -5,7 +5,7 @@
 	foreach ($mods as $mod) {
 		$url = "http://widget.mcf.li/mc-mods/minecraft/" . $mod . ".json";
 		$modJson = json_decode(file_get_contents($url), true);
-		echo "  " . $modJson["download"] . "<br />";
+		echo "  " . $modJson["download"]["url"] . "<br />";
 	}
 	$GLOBALS["origin"] = "origin download url";
 
