@@ -1,4 +1,5 @@
 <?php
+	// que and save all my mods and their corresponding curseforge names
 	$GLOBALS["mods"] = array(
 		"Origin" => "countrygamer_core",
 		"Weeping Angels" => "weeping-angels",
@@ -7,6 +8,7 @@
 		"Morph Additions" => "morphadditions",
 		"Not Enough Keys" => "notenoughkeys"
 	);
+	// Run through each of the mods and get the download url
 	foreach ($GLOBALS["mods"] as $mod) {
 		$url = "http://widget.mcf.li/mc-mods/minecraft/" . $mod . ".json";
 		$modJson = json_decode(file_get_contents($url), true);
@@ -17,12 +19,12 @@
 <html lang="en">
 	<body>
 		<?php
+			// iterate through all mods and create buttons for them
 			foreach ($GLOBALS["mods"] as $modName => $modsubname) {
 				echo "<button onclick=
 					\"window.open('" . $GLOBALS["download:" . $modsubname] . "')\"
 				>" . $modName . "</button><br />";
 			}
-
 		?>
 	</body>
 </html>
