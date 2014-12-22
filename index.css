@@ -10,7 +10,7 @@
 	display: none;
 }
 
-#subMenu:hover {
+#subMenu li:hover {
 	display: block;
 }
 
