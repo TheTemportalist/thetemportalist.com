@@ -55,7 +55,7 @@
 					SIDEBAR
 				</div>
 				<!-- MAIN -->
-				<div style="display: table-cell;">
+				<div style="display: table-cell; overflow: auto;">
 					MAIN
 				</div>
 			</div>
