@@ -41,14 +41,12 @@
 		</div>
 
 		<!-- DROP DOWN -->
-		<div style="width: 100%;">
-			<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown">Dropdown Button</button>
-			<br>
-			<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
-			  <li><a href="#">This is a link</a></li>
-			  <li><a href="#">This is another</a></li>
-			  <li><a href="#">Yet another</a></li>
-			</ul>
+		<div style="width: 100%;" class="menus">
+			<a id="TakeAction">Take Action</a>
+			<ul id="menu">
+				<li>action 1</li>
+				<li>action 2</li>
+		  	</ul>
 		</div>
 
 		<br />
