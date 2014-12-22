@@ -1,4 +1,9 @@
 
+html {
+	color: #000000;
+
+}
+
 div {
 	/*debug code*/
 	border-style: solid;

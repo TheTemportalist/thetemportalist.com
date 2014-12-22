@@ -38,8 +38,6 @@
 			<img src="resources/TheTemportalist.png" style="width:437.5px; height:112.5px;">
 		</div>
 
-		<br />
-
 		<!-- DROP DOWN -->
 		<div style="width: 100%;">
 			DROP DOWN
@@ -51,7 +49,7 @@
 		<div style="width: 100%; display: table;">
 			<div style="display: table-row">
 				<!-- SIDE BAR -->
-				<div style="width: 25%; display: table-cell;">
+				<div style="width: 20%; display: table-cell;">
 					SIDEBAR
 				</div>
 				<!-- MAIN -->
