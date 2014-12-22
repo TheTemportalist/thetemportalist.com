@@ -9,11 +9,13 @@
 		"Not Enough Keys" => "notenoughkeys"
 	);
 	// Run through each of the mods and get the download url
+	/*
 	foreach ($GLOBALS["mods"] as $mod) {
 		$url = "http://widget.mcf.li/mc-mods/minecraft/" . $mod . ".json";
 		$modJson = json_decode(file_get_contents($url), true);
 		$GLOBALS["download:" . $mod] = $modJson["download"]["url"] . "#";
 	}
+	*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
