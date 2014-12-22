@@ -6,11 +6,11 @@
 
 }
 
-#subMenu li {
+#subMenu {
 	display: none;
 }
 
-#subMenu li:hover {
+#subMenu:hover {
 	display: block;
 }
 

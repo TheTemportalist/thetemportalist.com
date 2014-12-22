@@ -43,7 +43,7 @@
 		<!-- DROP DOWN -->
 		<div style="width: 100%;">
 
-			<div class="dropdown" id="menu1">
+			<div class="dropdown" id="menu">
 				<a href="#">Menu1</a>
 				<ul id="subMenu">
 					<li><a href="#">Sub1</a></li>
@@ -73,15 +73,3 @@
 
 	</body>
 </html>
-
-<ul id="menu">
-    <li><a href="#">Hyperlink 1</a></li>
-    <li><a href="#">Hyperlink 2</a>
-        <ul id="sub1">
-            <li><a href="#">Hyperlink 2.1</a></li>
-            <li><a href="#">Hyperlink 2.2</a></li>
-        </ul>
-    </li>
-        <li><a href="#">Hyperlink 3</a></li>
-        <li><a href="#">Hyperlink 4</a></li>
-</ul>
