@@ -34,10 +34,14 @@
 		?>
 
 		<div>
-			<img src="resources/TheTemportalist.png" style="width:437.5px; height:112.5px;">
+			this is a div
 		</div>
 
 		<!--
+		<div>
+			<img src="resources/TheTemportalist.png" style="width:437.5px; height:112.5px;">
+		</div>
+
 		<div id="sidebar">
 
 		</div>
