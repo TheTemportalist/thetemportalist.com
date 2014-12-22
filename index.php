@@ -33,12 +33,7 @@
 			*/
 		?>
 
-		<div>
-			this is a div
-		</div>
-
-		<!--
-		<div>
+		<div align="center">
 			<img src="resources/TheTemportalist.png" style="width:437.5px; height:112.5px;">
 		</div>
 
@@ -49,7 +44,6 @@
 		<div id="body">
 			this is the body
 		</div>
-		-->
 
 	</body>
 </html>
