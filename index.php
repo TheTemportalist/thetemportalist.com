@@ -42,16 +42,12 @@
 
 		<!-- DROP DOWN -->
 		<div style="width: 100%;">
-			<button
-					data-dropdown="drop" aria-controls="drop",
-					aria-expanded="false" class="large alert round button dropdown">
-				Dropdown Button
-			</button>
+			<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown">Dropdown Button</button>
 			<br>
-			<ul id="drop" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1">
-				<li><a href="#">This is a link</a></li>
-				<li><a href="#">This is another</a></li>
-				<li><a href="#">Yet another</a></li>
+			<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+			  <li><a href="#">This is a link</a></li>
+			  <li><a href="#">This is another</a></li>
+			  <li><a href="#">Yet another</a></li>
 			</ul>
 		</div>
 
