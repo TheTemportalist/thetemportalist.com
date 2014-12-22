@@ -6,11 +6,12 @@
 
 }
 
-ul#menu
+ul#elements
 {
     display:none;
 }
-.menus:hover ul#menu
+
+.menu:hover ul#elements
 {
     display: block;
 }

@@ -41,12 +41,16 @@
 		</div>
 
 		<!-- DROP DOWN -->
-		<div style="width: 100%;" class="menus">
-			<a id="TakeAction">Take Action</a>
-			<ul id="menu">
-				<li>action 1</li>
-				<li>action 2</li>
-		  	</ul>
+		<div style="width: 100%;">
+
+			<div class="menu">
+				<a id="Trigger">Hover me!</a>
+				<ul id="elements">
+					<li>A</li>
+					<li>B</li>
+				</ul>
+			</div>
+
 		</div>
 
 		<br />
