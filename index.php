@@ -43,17 +43,7 @@
 		<!-- DROP DOWN -->
 		<div style="width: 100%;">
 
-			<ul id="menu">
-    <li><a href="#">Hyperlink 1</a></li>
-    <li><a href="#">Hyperlink 2</a>
-        <ul id="sub1">
-            <li><a href="#">Hyperlink 2.1</a></li>
-            <li><a href="#">Hyperlink 2.2</a></li>
-        </ul>
-    </li>
-        <li><a href="#">Hyperlink 3</a></li>
-        <li><a href="#">Hyperlink 4</a></li>
-</ul>
+
 
 		</div>
 
@@ -72,6 +62,18 @@
 				</div>
 			</div>
 		</div>
+
+		<ul id="menu">
+    <li><a href="#">Hyperlink 1</a></li>
+    <li><a href="#">Hyperlink 2</a>
+        <ul id="sub1">
+            <li><a href="#">Hyperlink 2.1</a></li>
+            <li><a href="#">Hyperlink 2.2</a></li>
+        </ul>
+    </li>
+        <li><a href="#">Hyperlink 3</a></li>
+        <li><a href="#">Hyperlink 4</a></li>
+</ul>
 
 	</body>
 </html>
