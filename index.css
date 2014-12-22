@@ -6,17 +6,5 @@ div {
 
 }
 
-div#sidebar {
-	width: 25%;
-	/*height: calc(100% - 112.5%);*/
 
-}
-
-div#body {
-	width: 75%;
-	color: red;
-	/*height: calc(100% - 112.5px);
-	background-color: #000000;*/
-
-}
 
