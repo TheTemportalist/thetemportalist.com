@@ -33,16 +33,31 @@
 			*/
 		?>
 
+		<!-- HEADER -->
 		<div align="center">
 			<img src="resources/TheTemportalist.png" style="width:437.5px; height:112.5px;">
 		</div>
 
 		<br />
 
+		<!-- DROP DOWN -->
+		<div style="width: 100%;">
+			DROP DOWN
+		</div>
+
+		<br />
+
+		<!-- SIDE BAR AND MAIN -->
 		<div style="width: 100%; display: table;">
 			<div style="display: table-row">
-				<div style="width: 25%; display: table-cell;"> Left </div>
-				<div style="display: table-cell;"> Right </div>
+				<!-- SIDE BAR -->
+				<div style="width: 25%; display: table-cell;">
+					SIDEBAR
+				</div>
+				<!-- MAIN -->
+				<div style="display: table-cell;">
+					MAIN
+				</div>
 			</div>
 		</div>
 
