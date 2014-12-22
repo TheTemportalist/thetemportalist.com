@@ -37,6 +37,13 @@
 			<img src="resources/TheTemportalist.png" style="width:437.5px; height:112.5px;">
 		</div>
 
+		<div style="width: 100%; display: table;">
+			<div style="display: table-row">
+				<div style="width: 25%; display: table-cell;"> Left </div>
+				<div style="display: table-cell;"> Right </div>
+			</div>
+		</div>
+
 		<div id="sidebar">
 
 		</div>
