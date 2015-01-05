@@ -6,12 +6,11 @@
 
 }
 
-#subMenu {
+.nav ul ul {
 	display: none;
 }
 
-#subMenu:hover {
+.nav ul li:hover > ul {
 	display: block;
 }
-
 

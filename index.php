@@ -43,11 +43,15 @@
 		<!-- DROP DOWN -->
 		<div style="width: 100%;">
 
-			<div class="dropdown" id="menu">
-				<a href="#">Menu1</a>
-				<ul id="subMenu">
-					<li><a href="#">Sub1</a></li>
-					<li><a href="#">Sub2</a></li>
+			<div class="nav">
+				<ul>
+					<li><a href="">Page A</a></li>
+					<li><a href="">Page B</a></li>
+					<ul>
+						<li><a href="">Content 1</a></li>
+						<li><a href="">Content 2</a></li>
+						<li><a href="">Content 3</a></li>
+					</ul>
 				</ul>
 			</div>
 
