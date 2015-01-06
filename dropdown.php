@@ -2,7 +2,7 @@
 	<head>
 		<link href="ddstyle.css" rel="stylesheet" />
 	</head>
-	<body>
+	<body class="news">
 		<header>
 			<div class="nav">
 			  <ul>
