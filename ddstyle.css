@@ -1,6 +1,7 @@
 
-.navItem {
+.navList {
 	list-style: none;
+	display: inline-table;
 }
 
 .list {

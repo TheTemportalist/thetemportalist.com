@@ -4,9 +4,9 @@
 	</head>
 	<body>
 		<nav>
-			<ul>
-				<li class="navItem"><a href="#">Home</a></li>
-				<li class="navItem">
+			<ul class="navList">
+				<li><a href="#">Home</a></li>
+				<li>
 					<a href="#">Tutorials</a>
 					<ul class="list">
 						<li><a href="#">Photoshop</a></li>
@@ -20,7 +20,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class="navItem">
+				<li>
 					<a href="#">Articles</a>
 					<ul class="list">
 						<li><a href="#">Web Design</a></li>
