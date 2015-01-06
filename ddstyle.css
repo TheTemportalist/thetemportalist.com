@@ -3,7 +3,7 @@ body {
   padding: 0;
   background: #ccc;
 }
-
+/*
 .nav ul {
   list-style: none;
   background-color: #444;
@@ -37,11 +37,14 @@ body {
   color: #444;
   cursor: default;
 }
+*/
 
 /* Sub Menus */
+/*
 .nav li li {
   font-size: .8em;
 }
+*/
 
 /*******************************************
    Style menu for larger screens
