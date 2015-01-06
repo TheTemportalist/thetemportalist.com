@@ -3,32 +3,28 @@
 		<link href="ddstyle.css" rel="stylesheet" />
 	</head>
 	<body>
-		<nav>
-			<ul class="navList">
-				<li><a href="#">Home</a></li>
-				<li class="listContainer">
-					<a href="#">Tutorials</a>
-					<ul class="list">
-						<li><a href="#">Photoshop</a></li>
-						<li><a href="#">Illustrator</a></li>
-						<li>
-							<a href="#">Web Design</a>
-							<ul class="list">
-								<li><a href="#">HTML</a></li>
-								<li><a href="#">CSS</a></li>
-							</ul>
-						</li>
-					</ul>
+		<header>
+			<div class="nav">
+			  <ul>
+				<li class="home"><a href="#">Home</a></li>
+				<li class="tutorials"><a href="#">Tutorials</a>
+				  <ul>
+					<li><a href="#">Tutorial #1@@</a></li>
+					<li><a href="#">Tutorial #2</a></li>
+					<li><a href="#">Tutorial #3</a></li>
+				  </ul>
 				</li>
-				<li class="listContainer">
-					<a href="#">Articles</a>
-					<ul class="list">
-						<li><a href="#">Web Design</a></li>
-						<li><a href="#">User Experience</a></li>
-					</ul>
+				<li class="about"><a class="active" href="#">About</a></li>
+				<li class="news"><a href="#">Newsletter</a>
+				  <ul>
+					<li><a href="#">News #1</a></li>
+					<li><a href="#">News #2@@@</a></li>
+					<li><a href="#">News #3</a></li>
+				  </ul>
 				</li>
-				<li><a href="#">Inspiration</a></li>
-			</ul>
-		</nav>
+				<li class="contact"><a href="#">Contact</a></li>
+			  </ul>
+			</div>
+		</header>
 	</body>
 </html>
