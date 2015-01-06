@@ -3,7 +3,7 @@
 	display: none;
 }
 
-.list:hover {
+.listContainer:hover > ul {
 	display: block;
 }
 

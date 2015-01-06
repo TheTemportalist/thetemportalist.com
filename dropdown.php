@@ -6,7 +6,7 @@
 		<nav>
 			<ul class="navList">
 				<li><a href="#">Home</a></li>
-				<li>
+				<li class="listContainer">
 					<a href="#">Tutorials</a>
 					<ul class="list">
 						<li><a href="#">Photoshop</a></li>
@@ -20,7 +20,7 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li class="listContainer">
 					<a href="#">Articles</a>
 					<ul class="list">
 						<li><a href="#">Web Design</a></li>
