@@ -8,12 +8,12 @@
 				<li><a href="#">Home</a></li>
 				<li>
 					<a href="#">Tutorials</a>
-					<ul>
+					<ul class="list">
 						<li><a href="#">Photoshop</a></li>
 						<li><a href="#">Illustrator</a></li>
 						<li>
 							<a href="#">Web Design</a>
-							<ul>
+							<ul class="list">
 								<li><a href="#">HTML</a></li>
 								<li><a href="#">CSS</a></li>
 							</ul>

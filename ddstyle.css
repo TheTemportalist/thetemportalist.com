@@ -1,4 +1,9 @@
 
+.list {
+	display: none;
+}
+
+/*
 nav ul ul {
 	display: none;
 }
@@ -23,3 +28,4 @@ nav ul {
 nav ul:after {
 	content: ""; clear: both; display: block;
 }
+*/
