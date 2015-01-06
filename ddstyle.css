@@ -49,7 +49,7 @@ body {
    Using 650px (130px each * 5 items), but ems
    or other values could be used depending on other factors
 ********************************************/
-
+/*
 @media screen and (min-width: 650px) {
   .nav li {
     width: 130px;
@@ -72,9 +72,9 @@ body {
   .nav > ul > li > a {
     padding-left: 0;
   }
-
+*/
   /* Sub Menus */
-  .nav li ul {
+/*  .nav li ul {
     position: absolute;
     display: none;
     width: inherit;
@@ -88,3 +88,4 @@ body {
     display: block;
   }
 }
+*/
