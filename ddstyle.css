@@ -1,15 +1,15 @@
 
-.navList {
-	list-style: none;
-	display: inline-table;
-}
-
 .list {
 	display: none;
 }
 
-.list:hover > ul {
+.list:hover {
 	display: block;
+}
+
+.navList {
+	list-style: none;
+	display: inline-table;
 }
 
 /*
