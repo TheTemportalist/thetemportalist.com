@@ -22,7 +22,7 @@
 				</li>
 				<li>
 					<a href="#">Articles</a>
-					<ul>
+					<ul class="list">
 						<li><a href="#">Web Design</a></li>
 						<li><a href="#">User Experience</a></li>
 					</ul>

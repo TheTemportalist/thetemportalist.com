@@ -3,6 +3,10 @@
 	display: none;
 }
 
+.list:hover > ul {
+	display: block;
+}
+
 /*
 nav ul ul {
 	display: none;
