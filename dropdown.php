@@ -4,6 +4,7 @@
 	</head>
 	<body>
 		<header>
+			THIS IS THE HEADER
 			<div class="nav">
 				<ul class="list">
 					<li class="listItem">A</li>
