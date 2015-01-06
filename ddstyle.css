@@ -1,0 +1,14 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #ccc;
+}
+
+.list {
+	list-style: none;
+	background-color: #444;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
