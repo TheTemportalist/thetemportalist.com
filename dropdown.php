@@ -5,8 +5,8 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li>
+				<li class="navItem"><a href="#">Home</a></li>
+				<li class="navItem">
 					<a href="#">Tutorials</a>
 					<ul class="list">
 						<li><a href="#">Photoshop</a></li>
@@ -20,7 +20,7 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li class="navItem">
 					<a href="#">Articles</a>
 					<ul class="list">
 						<li><a href="#">Web Design</a></li>

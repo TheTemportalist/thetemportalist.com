@@ -1,4 +1,8 @@
 
+.navItem {
+	list-style: none;
+}
+
 .list {
 	display: none;
 }
