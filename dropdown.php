@@ -6,10 +6,22 @@
 		<header>
 			<!--THIS IS THE HEADER-->
 			<div class="nav">
-				<ul class="list">
-					<li class="listItem">A</li>
-					<li class="listItem">B</li>
-					<li class="listItem">C</li>
+				<ul class="headerList">
+					<li class="headerItem">
+						A
+						<ul class="list">
+						</ul>
+					</li>
+					<li class="headerItem">
+						B
+						<ul class="list">
+						</ul>
+					</li>
+					<li class="headerItem">
+						C
+						<ul class="list">
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</header>
