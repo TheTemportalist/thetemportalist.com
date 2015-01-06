@@ -1,8 +1,5 @@
-<html>
-	<head>
-		<link href="ddstyle.css" rel="stylesheet" />
-	</head>
-	<body class="news">
+
+	<body>
 		<header>
 			<div class="nav">
 				<ul class="list">
@@ -13,4 +10,3 @@
 			</div>
 		</header>
 	</body>
-</html>
