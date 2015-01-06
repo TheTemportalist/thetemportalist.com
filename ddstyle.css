@@ -1,13 +1,13 @@
 
-.list {
+ul.list {
 	display: none;
 }
 
-.listContainer:hover > ul {
+li.listContainer:hover > ul {
 	display: block;
 }
 
-.navList {
+ul.navList {
 	background: #efefef;
 	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
 	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
@@ -20,7 +20,7 @@
 	display: inline-table;
 }
 
-.navList:after {
+ul.navList:after {
 	content: ""; clear: both; display: block;
 }
 
