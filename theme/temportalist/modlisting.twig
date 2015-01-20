@@ -13,7 +13,7 @@
 			</a>
 			{% set cfname = item.curseforge|split('-') %}
 			{{ cfname[1] }}
-			{% set json = json_decode(file_get_contents('http://widget.mcf.li/mc-mods/minecraft/' ~ cfname[1]w ~ '.json')) %}
+			{% set json = json_decode(file_get_contents('http://widget.mcf.li/mc-mods/minecraft/' ~ cfname[1] ~ '.json')) %}
 		{% endif %}</td>
 		<td class="center">{% if item.maven is defined %}{{item.maven}}{% endif %}</td>
 		<td class="center">{% if item.source is defined %}
