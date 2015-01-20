@@ -12,14 +12,15 @@
 				<img src="{{ paths.theme ~ 'assets/curseforge.png' }}" alt="" style="width:32px;height:32px;" />
 			</a>
 			{% set cfname = item.curseforge|split('-') %}
-			{{ cfname[1] }}
-			{% set json = json_decode(file_get_contents('http://widget.mcf.li/mc-mods/minecraft/' ~ cfname[1] ~ '.json')) %}
+			{# todo figure out how to retrieve [???] and parse [json_decode] the json #}
 		{% endif %}</td>
-		<td class="center">{% if item.maven is defined %}{{item.maven}}{% endif %}</td>
 		<td class="center">{% if item.source is defined %}
 			<a href="{{item.source}}" target="_blank">
 				<img src="{{ paths.theme ~ 'assets/github.png' }}" alt="" style="width:32px;height:32px;" />
 			</a>
+		{% endif %}</td>
+		<td class="center">{% if item.maven is defined %}
+			<a href="a" target="_blank">Maven</a>
 		{% endif %}</td>
 	</tr>
 {% endmacro %}
