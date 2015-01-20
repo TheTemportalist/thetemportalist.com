@@ -13,6 +13,9 @@
 			</a>
 			{% set cfname = item.curseforge|split('-') %}
 			{# todo figure out how to retrieve [???] and parse [json_decode] the json #}
+			<a href="" target="_blank">
+				<img src="{{ paths.theme ~ 'assets/download.png' }}" alt="" style="width:32px;height:32px;" />
+			</a>
 		{% endif %}</td>
 		<td class="center">{% if item.source is defined %}
 			<a href="{{item.source}}" target="_blank">
