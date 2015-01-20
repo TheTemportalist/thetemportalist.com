@@ -1,14 +1,13 @@
 
 <!-- Footer -->
-        {#</div>#}
+        <footer class="large-12 columns">
+            <hr />
+            <p>
+                {{ __("This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.",{'%url%':'http://bolt.cm'}) }}
+            </p>
+        </footer>
     </div>
-    <footer class="large-12 columns">
-        <hr />
-        <p>
-            {{ __("This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.",{'%url%':'http://bolt.cm'}) }}
-        </p>
-    </footer>
-
+    
     <script src="{{ paths.theme }}javascripts/jquery-2.1.0.min.js"></script>
     <script src="{{ paths.theme }}javascripts/foundation.min.js"></script>
     <script src="{{ paths.theme }}javascripts/modernizr.js"></script>
