@@ -1,0 +1,16 @@
+{% macro display_menu_item(item, loop) %}
+    {% from _self import display_menu_item %}
+    <li class="index-{{ loop.index }}{% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %}{% if item.submenu is defined %} has-dropdown{% endif %}{% if item|current %} active{% endif %}">
+
+    	{{item.label}}
+
+ 	</li>
+{% endmacro %}
+
+{% from _self import display_menu_item %}
+
+{% for item in menu %}
+    {% if item.label is defined %}
+        {{ display_menu_item(item, loop) }}
+    {% endif %}
+{% endfor %}

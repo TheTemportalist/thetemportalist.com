@@ -13,13 +13,13 @@ main:
     path: /page/mods-minecraft
     submenu:
       - label: Origin
-        path: /page/mods-minecraft/origin
+        path: /page/origin
       - label: Weeping Angels
-        path: /page/mods-minecraft/weeping-angels
+        path: /page/weeping-angels
       - label: Tardis
-        path: /page/mods-minecraft/tardis
+        path: /page/tardis
       - label: Secret Rooms
-        path: /page/mods-minecraft/secret-rooms
+        path: /page/secret-rooms
     class: last
 
 social:
@@ -54,3 +54,10 @@ social:
   - label: Twitch
     link: http://www.twitch.tv/thetemportalist
     icon: twitch
+
+mods:
+  - label: Origin
+    curseforge: 72503-origin #http://minecraft.curseforge.com/mc-mods/
+    mavenhost: http://doubledoordev.net/maven
+    maven: com.temportalist.origin:Origin:version
+    source: https://github.com/TheTemportalist/Origin
