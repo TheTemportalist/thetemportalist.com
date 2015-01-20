@@ -7,8 +7,12 @@
 			{% set forgelink = 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ item.latestMC ~ '-' ~ item.forge ~ '/forge-' ~ item.latestMC ~ '-' ~ item.forge ~ '-installer.jar' %}
 			<a href="{{ forgelink }}">{{item.forge}}</a>
 		{% endif %}</td>
-		<td class="center">{% if item.curseforge is defined %}{{item.curseforge}}{% endif %}</td>
-		<td class="center">{% if item.mavenHost is defined %}{{item.mavenHost}}{% endif %}</td>
+		<td class="center">{% if item.curseforge is defined %}
+			<a href="http://minecraft.curseforge.com/mc-mods/{{item.curseforge}}">
+				<img src="{{ paths.theme ~ 'assets/curseforge.png' }}" alt="" style="width:32px;height:32px;" />
+			</a>
+
+		{% endif %}</td>
 		<td class="center">{% if item.maven is defined %}{{item.maven}}{% endif %}</td>
 		<td class="center">{% if item.source is defined %}
 			<a href="{{item.source}}" target="_blank">

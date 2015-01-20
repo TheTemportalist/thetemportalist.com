@@ -59,7 +59,6 @@ mods:
   - label: Origin
     latestMC: 1.8
     forge: 11.14.0.1289
-    curseforge: 72503-origin #http://minecraft.curseforge.com/mc-mods/
-    mavenhost: http://doubledoordev.net/maven
-    maven: com.temportalist.origin:Origin:version
+    curseforge: 72503-origin
+    maven: http://doubledoordev.net/maven|com.temportalist.origin:Origin:version
     source: https://github.com/TheTemportalist/Origin
