@@ -23,6 +23,6 @@ main:
     class: last
 
 social:
-  - icon: twitter
+  - label: Twitter
     link: https://twitter.com/TheTemportalist
-    
+    icon: twitter
