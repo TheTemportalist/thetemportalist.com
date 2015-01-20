@@ -2,7 +2,9 @@
 	<tr>
 		<td class="center">{{item.label}}</td>
 		<td class="center">{% if item.latestMC is defined %}{{item.latestMC}}{% endif %}</td>
-		<td class="center">{% if item.forge is defined %}{{item.forge}}{% endif %}</td>
+		<td class="center">{% if item.forge is defined %}
+			<a href="{{ 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ {{ item.latestMC }} ~ {{ item.forge }} ~ '/forge-' ~ {{ item.latestMC }} ~ {{ item.forge }} ~ '-installer.jar' }}">{{item.forge}}</a>
+		{% endif %}</td>
 		<td class="center">{% if item.curseforge is defined %}{{item.curseforge}}{% endif %}</td>
 		<td class="center">{% if item.mavenHost is defined %}{{item.mavenHost}}{% endif %}</td>
 		<td class="center">{% if item.maven is defined %}{{item.maven}}{% endif %}</td>
