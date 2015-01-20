@@ -39,6 +39,16 @@
             </section>
         </nav>
 
+         <!-- Header bar -->
+        <div class="headerphoto">
+            {# the values in the 'app.config' object are taken directly from the file app/config/config.yml #}
+            <p><span>{{ app.config.get('general/sitename') }}</span>
+                {% if app.config.get('general/payoff') %}
+                    <br><small>{{ app.config.get('general/payoff') }}</small>
+                {% endif %}
+            </p>
+        </div>
+
         <!-- End header -->
 
     </header>
