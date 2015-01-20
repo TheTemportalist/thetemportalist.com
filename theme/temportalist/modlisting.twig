@@ -2,6 +2,11 @@
 	<tr>
 		<td class="center">{{item.label}}</td>
 		<td class="center">{% if item.latestMC is defined %}{{item.latestMC}}{% endif %}</td>
+		<td class="center">{% if item.forge is defined %}{{item.forge}}{% endif %}</td>
+		<td class="center">{% if item.curseforge is defined %}{{item.curseforge}}{% endif %}</td>
+		<td class="center">{% if item.mavenHost is defined %}{{item.mavenHost}}{% endif %}</td>
+		<td class="center">{% if item.maven is defined %}{{item.maven}}{% endif %}</td>
+		<td class="center">{% if item.source is defined %}{{item.source}}{% endif %}</td>
 	</tr>
 {% endmacro %}
 
