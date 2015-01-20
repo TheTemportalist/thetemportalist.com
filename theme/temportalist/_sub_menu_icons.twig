@@ -2,10 +2,14 @@
     {% from _self import display_menu_item %}
     <li class="index-{{ loop.index }}{% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %}{% if item.submenu is defined %} has-dropdown{% endif %}{% if item|current %} active{% endif %}">
         <a href="{{ item.link }}" {% if item.title is defined %}title='{{ item.title|escape }}'{% endif %}
-           class='{% if item.class is defined %}{{item.class}}{% endif %}' {% if item.target is defined %}target={{item.target}}{% endif %}>
+           class='{% if item.class is defined %}{{item.class}}{% endif %}' target={% if item.target is defined %}{{item.target}}{% else %}"_blank"{% endif %}>
             {% if item.icon is defined %}
                 {% set img = paths.theme ~ 'assets/' ~ item.icon ~ '.png' %}
                 <img src="{{ img }}" alt="" style="width:32px;height:32px;" />
+            {% elseif item.label is defined %}
+                {{item.label}}
+            {% else %}
+                No label
             {% endif %}
         </a>
         {% if item.submenu is defined %}

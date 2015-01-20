@@ -27,3 +27,31 @@ social:
     link: https://twitter.com/TheTemportalist
     icon: twitter
     target: "_blank"
+  - label: CurseForge
+    link: http://minecraft.curseforge.com/members/Country_Gamer/projects
+    icon: curseforge
+    submenu:
+      - label: Jenkins
+        link: http://jenkins.dries007.net/view/Temportal/
+        icon: jenkins
+        submenu:
+          - label: Maven
+            link: http://doubledoordev.net/maven/com/temportalist/
+      - label: Bamboo
+        link: http://ci.builtbroken.com:8085/browse/TEMP
+        icon: bamboo
+        submenu:
+          - label: Maven
+            link: http://ci.builtbroken.com/maven/com/temportalist/
+  - label: Patreon
+    link: https://www.patreon.com/TheTemportalist
+    icon: patreon
+  - label: Player.me
+    link: https://player.me/thetemportalist
+    icon: player.me
+  - label: Twitch
+    link: http://www.twitch.tv/thetemportalist
+    icon: twitch
+  - label: GitHub
+    link: https://github.com/TheTemportalist
+    icon: github
