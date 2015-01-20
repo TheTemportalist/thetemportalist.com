@@ -3,11 +3,11 @@
 
 main:
   - label: Home
-    path: page/home
+    path: homepage
     class: first
   - label: About me
     title: Who is TheTemportalist?
-    path: page/about
+    path: page/2
   - label: Minecraft Mods
     title: The most up to date mods
     path: /page/mods-minecraft
