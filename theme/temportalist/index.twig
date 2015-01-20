@@ -1,30 +1,31 @@
 {% include '_header.twig' %}
 
-<div class="large-8 columns">
+<div class="row">
+    <div class="container large-12 columns">
+		<div class="large-8 columns">
 
-	{% if record is defined %}
-		{% set home = record %}
+			{% if record is defined %}
+				{% set home = record %}
 
-		{{ print(home) }}
-		{#
-	    {% if home.title is defined and home.title is not empty %}
-	        <h1>{{ home.title }}</h1>
-	    {% endif %}
-	    {% if home.body is defined and home.body is not empty %}
-	    	<p>
-	    		{{home.body}}
-	    	</p>
-	    {% endif %}
-	    #}
-	
+				{% if home.title is defined and home.title is not empty %}
+			        <h1>{{ home.title }}</h1>
+			    {% endif %}
+			    {% if home.body is defined and home.body is not empty %}
+			    	<p>
+			    		{{home.body}}
+			    	</p>
+			    {% endif %}
+			
 
-	{% else %}
-	    <p>
-	        {{ __('Content for home not found!') }} 
-	        {{ __("You should set 'homepage:' in your 'app/config/config.yml' to an existing record. Make sure that the content is published, otherwise it will not be shown.") }}
-	    </p>
-	{% endif %}
+			{% else %}
+			    <p>
+			        {{ __('Content for home not found!') }} 
+			        {{ __("You should set 'homepage:' in your 'app/config/config.yml' to an existing record. Make sure that the content is published, otherwise it will not be shown.") }}
+			    </p>
+			{% endif %}
 
+		</div>
+	</div>
 </div>
 
 
