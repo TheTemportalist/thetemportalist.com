@@ -7,7 +7,6 @@
                 {% set img = paths.theme ~ 'assets/' ~ item.icon ~ '.png' %}
                 <img src="{{ img }}" alt="" style="width:32px;height:32px;" />
             {% endif %}
-            {% if item.label is defined %}{{item.label}}{% endif %}
         </a>
         {% if item.submenu is defined %}
             <ul class="dropdown">
