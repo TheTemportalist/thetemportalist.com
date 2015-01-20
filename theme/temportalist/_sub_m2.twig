@@ -4,7 +4,9 @@
         <a href="{{ item.link }}" {% if item.title is defined %}title='{{ item.title|escape }}'{% endif %}
            class='{% if item.class is defined %}{{item.class}}{% endif %}'>
             {% if item.icon is defined %}
-                {{item.icon}}
+                {#{{item.icon}}#}
+                {% set img = paths.theme ~ 'assets/' ~ item.icon ~ '.png' %}
+                {{ img }}
             {% endif %}
         </a>
         {% if item.submenu is defined %}
