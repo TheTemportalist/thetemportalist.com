@@ -2,25 +2,20 @@
 # details: http://docs.bolt.cm/menus
 
 main:
-  - label: Home
-    title: This is the first menu item.
-    path: homepage
+  - label: About me
+    title: Who is TheTemportalist?
+    path: pages/about
     class: first
-  - label: Second item
-    path: entry/1
+  - label: Minecraft Mods
+    title: The most up to date mods
+    path: pages/mods
     submenu:
-      - label: Sub 1
-        path: entry/2
-      - label: Sub 2
-        class: menu-item-class
+      - label: Origin
         path: entry/3
-      - label: Sub 3
+      - label: Weeping Angels
         path: entry/4
-      - label: Sub 4
-        class: sub-class
-        path: page/3
-  - label: All pages
-    path: pages/
-  - label: The Bolt site
-    link: http://bolt.cm
+      - label: Tardis
+        path: entry/5
+      - label: Secret Rooms
+        path: entry/6
     class: last
