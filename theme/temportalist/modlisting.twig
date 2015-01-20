@@ -1,6 +1,7 @@
 {% macro display_menu_item(item, loop) %}
 	<tr>
 		<td>{{item.label}}</td>
+		<td>{% if item.latestMC is defined %}{{item.latestMC}}{% endif %}</td>
 	</tr>
 {% endmacro %}
 
