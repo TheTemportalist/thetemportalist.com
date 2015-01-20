@@ -60,7 +60,7 @@ mods:
     latestMC: Minecraft Version
     forge: Forge Version
   - label: Origin
-    latestMC: 1.8.0
+    latestMC: 1.8
     forge: 11.14.0.1289
     curseforge: 72503-origin #http://minecraft.curseforge.com/mc-mods/
     mavenhost: http://doubledoordev.net/maven
