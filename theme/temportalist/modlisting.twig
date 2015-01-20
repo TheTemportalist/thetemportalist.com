@@ -12,7 +12,7 @@
 				<img src="{{ paths.theme ~ 'assets/curseforge.png' }}" alt="" style="width:32px;height:32px;" />
 			</a>
 			{% set cfname = item.curseforge|split('-') %}
-			{{ cfname[1:] }}
+			{{ cfname[1] }}
 		{% endif %}</td>
 		<td class="center">{% if item.maven is defined %}{{item.maven}}{% endif %}</td>
 		<td class="center">{% if item.source is defined %}
