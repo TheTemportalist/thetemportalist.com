@@ -6,7 +6,11 @@
 		<td class="center">{% if item.curseforge is defined %}{{item.curseforge}}{% endif %}</td>
 		<td class="center">{% if item.mavenHost is defined %}{{item.mavenHost}}{% endif %}</td>
 		<td class="center">{% if item.maven is defined %}{{item.maven}}{% endif %}</td>
-		<td class="center">{% if item.source is defined %}{{item.source}}{% endif %}</td>
+		<td class="center">{% if item.source is defined %}
+			<a href="{{item.source}}" target="_blank">
+				<img src="{{ paths.theme ~ 'assets/github.png' }}" alt="" style="width:32px;height:32px;" />
+			</a>
+		{% endif %}</td>
 	</tr>
 {% endmacro %}
 
