@@ -6,7 +6,7 @@
             {% if item.icon is defined %}
                 {#{{item.icon}}#}
                 {% set img = paths.theme ~ 'assets/' ~ item.icon ~ '.png' %}
-                {{ img }}
+                <img src="{{ img }}" alt="" />
             {% endif %}
         </a>
         {% if item.submenu is defined %}
