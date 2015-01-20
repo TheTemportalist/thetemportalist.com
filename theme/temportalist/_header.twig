@@ -22,6 +22,8 @@
     {#<!-- A variable from the theme's config: {{ theme.foo }} -->#}
 
 </head>
+{% set bgimg = paths.theme ~ 'assets/background.png' %}
+<body {% if bgimg exists %}style="background-image:{{bgimg}};"{% endif %}>
 <div class="row">
     <header>
         <nav class="top-bar" data-topbar>
