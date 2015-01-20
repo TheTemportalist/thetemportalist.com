@@ -1,0 +1,30 @@
+{% import '_macro/_panels.twig' as panels %}
+
+{# No Javascript #}
+<noscript>
+    <section>
+        <h2>{{ __('generic.noscript.headline') }}</h2>
+        <p>{{ __('generic.noscript.message') }}</p>
+    </section>
+</noscript>
+
+{# News #}
+{% if not app.config.get('general/backend/news/disable', false) %}
+    {{ render(path('dashboardnews')) }}
+{% endif %}
+
+{# Stack #}
+{{ panels.stack(7, true) }}
+
+{# Dashboard Widget #}
+{{ widget('dashboard', 'right_first') }}
+
+{# Latest Activity #}
+<div id="latestactivity">
+    {{ render(path("latestactivity")) }}
+</div>
+
+{# ? #}
+<div id="latesttemp" style="display:none; visibility: hidden;">
+    <!-- intentionally left blank -->
+</div>

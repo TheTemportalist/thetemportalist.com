@@ -1,79 +1,19 @@
 <?php
-	// que and save all my mods and their corresponding curseforge names
-	$GLOBALS["mods"] = array(
-		"Origin" => "countrygamer_core",
-		"Weeping Angels" => "weeping-angels",
-		"Races For Minecraft" => "racesforminecraft",
-		"Owner Emitter" => "owner-emitter",
-		"Morph Additions" => "morphadditions",
-		"Not Enough Keys" => "notenoughkeys"
-	);
-	// Run through each of the mods and get the download url
-	/*
-	foreach ($GLOBALS["mods"] as $mod) {
-		$url = "http://widget.mcf.li/mc-mods/minecraft/" . $mod . ".json";
-		$modJson = json_decode(file_get_contents($url), true);
-		$GLOBALS["download:" . $mod] = $modJson["download"]["url"] . "#";
-	}
-	*/
-?>
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>The Temportalist</title>
-		<link type="text/css" rel="stylesheet" href="index.css" />
-	</head>
-	<body>
-		<?php
-			// iterate through all mods and create buttons for them
-			/*
-			foreach ($GLOBALS["mods"] as $modName => $modsubname) {
-				echo "<button onclick=
-					\"window.open('" . $GLOBALS["download:" . $modsubname] . "')\"
-				>" . $modName . "</button><br />";
-			}
-			*/
-		?>
+/**
+ * Bolt entry script
+ *
+ * Here we'll require in the first stage load script, which handles all the
+ * tasks needed to return the app.  Once we get the app, we simply tell it
+ * to run, building a beautiful web page for you and other visitors.
+ */
 
-		<!-- HEADER -->
-		<div align="center">
-			<img src="resources/TheTemportalist.png" style="width:437.5px; height:112.5px;">
-		</div>
+/**
+ * @var \Bolt\Application $app
+ */
+$app = require_once __DIR__ . '/app/load.php';
 
-		<!-- DROP DOWN -->
-		<div style="width: 100%;">
-
-			<div class="nav">
-				<ul>
-					<li><a href="">Page A</a></li>
-					<li><a href="">Page B</a></li>
-					<ul>
-						<li><a href="">Content 1</a></li>
-						<li><a href="">Content 2</a></li>
-						<li><a href="">Content 3</a></li>
-					</ul>
-				</ul>
-			</div>
-
-		</div>
-
-		<br />
-
-		<!-- SIDE BAR AND MAIN -->
-		<div style="width: 100%; display: table;">
-			<div style="display: table-row">
-				<!-- SIDE BAR -->
-				<div style="width: 20%; display: table-cell;">
-					SIDEBAR
-				</div>
-				<!-- MAIN -->
-				<div style="display: table-cell; overflow: auto;">
-					MAIN
-				</div>
-			</div>
-		</div>
-
-
-
-	</body>
-</html>
+if ($app) {
+    $app->run();
+} else {
+    return false;
+}
