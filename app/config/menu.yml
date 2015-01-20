@@ -56,7 +56,12 @@ social:
     icon: twitch
 
 mods:
+  - label: Mod Name
+    latestMC: Minecraft Version
+    forge: Forge Version
   - label: Origin
+    latestMC: 1.8.0
+    forge: 11.14.0.1289
     curseforge: 72503-origin #http://minecraft.curseforge.com/mc-mods/
     mavenhost: http://doubledoordev.net/maven
     maven: com.temportalist.origin:Origin:version
