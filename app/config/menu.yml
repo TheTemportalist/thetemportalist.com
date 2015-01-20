@@ -26,3 +26,4 @@ social:
   - label: Twitter
     link: https://twitter.com/TheTemportalist
     icon: twitter
+    target: "_blank"
