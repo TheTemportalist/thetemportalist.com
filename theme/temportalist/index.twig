@@ -1,6 +1,15 @@
 {% include '_header.twig' %}
 
-
-This is my page!
-
+{% if record is defined %}
+	{% set home = record %}
+    {% if home.title is defined and home.title is not empty %}
+        <h1>{{ home.title }}</h1>
+    {% endif %}
+{% else %}
+    <p>
+        {{ __('Content for home not found!') }} 
+        {{ __("You should set 'homepage:' in your 'app/config/config.yml' to an existing record. Make sure that the content is published, otherwise it will not be shown.") }}
+    </p>
+{% endif %}
+            
 {% include '_footer.twig' %}
