@@ -3,7 +3,7 @@
 		<td class="center">{{item.label}}</td>
 		<td class="center">{% if item.latestMC is defined %}{{item.latestMC}}{% endif %}</td>
 		<td class="center">{% if item.forge is defined %}
-			{% set forgelink = 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ {{ item.latestMC }} ~ {{ item.forge }} ~ '/forge-' ~ {{ item.latestMC }} ~ {{ item.forge }} ~ '-installer.jar' %}
+			{% set forgelink = 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ ({{ item.latestMC }}) ~ {{ item.forge }} ~ '/forge-' ~ ({{ item.latestMC }}) ~ {{ item.forge }} ~ '-installer.jar' %}
 			<a href="{{ forgelink }}">{{item.forge}}</a>
 		{% endif %}</td>
 		<td class="center">{% if item.curseforge is defined %}{{item.curseforge}}{% endif %}</td>
