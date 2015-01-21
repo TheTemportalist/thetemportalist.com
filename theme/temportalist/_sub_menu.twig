@@ -1,7 +1,7 @@
 {% macro display_menu_item(item, loop) %}
     {% from _self import display_menu_item %}
     <li class="index-{{ loop.index }}{% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %}{% if item.submenu is defined %} has-dropdown{% endif %}{% if item|current %} active{% endif %}">
-        {% if item.type == "outerMenu" %}
+        {% if item.type is defined and item.type == "outerMenu" %}
             {% for mod in config.get('menu/' ~ item.label) %}
                 {{ display_menu_item(mod, loop) }}
                 {#<a href="">{{mod['label']}}</a>#}
