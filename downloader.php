@@ -18,7 +18,7 @@ $versions = $json['versions'][$mcv];
 $url = "";
 
 if (strcmp($file, 'latest') == 0) {
-	$url = $versions[0];
+	$url = $versions[0]['url'];
 }
 else {
 	foreach ($versions as $modVersion) {
