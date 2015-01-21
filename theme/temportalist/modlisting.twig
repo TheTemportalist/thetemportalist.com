@@ -1,25 +1,17 @@
 {% macro display_menu_item(item, loop) %}
+	{% set mcv = app.request.get('mcv') %}
 	<tr>
 		<td class="center">{{item.label}}</td>
-		<td class="center">{% if item.latestMC is defined %}{{item.latestMC}}{% endif %}</td>
 		<td class="center">{% if item.forge is defined %}
 			{# http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.2.1286/forge-1.7.10-10.13.2.1286-installer.jar #}
 			{% set forgelink = 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ item.latestMC ~ '-' ~ item.forge ~ '/forge-' ~ item.latestMC ~ '-' ~ item.forge ~ '-installer.jar' %}
 			<a href="{{ forgelink }}" target="_blank">{{item.forge}}</a>
 		{% endif %}</td>
 		<td class="center">{% if item.curseforge is defined %}
-			<a href="http://minecraft.curseforge.com/mc-mods/{{item.curseforge}}" target="_blank">
-				<img src="{{ paths.theme ~ 'assets/curseforge.png' }}" alt="" style="width:32px;height:32px;" />
-			</a>
 			{% set cfname = item.curseforge|split('-') %}
 			{# todo figure out how to retrieve [???] and parse [json_decode] the json #}
-			<a href="" target="_blank">
+			<a href="thetemportalist.dries007.net/mod-helper/{{ mcv }}/{{ cfname }}/latest" target="_blank">
 				<img src="{{ paths.theme ~ 'assets/download.png' }}" alt="" style="width:32px;height:32px;" />
-			</a>
-		{% endif %}</td>
-		<td class="center">{% if item.source is defined %}
-			<a href="{{item.source}}" target="_blank">
-				<img src="{{ paths.theme ~ 'assets/github.png' }}" alt="" style="width:32px;height:32px;" />
 			</a>
 		{% endif %}</td>
 	</tr>
