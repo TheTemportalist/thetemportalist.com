@@ -5,13 +5,6 @@
 		{% for mcv in config.get('general/minecraft') %}
 			<option value="{{mcv}}" {% if loop.first %}selected{% endif %}>{{mcv}}</option>
 		{% endfor %}
-		{#}
-		<option value="1.8" selected>1.8</option>
-		<option value="1.7.10">1.7.10</option>
-		<option value="1.7.2">1.7.2</option>
-		<option value="1.6.4">1.6.4</option>
-		<option value="1.5.2">1.5.2</option>
-		#}
 	</select>
 
 	<script>
@@ -22,7 +15,6 @@
 				var pair = pars[i].split("=");
 				varAr[pair[0]] = pair[1];
 			}
-			//document.getElementById("a").innerHTML = varAr["mcv"];
 			if ("mcv" in varAr) {
 				document.getElementById("mcv_select").value = varAr["mcv"];
 			}
