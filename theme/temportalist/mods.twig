@@ -7,7 +7,7 @@
 		</ul>
 		#}
 
-		{{ app.request.queryString }}
+		{{ app.request.get('mcv') }}
 
 		Minecraft Version:
 		<select id="mcv_select" onchange="updatePage()">
