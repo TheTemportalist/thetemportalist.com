@@ -30,7 +30,8 @@
 			<td class="center">Forge Version</td>
 			<td class="center">CurseForge</td>
 		</tr>
-		{{ menu('mods', 'modlisting.twig') }}
+		{% app.request.set('mcv', '1.8') %}
+		{{ menu('mc-mods', 'modlisting.twig') }}
 	</table>
 
 	<script>
