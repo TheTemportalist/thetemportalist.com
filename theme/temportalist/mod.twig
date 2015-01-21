@@ -12,7 +12,6 @@
 		{% set details = details|merge({'mcv': config.get('general/minecraft')[0]}) %}
 		{% set details = details|merge({'cfname': details['curseforge']|split('-')[1]}) %}
 		{% set details = details|merge({'latest': "http://thetemportalist.dries007.net/mod-helper/" ~ details['mcv'] ~ "/" ~ details['cfname'] ~ "/latest"}) %}
-		{{ dump(details['latest']) }}
 
 		{% include '_aside_mod.twig' %}
 
