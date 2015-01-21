@@ -8,7 +8,7 @@
 		#}
 
 		{{ app.request.get('mcv') }}
-		{{ setSelected(app.request.get('mcv')) }}
+		{{ form_widget(form.mcv_select, {value: 1 } ) }}
 
 		Minecraft Version:
 		<select id="mcv_select" onchange="updatePage()">
