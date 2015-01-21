@@ -15,9 +15,9 @@
 
 		<table style="width:100%;">
 			<tr>
-				<td>{% include '_aside_mod.twig' %}</td>
-				<td>
-					<div style="border: solid; border-color: red; width: 75%;">
+				<td style="width: 25%;">{% include '_aside_mod.twig' %}</td>
+				<td style="width: 75%;">
+					<div style="border: solid; border-color: red;">
 						{% if home.title is defined and home.title is not empty %}
 							<h1 style="color:white;text-align:center;"><u>{{ home.title }}</u></h1>
 						{% endif %}
