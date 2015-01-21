@@ -14,8 +14,10 @@
 		{% set details = details|merge({'latest': "http://thetemportalist.dries007.net/mod-helper/" ~ details['mcv'] ~ "/" ~ details['cfname'] ~ "/latest"}) %}
 
 		<div style="border: solid; border-color: red;">
-			{% include '_aside_mod.twig' %}
-			<div class="large-8 columns">
+			<div style="border: solid; border-color: red;">
+				{% include '_aside_mod.twig' %}
+			</div>
+			<div class="large-8 columns" style="border: solid; border-color: red;">
 				{% if home.title is defined and home.title is not empty %}
 					<h1 style="color:white;text-align:center;"><u>{{ home.title }}</u></h1>
 				{% endif %}
@@ -31,6 +33,7 @@
 				{% endif %}
 			</div>
 		</div>
+
 	{% endif %}
 
 {% include '_footer_info.twig' %}
