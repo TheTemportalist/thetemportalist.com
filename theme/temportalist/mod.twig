@@ -17,11 +17,11 @@
 			{% include '_aside_mod.twig' %}
 			<div class="large-8 columns">
 				{% if home.title is defined and home.title is not empty %}
-					<h1 style="color:white;">{{ home.title }}</h1>
+					<h1 style="color:white;text-align:center;"><u>{{ home.title }}</u></h1>
 				{% endif %}
 
 				{% if home.teaser is defined and home.teaser is not empty %}
-					<h3 style="color:white;">{{ home.teaser }}</h3>
+					<h3 style="color:white;text-align:center;">{{ home.teaser }}</h3>
 				{% endif %}
 
 				<br />
