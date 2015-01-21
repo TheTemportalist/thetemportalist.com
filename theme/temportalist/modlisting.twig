@@ -2,8 +2,7 @@
 	{% set mcv = app.request.get('mcv') %}
 	<tr>
 		<td class="center">
-			<div>
-				<img src="{{ paths.theme ~ 'assets/button.png' }}" alt="" style="width:64px;height:32px;" />
+			<div style="background: url({{ paths.theme ~ 'assets/button.png' }});width:128px;height:64px;">
 				<span style="position:absolute;">{{item.label}}</span>
 			</div>
 		</td>
