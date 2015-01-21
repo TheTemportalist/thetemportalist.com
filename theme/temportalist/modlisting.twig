@@ -1,10 +1,11 @@
 {% macro display_menu_item(item, loop) %}
 	{% set mcv = app.request.get('mcv') %}
 	<tr>
-		<td class="center">
-			<div style="background: url({{ paths.theme ~ 'assets/button.png' }});width:128px;height:64px;">
-				<span style="position:absolute;">{{item.label}}</span>
-			</div>
+		<td>
+			<table><tr>
+				<td class="center">{{item.label}}</td>
+				<td class="center">DL Img</td>
+			</tr></table>
 		</td>
 		<td class="center">{% if item.forge is defined %}
 			{# http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.2.1286/forge-1.7.10-10.13.2.1286-installer.jar #}
