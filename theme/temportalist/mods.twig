@@ -21,10 +21,9 @@
 		</select>
 
 		<script>
-			function setSelected(value){
-				document.getElementById("a").value = value;
-			};
-			setSelected("def");
+			window.onload=function() {
+				document.getElementById("a").innerHTML = "def";
+			}
 		</script>
 
 		{#
