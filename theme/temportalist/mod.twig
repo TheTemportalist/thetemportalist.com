@@ -19,21 +19,19 @@
 					{% include '_aside_mod.twig' %}
 				</td>
 				<td style="width: 75%;">
-					<div style="border: solid; border-color: red;">
-						{% if home.title is defined and home.title is not empty %}
-							<h1 style="color:white;text-align:center;"><u>{{ home.title }}</u></h1>
-						{% endif %}
+					{% if home.title is defined and home.title is not empty %}
+						<h1 style="color:white;text-align:center;"><u>{{ home.title }}</u></h1>
+					{% endif %}
 
-						{% if home.teaser is defined and home.teaser is not empty %}
-							<h3 style="color:white;text-align:center;">{{ home.teaser }}</h3>
-						{% endif %}
+					{% if home.teaser is defined and home.teaser is not empty %}
+						<h3 style="color:white;text-align:center;">{{ home.teaser }}</h3>
+					{% endif %}
 
-						<br />
+					<br />
 
-						{% if home.body is defined and home.body is not empty %}
-							<p>{{ home.body }}</p>
-						{% endif %}
-					</div>
+					{% if home.body is defined and home.body is not empty %}
+						<p>{{ home.body }}</p>
+					{% endif %}
 				</td>
 			</tr>
 		</table>
