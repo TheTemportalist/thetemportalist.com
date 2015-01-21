@@ -29,6 +29,9 @@ else {
 	}
 }
 #out($url);
+if (strcmp($url, '') == 0) {
+	$url = $_SERVER['HTTP_REFERER'];
+}
 header('Location: ' . $url);
 exit;
 
