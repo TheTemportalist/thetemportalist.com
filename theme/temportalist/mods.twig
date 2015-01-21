@@ -10,16 +10,14 @@
 		{{ app.request.get('mcv') }}
 		{# document.getElementById("mcv_select").value = 1.8 #}
 
-		{% $form = $this->createFormBuilder()
-            ->add('status', 'choice', array(
-                'choices' => array(
-                    0 => 'Published',
-                    1 => 'Draft'
-                ),
-                'data' => 1
-            ))
-            ->getForm();
-		%}
+		<select id="mcv_select" onchange="updatePage()" value="1.5.2" >
+			<option value="1.8">1.8</option>
+			<option value="1.7.10">1.7.10</option>
+			<option value="1.7.2">1.7.2</option>
+			<option value="1.6.4">1.6.4</option>
+			<option value="1.5.2">1.5.2</option>
+		</select>
+
 		{#
 		Minecraft Version:
 		<select id="mcv_select" onchange="updatePage()">
