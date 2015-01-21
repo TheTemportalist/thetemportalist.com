@@ -1,6 +1,6 @@
 <?php
 
-	$mods = array(
+	var $mods = array(
 		"Origin" => array(
 			"page" => "/page/origin"
 		),
