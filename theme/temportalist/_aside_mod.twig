@@ -5,7 +5,7 @@
 	This is the sidebar
 
 	{% for mod in config.get('menu/mc-mods') %}
-		{{ dunp(mod['label']) }}
+		{{ dump(mod['label']) }}
 		{% if mod['label'] == home.title %}
 			Found slug
 		{% endif %}
