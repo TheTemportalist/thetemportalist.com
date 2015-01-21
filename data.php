@@ -19,6 +19,6 @@
 		"Owner Emitter" => array(
 			"page" => "/page/owner-emitter"
 		)
-	)
+	);
 
 ?>
