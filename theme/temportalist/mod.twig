@@ -1,10 +1,9 @@
 {% include '_header_info.twig' %}
+	
+	{% menu('mods') %}
 
-	{# Menu links (sidebar), Title (header), teaser (subtitle), info (body) #}
+	{% include '_aside_mod.twig' %}
 
-	<aside class="large-4 columns" style="border-right-style: solid; border-width: 2px; border-color: white;">
-		This is the sidebar
-	</aside>
 	<div class="large-8 columns">
 		{% if record is defined %}
 			{% set home = record %}

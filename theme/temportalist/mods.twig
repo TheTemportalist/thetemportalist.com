@@ -2,7 +2,7 @@
 
 	Minecraft Version:
 	<select id="mcv_select" onchange="updatePage()" style="" >
-		<option value="1.8">1.8</option>
+		<option value="1.8" selected>1.8</option>
 		<option value="1.7.10">1.7.10</option>
 		<option value="1.7.2">1.7.2</option>
 		<option value="1.6.4">1.6.4</option>
@@ -18,7 +18,9 @@
 				varAr[pair[0]] = pair[1];
 			}
 			//document.getElementById("a").innerHTML = varAr["mcv"];
-			document.getElementById("mcv_select").value = varAr["mcv"];
+			if ("mcv" in varAr) {
+				document.getElementById("mcv_select").value = varAr["mcv"];
+			}
 		}
 	</script>
 
