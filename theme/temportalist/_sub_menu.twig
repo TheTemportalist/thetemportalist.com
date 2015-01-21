@@ -5,9 +5,9 @@
             
             <a href="">MODS</a>
 
-            {% for mod in mods %}
+            {% for mod in config.get('menu/mods') %}
                 {#{{ display_menu_item(mod, loop) }}#}
-                <a href="">Iter</a>
+                <a href="">{{mod['label']}}</a>
             {% endfor %}
             
         {% else %}
