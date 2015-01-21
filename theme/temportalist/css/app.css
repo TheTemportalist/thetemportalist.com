@@ -42,7 +42,8 @@ h6 {
 }
 
 a {
-    color: #284F76;
+    /*color: #284F76;*/
+    color: white;
 }
 
 a:hover {
