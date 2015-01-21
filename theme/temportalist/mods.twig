@@ -21,7 +21,13 @@
 
 		<script>
 			window.onload=function() {
-				document.getElementById("a").innerHTML = window.location.search.substring(1);
+				var pars = window.location.search.substring(1).split("&");
+				var varAr = {};
+				for (var i=0;i<pars.length;i++) {
+					var pair = pars[i].split("=");
+					varAr[pair[0]] = pair[1];
+				}
+				document.getElementById("a").innerHTML = varAr["mcv"];
 				document.getElementById("mcv_select").value = "1.7.10";
 			}
 		</script>
