@@ -11,7 +11,7 @@
 		</td>
 		<td class="center">{% if item.forge is defined %}
 			{# http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.2.1286/forge-1.7.10-10.13.2.1286-installer.jar #}
-			{% set forgelink = 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ item.latestMC ~ '-' ~ item.forge ~ '/forge-' ~ item.latestMC ~ '-' ~ item.forge ~ '-installer.jar' %}
+			{% set forgelink = 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ mcv ~ '-' ~ item.forge ~ '/forge-' ~ mcv ~ '-' ~ item.forge ~ '-installer.jar' %}
 			<a href="{{ forgelink }}" target="_blank">{{item.forge}}</a>
 		{% endif %}</td>
 		<td class="center">{% if item.curseforge is defined %}
