@@ -1,4 +1,4 @@
-<?php
+<?
 
 	var $mods = array(
 		"Origin" => array(
