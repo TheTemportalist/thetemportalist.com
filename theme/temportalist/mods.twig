@@ -8,6 +8,11 @@
 		#}
 
 		{{ app.request.get('mcv') }}
+		<script>
+			Twig.setFunction('setSelected', function(v) {
+				document.getElementById("mcv_select").value = v
+			});
+		</script>
 		{{ setSelected(app.request.get('mcv')) }}
 
 		Minecraft Version:
@@ -37,11 +42,6 @@
 		var mcv = document.getElementById("mcv_select").value;
 		window.location.href = "http://thetemportalist.dries007.net/page/mods-minecraft?mcv=" + mcv;
 	}
-	</script>
-	<script>
-	Twig.setFunction('setSelected', function(v) {
-		document.getElementById("mcv_select").value = v
-	});
 	</script>
 
 {% include '_footer.twig' %}
