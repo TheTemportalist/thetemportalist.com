@@ -1,7 +1,12 @@
 {% macro display_menu_item(item, loop) %}
 	{% set mcv = app.request.get('mcv') %}
 	<tr>
-		<td class="center">{{item.label}}</td>
+		<td class="center">
+			<div>
+				<img src="{{ paths.theme ~ 'assets/button.png' }}" alt="" style="width:64px;height:32px;" />
+				<span style="position:absolute;">{{item.label}}</span>
+			</div>
+		</td>
 		<td class="center">{% if item.forge is defined %}
 			{# http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.2.1286/forge-1.7.10-10.13.2.1286-installer.jar #}
 			{% set forgelink = 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ item.latestMC ~ '-' ~ item.forge ~ '/forge-' ~ item.latestMC ~ '-' ~ item.forge ~ '-installer.jar' %}

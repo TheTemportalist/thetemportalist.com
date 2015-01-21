@@ -57,9 +57,12 @@ social:
 
 mods:
   - label: Origin
-    latestMC: 1.8
     forge: 11.14.0.1289
     curseforge: 72503-origin
     buildserver: http://jenkins.dries007.net/view/Temportal/job/Origin/
     source: https://github.com/TheTemportalist/Origin
     maven: http://doubledoordev.net/maven|com.temportalist.origin:Origin:version
+  - label: Weeping Angels
+  - label: Not Enough Keys
+  - label: Tardis
+  - label: Owner Emitter

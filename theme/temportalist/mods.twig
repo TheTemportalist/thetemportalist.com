@@ -1,17 +1,9 @@
 {% include '_header.twig' %}
 
 	<div style="margin-left: 40px; margin-right: 20px;">
-		{#
-<ul style="list-style-type: none; padding-top: 20px; margin: 0 auto 20px;">
-			{{ menu('mods', 'modlisting.twig') }}
-		</ul>
-		#}
-
-		{#{{ app.request.get('mcv') }}#}
-		{# document.getElementById("mcv_select").value = 1.8 #}
 
 		Minecraft Version:
-		<select id="mcv_select" onchange="updatePage()" value="1.5.2" >
+		<select id="mcv_select" onchange="updatePage()" style="" >
 			<option value="1.8">1.8</option>
 			<option value="1.7.10">1.7.10</option>
 			<option value="1.7.2">1.7.2</option>
