@@ -3,6 +3,13 @@
 	{% if record is defined %}
 		{% set home = record %}
 		{% set slug = app.request.pathInfo|split('/')[2] %}
+		{% set details = {} %}
+		{% for mod in config.get('menu/mc-mods') %}
+			{% if mod['label'] == home.title %}
+				{% set details = mod %}
+			{% endif %}
+		{% endfor %}
+		{{ dump(details) }}
 
 		{% include '_aside_mod.twig' %}
 
