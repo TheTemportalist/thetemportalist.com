@@ -7,8 +7,10 @@
 		</ul>
 		#}
 
-		{{ app.request.get('mcv') }}
+		{#{{ app.request.get('mcv') }}#}
 		{# document.getElementById("mcv_select").value = 1.8 #}
+
+		<p id="a">abc</p>
 
 		<select id="mcv_select" onchange="updatePage()" value="1.5.2" >
 			<option value="1.8">1.8</option>
@@ -17,6 +19,10 @@
 			<option value="1.6.4">1.6.4</option>
 			<option value="1.5.2">1.5.2</option>
 		</select>
+
+		<script>
+			document.getElementById("a").value = "def";
+		</script>
 
 		{#
 		Minecraft Version:
