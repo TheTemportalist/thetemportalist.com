@@ -13,7 +13,7 @@ out($id);
 out($v);
 
 $json = json_decode(file_get_contents("http://widget.mcf.li/mc-mods/minecraft/" . $id . ".json"));
-var_dump($json);
+var_dump($json['versions'][$mcv]);
 
 
 ?>
