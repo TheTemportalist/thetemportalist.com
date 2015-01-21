@@ -1,8 +1,9 @@
 <?php
 
-
-echo "..."
-
-echo "..."
+echo "...";
+echo $_GET["mcv"];
+echo $_GET["id"];
+echo $_GET["v"];
+echo "...";
 
 ?>
