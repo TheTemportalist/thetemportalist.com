@@ -1,19 +1,18 @@
 {% include '_header_info.twig' %}
 
-	{% include '_aside_mod.twig' %}
+	{% if record is defined %}
+		{% set home = record %}
+		{% include '_aside_mod.twig' %}
 
-	<div class="large-8 columns">
-		{% if record is defined %}
-			{% set home = record %}
-			
+		<div class="large-8 columns">
+
 			{% if home.title is defined and home.title is not empty %}
-    			<h1>{{ home.title }}</h1>
-        	{% endif %}
+				<h1>{{ home.title }}</h1>
+			{% endif %}
 
+			{{ dump(app.request) }}
 
-
-
-        {% endif %}
-	</div>
+		</div>
+	{% endif %}
 
 {% include '_footer_info.twig' %}
