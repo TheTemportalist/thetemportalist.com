@@ -8,6 +8,12 @@ main:
   - label: About me
     title: Who is TheTemportalist?
     path: page/2
+  - label: Projects
+    title: Misc. Projects
+    path: /page/projects
+    submenu:
+      - label: Minecraft Mods
+        path: /page/mods-minecraft
   - label: Minecraft Mods
     title: The most up to date mods
     path: /page/mods-minecraft
