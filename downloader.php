@@ -29,5 +29,6 @@ else {
 	}
 }
 out($url);
+header($url);
 
 ?>
