@@ -10,8 +10,7 @@
 		{#{{ app.request.get('mcv') }}#}
 		{# document.getElementById("mcv_select").value = 1.8 #}
 
-		<p id="a">abc</p>
-
+		<p id="a">Para</p>
 		<select id="mcv_select" onchange="updatePage()" value="1.5.2" >
 			<option value="1.8">1.8</option>
 			<option value="1.7.10">1.7.10</option>
@@ -22,6 +21,7 @@
 
 		<script>
 			window.onload=function() {
+				document.getElementById("a").innerHTML = window.location.search.substring(1);
 				document.getElementById("mcv_select").value = "1.7.10";
 			}
 		</script>
