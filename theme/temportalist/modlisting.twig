@@ -2,10 +2,12 @@
 	{% set mcv = app.request.get('mcv') %}
 	<tr>
 		<td class="center">
+			<a href="{{ item.label|lower }}">{{item.label}}</a>
+			{#}
 			<table style="width:100%; height:100%;"><tr>
-				<td class="center">{{item.label}}</td>
+				<td class="center"></td>
 				<td class="center">DL Img</td>
-			</tr></table>
+			</tr></table>#}
 		</td>
 		<td class="center">{% if item.forge is defined %}
 			{# http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.2.1286/forge-1.7.10-10.13.2.1286-installer.jar #}
