@@ -9,5 +9,7 @@ $id=$_GET["id"];
 $v=$_GET["v"];
 
 out($mcv);
+out($id);
+out($v);
 
 ?>
