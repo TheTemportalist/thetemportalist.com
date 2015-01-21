@@ -12,7 +12,8 @@ main:
     title: The most up to date mods
     path: /page/mods-minecraft
     submenu:
-      - label: mods
+      - label: mc-mods
+        type: outerMenu
     class: last
 
 social:
@@ -48,22 +49,27 @@ social:
     link: http://www.twitch.tv/thetemportalist
     icon: twitch
 
-mods:
+mc-mods:
   - label: Origin
+    path: /page/origin
     forge: 11.14.0.1289
     curseforge: 72503-origin
     buildserver: http://jenkins.dries007.net/view/Temportal/job/Origin/
     source: https://github.com/TheTemportalist/Origin
     maven: http://doubledoordev.net/maven|com.temportalist.origin:Origin:version
   - label: Weeping Angels
+    path: /page/weeping-angels
     forge: 11.14.0.1289
     curseforge: a
   - label: Not Enough Keys
+    path: /page/not-enough-keys
     forge: 11.14.0.1289
     curseforge: a
   - label: Tardis
+    path: /page/tardis
     forge: 11.14.0.1289
     curseforge: a
   - label: Owner Emitter
+    path: /page/owner-emitter
     forge: 11.14.0.1289
     curseforge: a
