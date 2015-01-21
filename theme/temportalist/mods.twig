@@ -8,6 +8,7 @@
 		#}
 
 		{{ app.request.get('mcv') }}
+		{{ setSelected(app.request.get('mcv')) }}
 
 		Minecraft Version:
 		<select id="mcv_select" onchange="updatePage()">
@@ -35,6 +36,11 @@
 	function updatePage() {
 		var mcv = document.getElementById("mcv_select").value;
 		window.location.href = "http://thetemportalist.dries007.net/page/mods-minecraft?mcv=" + mcv;
+	}
+	</script>
+	<script>
+	function setSelected(v) {
+		document.getElementById("mcv_select").value = v
 	}
 	</script>
 
