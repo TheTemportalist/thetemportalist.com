@@ -4,19 +4,20 @@
 		{% if record is defined %}
 			{% set home = record %}
 
-			{% if home.title is defined and home.title is not empty %}
-			    <h1 style="color: white; text-align: left;">{{ home.title }}</h1>
-			{% endif %}
-			<div style="padding-left: 30px;">
-				{% if home.teaser is defined and home.teaser is not empty %}
-    			    <h3 style="color: white; text-align: left;">{{ home.teaser }}</h3>
-    			{% endif %}
+			<div style="margin-left: 30px;">
+				{% if home.title is defined and home.title is not empty %}
+				    <h1 style="color: white; text-align: left;">{{ home.title }}</h1>
+				{% endif %}
+				<div style="padding-left: 30px;">
+					{% if home.teaser is defined and home.teaser is not empty %}
+	    			    <h3 style="color: white; text-align: left;">{{ home.teaser }}</h3>
+	    			{% endif %}
+				</div>
+
+			    {% if home.body is defined and home.body is not empty %}
+			    	<p>{{home.body}}</p>
+			    {% endif %}
 			</div>
-			
-		    {% if home.body is defined and home.body is not empty %}
-		    	<p>{{home.body}}</p>
-		    {% endif %}
-		
 
 		{% else %}
 		    <p>
