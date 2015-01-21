@@ -15,7 +15,7 @@ out($file);
 $json = json_decode(file_get_contents("http://widget.mcf.li/mc-mods/minecraft/" . $id . ".json"), true);
 #echo '<pre>' . print_r($json, true) . '</pre>';
 $versions = $json['versions'][$mcv];
-$url = ""
+$url = "";
 
 if (strcmp($file, 'latest') == 0) {
 	$url = $versions[0];
