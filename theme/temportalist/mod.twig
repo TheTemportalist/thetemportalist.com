@@ -2,6 +2,9 @@
 
 	{% if record is defined %}
 		{% set home = record %}
+		{% set slug = app.request.pathInfo|split('/')[2] %}
+		{{ dump(slug) }}
+
 		{% include '_aside_mod.twig' %}
 
 		<div class="large-8 columns">
@@ -10,7 +13,7 @@
 				<h1>{{ home.title }}</h1>
 			{% endif %}
 
-			{{ dump(app.request.pathInfo) }}
+
 
 		</div>
 	{% endif %}
