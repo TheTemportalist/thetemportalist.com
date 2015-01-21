@@ -50,6 +50,7 @@
     </header>
 </div>
 <div class="row">
-    {% include 'data.twig' %}
+    {% set mods = {} %}
+    {% include 'data.twig', mods %}
     {{ dump(mods) }}
 
