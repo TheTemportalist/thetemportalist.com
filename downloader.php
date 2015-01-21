@@ -14,6 +14,6 @@ out($v);
 
 $json = json_decode(file_get_contents("http://widget.mcf.li/mc-mods/minecraft/" . $id . ".json"), true);
 #echo '<pre>' . print_r($json, true) . '</pre>';
-echo '<pre>' . print_r($json['title'], true) . '</pre>';
+echo '<pre>' . print_r($json['versions'], true) . '</pre>';
 
 ?>
