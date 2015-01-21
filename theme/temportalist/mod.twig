@@ -10,7 +10,7 @@
 				<h1>{{ home.title }}</h1>
 			{% endif %}
 
-			{{ dump(app.request) }}
+			{{ dump(app.request.pathInfo) }}
 
 		</div>
 	{% endif %}
