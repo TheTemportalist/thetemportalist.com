@@ -13,26 +13,28 @@
 		{% set details = details|merge({'cfname': details['curseforge']|split('-')[1]}) %}
 		{% set details = details|merge({'latest': "http://thetemportalist.dries007.net/mod-helper/" ~ details['mcv'] ~ "/" ~ details['cfname'] ~ "/latest"}) %}
 
-		<div style="border: solid; border-color: red;">
-			<div style="border: solid; border-color: red;">
-				{% include '_aside_mod.twig' %}
-			</div>
-			<div class="large-8 columns right" style="border: solid; border-color: red;">
-				{% if home.title is defined and home.title is not empty %}
-					<h1 style="color:white;text-align:center;"><u>{{ home.title }}</u></h1>
-				{% endif %}
+		<table>
+			<tr>
+				<td>{% include '_aside_mod.twig' %}</td>
+				<td>
+					<div class="large-8 columns right" style="border: solid; border-color: red;">
+						{% if home.title is defined and home.title is not empty %}
+							<h1 style="color:white;text-align:center;"><u>{{ home.title }}</u></h1>
+						{% endif %}
 
-				{% if home.teaser is defined and home.teaser is not empty %}
-					<h3 style="color:white;text-align:center;">{{ home.teaser }}</h3>
-				{% endif %}
+						{% if home.teaser is defined and home.teaser is not empty %}
+							<h3 style="color:white;text-align:center;">{{ home.teaser }}</h3>
+						{% endif %}
 
-				<br />
+						<br />
 
-				{% if home.body is defined and home.body is not empty %}
-					<p>{{ home.body }}</p>
-				{% endif %}
-			</div>
-		</div>
+						{% if home.body is defined and home.body is not empty %}
+							<p>{{ home.body }}</p>
+						{% endif %}
+					</div>
+				</td>
+			</tr>
+		</table>
 
 	{% endif %}
 
