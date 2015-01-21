@@ -8,7 +8,7 @@
 		#}
 
 		{{ app.request.get('mcv') }}
-		{{ form_widget(form.mcv_select, {value: 1 } ) }}
+		{{ setSelected(app.request.get('mcv')) }}
 
 		Minecraft Version:
 		<select id="mcv_select" onchange="updatePage()">
@@ -39,9 +39,9 @@
 	}
 	</script>
 	<script>
-	function setSelected(v) {
+	Twig.setFunction('setSelected', function(v) {
 		document.getElementById("mcv_select").value = v
-	}
+	});
 	</script>
 
 {% include '_footer.twig' %}
