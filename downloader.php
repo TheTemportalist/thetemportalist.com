@@ -22,7 +22,7 @@ if (strcmp($file, 'latest') == 0) {
 }
 else {
 	foreach ($versions as $modVersion) {
-		if (strcmp($file, $modVersion['name']) == 0) {
+		if (strcmp($file . ".jar", $modVersion['name']) == 0) {
 #			out("Found " . $modVersion['name']);
 			$url = $modVersion['url'];
 		}
