@@ -8,7 +8,7 @@
 		#}
 
 		Minecraft Version:
-		<select onchange="updatePage()">
+		<select id="mcv_select" onchange="updatePage()">
 			<option value="1.8">1.8</option>
 			<option value="1.7.10">1.7.10</option>
 			<option value="1.7.2">1.7.2</option>
@@ -31,7 +31,8 @@
 
 	<script>
 	function updatePage() {
-		window.location.href = "http://thetemportalist.dries007.net/page/mods-minecraft";
+		var mcv = document.getElementById("mcv_select").value;
+		window.location.href = "http://thetemportalist.dries007.net/page/mods-minecraft?mcv=" + mcv;
 	}
 	</script>
 
