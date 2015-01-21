@@ -29,7 +29,7 @@ else {
 	}
 }
 #out($url);
-header($url);
+header('Location: ' . $url);
 exit;
 
 ?>
