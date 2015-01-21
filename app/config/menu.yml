@@ -12,14 +12,7 @@ main:
     title: The most up to date mods
     path: /page/mods-minecraft
     submenu:
-      - label: Origin
-        path: /page/origin
-      - label: Weeping Angels
-        path: /page/weeping-angels
-      - label: Tardis
-        path: /page/tardis
-      - label: Secret Rooms
-        path: /page/secret-rooms
+      - label: mods
     class: last
 
 social:
