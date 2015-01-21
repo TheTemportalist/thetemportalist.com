@@ -1,6 +1,6 @@
 <?php
 
-function out(txt) {
+function out($txt) {
 	echo $txt . "\n";
 }
 
