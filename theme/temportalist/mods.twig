@@ -1,39 +1,35 @@
-{% include '_header.twig' %}
+{% include '_header_info.twig' %}
 
-	<div style="margin-left: 40px; margin-right: 20px;">
+	Minecraft Version:
+	<select id="mcv_select" onchange="updatePage()" style="" >
+		<option value="1.8">1.8</option>
+		<option value="1.7.10">1.7.10</option>
+		<option value="1.7.2">1.7.2</option>
+		<option value="1.6.4">1.6.4</option>
+		<option value="1.5.2">1.5.2</option>
+	</select>
 
-		Minecraft Version:
-		<select id="mcv_select" onchange="updatePage()" style="" >
-			<option value="1.8">1.8</option>
-			<option value="1.7.10">1.7.10</option>
-			<option value="1.7.2">1.7.2</option>
-			<option value="1.6.4">1.6.4</option>
-			<option value="1.5.2">1.5.2</option>
-		</select>
-
-		<script>
-			window.onload=function() {
-				var pars = window.location.search.substring(1).split("&");
-				var varAr = {};
-				for (var i=0;i<pars.length;i++) {
-					var pair = pars[i].split("=");
-					varAr[pair[0]] = pair[1];
-				}
-				//document.getElementById("a").innerHTML = varAr["mcv"];
-				document.getElementById("mcv_select").value = varAr["mcv"];
+	<script>
+		window.onload=function() {
+			var pars = window.location.search.substring(1).split("&");
+			var varAr = {};
+			for (var i=0;i<pars.length;i++) {
+				var pair = pars[i].split("=");
+				varAr[pair[0]] = pair[1];
 			}
-		</script>
+			//document.getElementById("a").innerHTML = varAr["mcv"];
+			document.getElementById("mcv_select").value = varAr["mcv"];
+		}
+	</script>
 
-		<table style="width: 100%; padding-top: 20px; margin: 0 auto 20px;">
-			<tr>
-				<td class="center">Mod Name</td>
-				<td class="center">Forge Version</td>
-				<td class="center">CurseForge</td>
-			</tr>
-			{{ menu('mods', 'modlisting.twig') }}
-		</table>
-
-	</div>
+	<table style="width: 100%; padding-top: 20px; margin: 0 auto 20px;">
+		<tr>
+			<td class="center">Mod Name</td>
+			<td class="center">Forge Version</td>
+			<td class="center">CurseForge</td>
+		</tr>
+		{{ menu('mods', 'modlisting.twig') }}
+	</table>
 
 	<script>
 	function updatePage() {
@@ -42,4 +38,4 @@
 	}
 	</script>
 
-{% include '_footer.twig' %}
+{% include '_footer_info.twig' %}
