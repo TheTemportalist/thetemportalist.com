@@ -1,5 +1,8 @@
 {% macro display_menu_item(item, loop) %}
 	{% set mcv = app.request.get('mcv') %}
+	{% if mcv == "" %}
+		{% set mcv = "1.8" %}
+	{% endif %}
 	<tr>
 		<td class="center">
 			<a href="{{ item.label|lower }}">{{item.label}}</a>
