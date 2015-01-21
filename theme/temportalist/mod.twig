@@ -1,8 +1,6 @@
 {% include '_header_info.twig' %}
 	
-	{% for item in menu('mods') %}
-		{{ item.label }}
-	{% endfor %}
+	{{ dump(menu('mods')) }}
 
 	{% include '_aside_mod.twig' %}
 
