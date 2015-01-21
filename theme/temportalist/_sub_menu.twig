@@ -2,9 +2,12 @@
     {% from _self import display_menu_item %}
     <li class="index-{{ loop.index }}{% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %}{% if item.submenu is defined %} has-dropdown{% endif %}{% if item|current %} active{% endif %}">
         {% if item.label == "mods" %}
+            {#}
             {% for mod in mods %}
                 {{ display_menu_item(mod, loop) }}
             {% endfor %}
+            #}
+            <a href="">MODS</a>
         {% else %}
             <a href="{{ item.link }}" {% if item.title is defined %}title='{{ item.title|escape }}'{% endif %}
                class='{% if item.class is defined %}{{item.class}}{% endif %}'>
