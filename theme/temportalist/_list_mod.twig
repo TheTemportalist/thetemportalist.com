@@ -1,3 +1,4 @@
+{% extends '_list.twig' %}
 {% macro display_list_item(item, loop) %}
 	{# Get the current MCV #}
 	{% set mcv = app.request.get('mcv') %}
@@ -31,6 +32,3 @@
 	</td>
 
 {% endmacro %}
-
-{% from _self import display_list_item %}
-{% include '_list.twig' %}
