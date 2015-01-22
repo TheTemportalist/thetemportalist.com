@@ -7,8 +7,16 @@
 		<table style="width: 100%; height: 100%;">
 			<tr>
 				<td><h3>{{item.label}}</h3></td>
-				<td>Version</td>
-				<td>DL</td>
+				<td class="center">{% if item.forge is defined %}
+					{% set forgelink = 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ mcv ~ '-' ~ item.forge ~ '/forge-' ~ mcv ~ '-' ~ item.forge ~ '-installer.jar' %}
+					<a href="{{ forgelink }}" target="_blank">{{item.forge}}</a>
+				{% endif %}</td>
+				<td class="center">{% if item.curseforge is defined %}
+					{% set cfname = item.curseforge|split('-') %}
+					<a href="http://thetemportalist.dries007.net/mod-helper/{{ mcv }}/{{ cfname[1] }}/latest" target="_blank">
+						<img src="{{ paths.theme ~ 'assets/download.png' }}" alt="" style="width:32px;height:32px;" />
+					</a>
+				{% endif %}</td>
 			</tr>
 		</table>
 	</div></a>
