@@ -6,7 +6,7 @@ div.project {
 	color: white;
 }
 
-div.project:hover {
+div.project a:hover {
 	color: white;
 	text-decoration: none;
 }
