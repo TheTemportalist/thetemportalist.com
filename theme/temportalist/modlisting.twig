@@ -4,9 +4,13 @@
 		{% set mcv = config.get('general/minecraft')[0] %}
 	{% endif %}
 	<a href="{{ item.link }}" class="project"><div class="project">
-		<div>{{item.label}}</div>
-		<div>Version</div>
-		<div>DL</div>
+		<table style="width: 100%; height: 100%;">
+			<tr>
+				<td><div>{{item.label}}</div></td>
+				<td><div>Version</div></td>
+				<td><div>DL</div></td>
+			</tr>
+		</table>
 	</div></a>
 	<br />
 	{#}
