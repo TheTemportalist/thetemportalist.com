@@ -2,8 +2,9 @@
 	text-align: center
 }
 
-div.project {
+div.project a {
 	color: white;
+	text-decoration: none;
 }
 
 div.project a:hover {
