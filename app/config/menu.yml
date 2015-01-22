@@ -12,8 +12,8 @@ main:
     title: Misc. Projects
     path: /page/projects
     submenu:
-      - label: Minecraft Mods
-        path: /page/mods-minecraft
+      - label: projects
+        type: outerMenu
   - label: Minecraft Mods
     title: The most up to date mods
     path: /page/mods-minecraft
@@ -54,6 +54,10 @@ social:
   - label: Twitch
     link: http://www.twitch.tv/thetemportalist
     icon: twitch
+
+projects:
+  - label: Minecraft Mods
+    path: /page/mods-minecraft
 
 mc-mods:
   - label: Origin
