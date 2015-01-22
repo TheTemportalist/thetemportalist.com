@@ -3,4 +3,19 @@
 {% endmacro %}
 
 {% from _self import display_list_item %}
-{% include '_list.twig' %}
+{% for item in menu %}
+    {% if item.label is defined %}
+    	{# Link the entire block #}
+		<a href="{{ item.link }}" class="project">
+			<div class="project">
+				{# Table for the row (organization) #}
+				<table class="full">
+					<tr>
+	       				{{ display_list_item(item, loop) }}
+					</tr>
+				</table>
+			</div>
+		</a>
+		<br />
+    {% endif %}
+{% endfor %}
