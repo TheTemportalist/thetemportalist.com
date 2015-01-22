@@ -7,7 +7,7 @@ a div.project {
 	text-decoration: none;
 }
 
-a div.project:hover {
+a:hover div.project {
 	color: white;
 	text-decoration: none;
 }
