@@ -3,9 +3,21 @@
 	{% if record is defined %}
 		{% set home = record %}
 
-			{% if home.body is defined and home.body is not empty %}
-		    	{{home.body}}
-		    {% endif %}
+			<div style="margin-left: 30px;">
+				{% if home.title is defined and home.title is not empty %}
+				    <h1 style="color: white; text-align: left;">{{ home.title }}</h1>
+				{% endif %}
+				<div style="padding-left: 30px;">
+					{% if home.teaser is defined and home.teaser is not empty %}
+	    			    <h3 style="color: white; text-align: left;">{{ home.teaser }}</h3>
+	    			{% endif %}
+				</div>
+
+			    {{ menu(item.body|split(';')[0], '_list_' ~ item.body|split(';')[1] ~ '.twig') }}
+
+			</div>
+
+		    
 
 	{% endif %}
 
