@@ -18,7 +18,7 @@ a.project:hover {
 	text-decoration: none;
 }
 
-div.project div {
+div.project td {
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	text-align: center;
