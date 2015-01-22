@@ -3,7 +3,7 @@
 	{% if mcv == "" %}
 		{% set mcv = config.get('general/minecraft')[0] %}
 	{% endif %}
-	<a href="{{ item.link }}"><div class="project" style="width: 100%; height: 60px; background-color: red;">
+	<a href="{{ item.link }}"><div class="project" style="width: 100%; height: 60px; background-color: red; text-decoration: none;">
 		{{item.label}}
 	</div></a>
 	<br />
