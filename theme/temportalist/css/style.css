@@ -9,5 +9,5 @@ a div.project {
 
 a:hover div.project {
 	color: black;
-	text-decoration: none;
+	text-decoration: initial;
 }
