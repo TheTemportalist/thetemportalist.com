@@ -22,4 +22,6 @@ div.project div {
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	text-align: center;
+	border-style: solid;
+	border-color: green;
 }
