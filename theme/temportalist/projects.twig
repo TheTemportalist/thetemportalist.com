@@ -1,5 +1,12 @@
 {% include '_header_info.twig' %}
 
-	{{ menu('projects', '_list_project.twig') }}
+	{% if record is defined %}
+		{% set home = record %}
+
+			{% if home.body is defined and home.body is not empty %}
+		    	{{home.body}}
+		    {% endif %}
+
+	{% endif %}
 
 {% include '_footer_info.twig' %}
