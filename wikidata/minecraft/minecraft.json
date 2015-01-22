@@ -1,0 +1,15 @@
+{
+	"id": "minecraft",
+	"name": "Minecraft",
+	"authors": [
+      {"name":"Mojang"},
+      {"name":"Marcus (Notch) Pearson"}
+    ],
+    "description": [
+      "The plain old Minecraft.",
+      "Developed by Mojang and has decided to take over the world."
+    ],
+    "item": [
+    	"stick"
+    ]
+}
