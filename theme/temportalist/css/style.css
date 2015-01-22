@@ -2,12 +2,15 @@
 	text-align: center
 }
 
-a div.project {
-	color: white;
-	text-decoration: none;
+div.project {
 }
 
-a:hover div.project {
+a.project {
 	color: black;
     text-decoration: line-through;
+}
+
+a.project:hover {
+	color: white;
+	text-decoration: none;
 }
