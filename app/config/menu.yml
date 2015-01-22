@@ -60,6 +60,8 @@ projects:
     path: /page/mods-minecraft
   - label: CurseForge Helper
     path: /page/cf-helper
+  - label: Minecraft Wiki
+    path: /page/mc-wiki
 
 mc-mods:
   - label: Origin
