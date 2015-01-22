@@ -4,5 +4,9 @@
 
 div.project {
 	color: white;
+}
+
+div.project:hover {
+	color: white;
 	text-decoration: none;
 }
