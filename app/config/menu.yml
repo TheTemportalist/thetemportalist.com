@@ -58,6 +58,8 @@ social:
 projects:
   - label: Minecraft Mods
     path: /page/mods-minecraft
+  - label: CurseForge Helper
+    path: /page/cf-helper
 
 mc-mods:
   - label: Origin
