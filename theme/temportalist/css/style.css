@@ -9,5 +9,5 @@ a div.project {
 
 a:hover div.project {
 	color: black;
-	text-decoration: initial;
+    text-decoration: line-through;
 }
