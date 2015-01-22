@@ -75,6 +75,9 @@ mc-mods:
     path: /page/tardis
     forge: 11.14.0.1289
     curseforge: a
+  - label: Secret Rooms
+    path: /page/secret-rooms
+    curseforge: a
   - label: Owner Emitter
     path: /page/owner-emitter
     forge: 11.14.0.1289

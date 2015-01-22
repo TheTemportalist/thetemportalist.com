@@ -1,0 +1,6 @@
+{% macro display_list_item(item, loop) %}
+	<td><h3>{{item.label}}</h3></td>
+{% endmacro %}
+
+{% from _self import display_list_item %}
+{% include '_list.twig' %}
