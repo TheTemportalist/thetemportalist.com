@@ -1,5 +1,5 @@
 {% macro display_list_item(item, loop) %}
-	<tr style="height: 40px;" class="flat">
+	<tr style="height: 40px;">
 	{# Get the current MCV #}
 	{% set mcv = app.request.get('mcv') %}
 	{% if mcv == "" %}
@@ -7,21 +7,23 @@
 	{% endif %}
 	
 	{# The Title of the project #}
-	<td class="flat"><h3 style="text-align: left;" class="border flat">{{item.label}}</h3></td>
+	<td><h3 style="text-align: left;" class="border">{{item.label}}</h3></td>
 	{#
 	<h3>{{item.label}}</h3>
 	{% setcontent modPage = item.path %}
 	<p style="padding-left: 30px;">{{modPage.teaser}}</p>
 	#}
 	{# Forge link #}
+	{#}
 	<td class="center">
 		{% if item.forge is defined %}
-			{# Parse the forge dowload link #}
+			{# Parse the forge dowload link 
 			{% set forgelink = 'http://files.minecraftforge.net/maven/net/minecraftforge/forge/' ~ mcv ~ '-' ~ item.forge ~ '/forge-' ~ mcv ~ '-' ~ item.forge ~ '-installer.jar' %}
-			{# Create the link #}
+			{# Create the link 
 			<a href="{{ forgelink }}" target="_blank">{{item.forge}}</a>
 		{% endif %}
 	</td>
+	#}
 	{# Curseforge quick download #}
 	<td class="center">
 		{% if item.curseforge is defined %}
@@ -47,7 +49,7 @@
     {% if item.label is defined %}
     	{# Link the entire block #}
 		<a href="{{ item.link }}" class="project">
-			<table class="project full">{{ display_list_item(item, loop) }}</table>
+			<table class="project full border">{{ display_list_item(item, loop) }}</table>
 		</a>
 		<br />
     {% endif %}
