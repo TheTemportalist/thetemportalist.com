@@ -6,7 +6,7 @@
 	{% endif %}
 	
 	{# The Title of the project #}
-	<td class="left border" style="width: 100%;">
+	<td class="left border" style="width: 80%;">
 		<h3 style="text-align: left; padding-left: 10px;">{{item.label}}</h3>
 		{% setcontent modPage = item.path %}
 		<div style="text-align: left; padding-left: 50px;">{{modPage.teaser}}</div>
@@ -28,7 +28,7 @@
 	</td>
 	#}
 	{# Curseforge quick download #}
-	<td class="center" style="width: 30%;">
+	<td class="center border">
 		{% if item.curseforge is defined %}
 			{# parse the curseforge name for links #}
 			{% set cfname = item.curseforge|split('-') %}
