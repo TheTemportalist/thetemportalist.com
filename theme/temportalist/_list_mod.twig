@@ -6,9 +6,10 @@
 	{% endif %}
 	
 	{# The Title of the project #}
-	<td>
+	<td class="left">
 		<h3>{{item.label}}</h3>
-		<p style="padding-left: 30px;">{{item.teaser}}</p>
+		{% setcontent modPage = item.path %}
+		<p style="padding-left: 30px;">{{modPage.teaser}}</p>
 	</td>
 	{# Forge link #}
 	<td class="center">
