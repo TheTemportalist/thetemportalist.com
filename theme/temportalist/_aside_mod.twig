@@ -15,26 +15,34 @@
 	<br />
 	Developer's Center:
 	<br />
-	<a style="padding-left: 20px;" href="{{ details['buildLink'] }}" target="_blank">
-		<img src="{{ paths.theme ~ 'assets/' ~ details['buildHost'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
-		Builds
-	</a>
-	<br />
-	<a style="padding-left: 20px;" href="{{ details['javadoc'] }}" target="_blank">
-		<img src="{{ paths.theme ~ 'assets/document.png' }}" alt="" style="width:32px;height:32px;" />
-		JavaDocs
-	</a>
-	<br />
-	{% set mavenAr = details['maven']|split('|') %}
-	{% set mavenGroup = mavenAr[1]|split(':')[0] %}
-	{% set mavenURL = mavenAr[0] ~ mavenGroup|split('.')|join('/') %}
-	<a style="padding-left: 20px;" href="{{ mavenURL }}" target="_blank">Maven</a>
-	<br />
-	<a style="padding-left: 20px;" href="{{ details['sourceLink'] }}" target="_blank">
-		<img src="{{ paths.theme ~ 'assets/' ~ details['sourceHost'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
-		Source Code
-	</a>
-
+	{% if 'buildLink' in details and 'buildHost' in details %}
+		<a style="padding-left: 20px;" href="{{ details['buildLink'] }}" target="_blank">
+			<img src="{{ paths.theme ~ 'assets/' ~ details['buildHost'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
+			Builds
+		</a>
+		<br />
+	{% endif %}
+	{% if 'javadoc' in details %}
+		<a style="padding-left: 20px;" href="{{ details['javadoc'] }}" target="_blank">
+			<img src="{{ paths.theme ~ 'assets/document.png' }}" alt="" style="width:32px;height:32px;" />
+			JavaDocs
+		</a>
+		<br />
+	{% endif %}
+	{% if 'maven' in details %}
+		{% set mavenAr = details['maven']|split('|') %}
+		{% set mavenGroup = mavenAr[1]|split(':')[0] %}
+		{% set mavenURL = mavenAr[0] ~ mavenGroup|split('.')|join('/') %}
+		<a style="padding-left: 20px;" href="{{ mavenURL }}" target="_blank">Maven</a>
+		<br />
+	{% endif %}
+	{% if 'sourceLink' in details and 'sourceHost' in details %}
+		<a style="padding-left: 20px;" href="{{ details['sourceLink'] }}" target="_blank">
+			<img src="{{ paths.theme ~ 'assets/' ~ details['sourceHost'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
+			Source Code
+		</a>
+		<br />
+	{% endif %}
 
 
 </div>

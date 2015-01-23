@@ -60,13 +60,12 @@ projects:
     path: /page/mods-minecraft
   - label: CurseForge Helper
     path: /page/cf-helper
-  - label: Minecraft Wiki
-    path: /page/wiki-mc
+  - label: Standalone Games
+    path: /page/my-games
 
 mc-mods:
   - label: Origin
     path: /page/origin
-    forge: 11.14.0.1289
     curseforge: 72503-origin
     buildHost: jenkins
     buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
@@ -76,20 +75,24 @@ mc-mods:
     sourceLink: https://github.com/TheTemportalist/Origin
   - label: Weeping Angels
     path: /page/weeping-angels
-    forge: 11.14.0.1289
     curseforge: a
+    buildHost: jenkins
+    buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
   - label: Not Enough Keys
     path: /page/not-enough-keys
-    forge: 11.14.0.1289
     curseforge: a
+    buildHost: jenkins
+    buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
   - label: Tardis
     path: /page/tardis
-    forge: 11.14.0.1289
     curseforge: a
+    buildHost: jenkins
+    buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
   - label: Secret Rooms
     path: /page/secret-rooms
     curseforge: a
+    buildHost: jenkins
+    buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
   - label: Owner Emitter
     path: /page/owner-emitter
-    forge: 11.14.0.1289
     curseforge: a
