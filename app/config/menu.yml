@@ -79,14 +79,14 @@ mc-mods:
     sourceLink: https://github.com/TheTemportalist/Origin
   - label: Weeping Angels
     path: /page/weeping-angels
-    curseforge: a
+    curseforge: 72505-weeping-angels
     buildHost: jenkins
     buildLink: http://jenkins.dries007.net/view/Temportal/job/WeepingAngels/
     sourceHost: github
     sourceLink: https://github.com/TheTemportalist/WeepingAngels
   - label: Not Enough Keys
     path: /page/not-enough-keys
-    curseforge: a
+    curseforge: 224614-notenoughkeys
     sourceHost: github
     sourceLink: https://github.com/mod-warriors/NotEnoughKeys
   - label: Tardis
@@ -96,11 +96,18 @@ mc-mods:
     sourceLink: https://github.com/TheTemportalist/Tardis
   - label: Secret Rooms
     path: /page/secret-rooms
-    curseforge: a
+    curseforge: 59652-seretroomsmod
     sourceHost: github
     sourceLink: https://github.com/mod-warriors/SecretRoomsMod-forge
+  - label: Morph Additions
+    path: /page/morph-additions
+    curseforge: 223803-morphadditions
+    sourceHost: github
+    sourceLink: https://github.com/TheTemportalist/MorphAdditions
+    buildHost: jenkins
+    buildLink: http://jenkins.dries007.net/view/TheCountryGamer/job/MorphAdditions/
   - label: Owner Emitter
     path: /page/owner-emitter
-    curseforge: a
+    curseforge: 222818-owner-emitter
     sourceHost: github
     sourceLink: https://github.com/TheTemportalist/OwnerEmitter
