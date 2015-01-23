@@ -25,7 +25,7 @@
 	
 	{% set mavenAr = details['maven']|split('|') %}
 	{% set mavenGroup = mavenAr[1]|split(':')[0] %}
-	{% set mavenURL = mavenAr[0] ~ mavenGroup|join('/') %}
+	{% set mavenURL = mavenAr[0] ~ mavenGroup|split('.')|join('/') %}
 	<a href="{{ mavenURL }}" target="_blank">Maven</a>
 
 
