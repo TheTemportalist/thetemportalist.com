@@ -40,7 +40,9 @@ else {
 if (strcmp($rawStatus, "raw") == 0) {
 	if (array_filter($matchedVersion)) {
 		out("{");
-		out("\t\"name: \"" . $matchedVersion['name']);
+		echo "<div style='padding-left:10px;'>";
+		out("\"name: \"" . $matchedVersion['name'] . "\"");
+		echo "</div>";
 		out("}");
 	}
 	else {
