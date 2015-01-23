@@ -20,6 +20,10 @@ main:
     submenu:
       - label: mc-mods
         type: outerMenu
+      - label: Developer's
+        submenu:
+          - label: OriginGradle
+          - label: Basic Setup
     class: last
 
 social:
