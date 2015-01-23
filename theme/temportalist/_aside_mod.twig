@@ -11,4 +11,22 @@
 		<img src="{{ paths.theme ~ 'assets/download.png' }}" alt="" style="width:32px;height:32px;" />
 		Latest Download
 	</a>
+	<br />
+	<br />
+	Developer's Center:
+	<a href="{{ details['builds'] }}" target="_blank">
+		<img src="{{ paths.theme ~ 'assets/' ~ details['buildserver'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
+		Builds
+	</a>
+	<a href="{{ details['javadoc'] }}" target="_blank">
+		<img src="{{ paths.theme ~ 'assets/document.png' }}" alt="" style="width:32px;height:32px;" />
+		JavaDocs
+	</a>
+	
+	{% set mavenAr = details['maven']|split('|') %}
+	{% set mavenURL = mavenAr[0] ~ (maven[Ar]|split('.'))|join('/') %}
+	<a href="{{ mavenURL }}" target="_blank">Maven</a>
+
+
+
 </div>
