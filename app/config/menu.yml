@@ -77,22 +77,26 @@ mc-mods:
     path: /page/weeping-angels
     curseforge: a
     buildHost: jenkins
-    buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
+    buildLink: http://jenkins.dries007.net/view/Temportal/job/WeepingAngels/
+    sourceHost: github
+    sourceLink: https://github.com/TheTemportalist/WeepingAngels
   - label: Not Enough Keys
     path: /page/not-enough-keys
     curseforge: a
-    buildHost: jenkins
-    buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
+    sourceHost: github
+    sourceLink: https://github.com/mod-warriors/NotEnoughKeys
   - label: Tardis
     path: /page/tardis
     curseforge: a
-    buildHost: jenkins
-    buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
+    sourceHost: github
+    sourceLink: https://github.com/TheTemportalist/Tardis
   - label: Secret Rooms
     path: /page/secret-rooms
     curseforge: a
-    buildHost: jenkins
-    buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
+    sourceHost: github
+    sourceLink: https://github.com/mod-warriors/SecretRoomsMod-forge
   - label: Owner Emitter
     path: /page/owner-emitter
     curseforge: a
+    sourceHost: github
+    sourceLink: https://github.com/TheTemportalist/OwnerEmitter
