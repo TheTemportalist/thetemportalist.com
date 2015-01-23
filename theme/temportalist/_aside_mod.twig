@@ -15,7 +15,7 @@
 	<br />
 	Developer's Center:
 	<br />
-	{% if 'buildLink' in details and 'buildHost' in details %}
+	{% if details['buildLink'] is defined and details['buildHost'] is defined %}
 		<a style="padding-left: 20px;" href="{{ details['buildLink'] }}" target="_blank">
 			<img src="{{ paths.theme ~ 'assets/' ~ details['buildHost'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
 			Builds
