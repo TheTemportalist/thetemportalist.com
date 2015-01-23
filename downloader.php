@@ -17,8 +17,7 @@ $json = json_decode(file_get_contents("http://widget.mcf.li/mc-mods/minecraft/" 
 #echo '<pre>' . print_r($json, true) . '</pre>';
 $versions = $json['versions'][$mcv];
 
-out($json['title']);
-$matchedVersion = array("title" => $json['title']);
+$matchedVersion = array();
 $url = "";
 
 if (strcmp($file, 'latest') == 0) {
@@ -42,7 +41,7 @@ if (strcmp($rawStatus, "raw") == 0) {
 	if (array_filter($matchedVersion)) {
 		out("{");
 		echo "<div style='padding-left:20px;'>";
-		out("\"name: \"" . $matchedVersion['title'] . "\"");
+		out("\"name: \"" . $json['title'] . "\"");
 		out("\"mcv\": \"" . $mcv . "\"");
 		out("\"file\": \"" . $matchedVersion['name'] . "\"");
 		out("\"url\": \"" . $matchedVersion['url'] . "\"");
