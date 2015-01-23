@@ -68,10 +68,12 @@ mc-mods:
     path: /page/origin
     forge: 11.14.0.1289
     curseforge: 72503-origin
-    buildserver: jenkins
-    build: http://jenkins.dries007.net/view/Temportal/job/Origin/
-    source: https://github.com/TheTemportalist/Origin
+    buildHost: jenkins
+    buildLink: http://jenkins.dries007.net/view/Temportal/job/Origin/
+    javadoc: null
     maven: http://doubledoordev.net/maven/|com.temportalist.origin:Origin:version
+    sourceHost: github
+    sourceLink: https://github.com/TheTemportalist/Origin
   - label: Weeping Angels
     path: /page/weeping-angels
     forge: 11.14.0.1289

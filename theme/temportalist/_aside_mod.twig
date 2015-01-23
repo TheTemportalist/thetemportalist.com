@@ -15,12 +15,12 @@
 	<br />
 	Developer's Center:
 	<br />
-	<a style="padding-left: 10px;" href="{{ details['builds'] }}" target="_blank">
-		<img src="{{ paths.theme ~ 'assets/' ~ details['buildserver'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
+	<a style="padding-left: 20px;" href="{{ details['buildLink'] }}" target="_blank">
+		<img src="{{ paths.theme ~ 'assets/' ~ details['buildHost'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
 		Builds
 	</a>
 	<br />
-	<a style="padding-left: 10px;" href="{{ details['javadoc'] }}" target="_blank">
+	<a style="padding-left: 20px;" href="{{ details['javadoc'] }}" target="_blank">
 		<img src="{{ paths.theme ~ 'assets/document.png' }}" alt="" style="width:32px;height:32px;" />
 		JavaDocs
 	</a>
@@ -28,7 +28,12 @@
 	{% set mavenAr = details['maven']|split('|') %}
 	{% set mavenGroup = mavenAr[1]|split(':')[0] %}
 	{% set mavenURL = mavenAr[0] ~ mavenGroup|split('.')|join('/') %}
-	<a style="padding-left: 10px;" href="{{ mavenURL }}" target="_blank">Maven</a>
+	<a style="padding-left: 20px;" href="{{ mavenURL }}" target="_blank">Maven</a>
+	<br />
+	<a style="padding-left: 20px;" href="{{ details['sourceLink'] }}" target="_blank">
+		<img src="{{ paths.theme ~ 'assets/' ~ details['sourceHost'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
+		Source Code
+	</a>
 
 
 
