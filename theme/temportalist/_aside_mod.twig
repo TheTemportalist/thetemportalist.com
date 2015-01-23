@@ -22,21 +22,21 @@
 		</a>
 		<br />
 	{% endif %}
-	{% if 'javadoc' in details %}
+	{% if details['javadoc'] is defined %}
 		<a style="padding-left: 20px;" href="{{ details['javadoc'] }}" target="_blank">
 			<img src="{{ paths.theme ~ 'assets/document.png' }}" alt="" style="width:32px;height:32px;" />
 			JavaDocs
 		</a>
 		<br />
 	{% endif %}
-	{% if 'maven' in details %}
+	{% if details['maven'] is defined %}
 		{% set mavenAr = details['maven']|split('|') %}
 		{% set mavenGroup = mavenAr[1]|split(':')[0] %}
 		{% set mavenURL = mavenAr[0] ~ mavenGroup|split('.')|join('/') %}
 		<a style="padding-left: 20px;" href="{{ mavenURL }}" target="_blank">Maven</a>
 		<br />
 	{% endif %}
-	{% if 'sourceLink' in details and 'sourceHost' in details %}
+	{% if details['sourceLink'] is defined and details['sourceHost'] is defined %}
 		<a style="padding-left: 20px;" href="{{ details['sourceLink'] }}" target="_blank">
 			<img src="{{ paths.theme ~ 'assets/' ~ details['sourceHost'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
 			Source Code
