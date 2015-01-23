@@ -54,6 +54,7 @@ if (strcmp($rawStatus, "raw") == 0) {
 }
 else {
 	if (array_filter($matchedVersion)) {
+		out($matchedVersion['url']);
 		header('Location: ' . $matchedVersion['url']);
 	}
 	else {
