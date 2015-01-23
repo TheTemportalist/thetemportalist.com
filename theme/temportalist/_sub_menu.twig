@@ -8,13 +8,14 @@
             
         {% else %}
             {% if item.link is defined %}
-                <a href="{{ link }}" {% if item.title is defined %}title='{{ item.title|escape }}'{% endif %}
+                {% set link = item.link %}
+            {% else %}
+                {% set link = "" %}
+            {% endif %}
+            <a href="{{ link }}" {% if item.title is defined %}title='{{ item.title|escape }}'{% endif %}
                 class='{% if item.class is defined %}{{item.class}}{% endif %}'>
                     {{item.label}}
-                </a>
-            {% else %}
-                {{item.label}}
-            {% endif %}
+            </a>
             {% if item.submenu is defined %}
                 <ul class="dropdown">
                 {% for submenu in item.submenu %}
