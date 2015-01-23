@@ -6,7 +6,10 @@
 	{% endif %}
 	
 	{# The Title of the project #}
-	<td><h3>{{item.label}}</h3></td>
+	<td>
+		<h3>{{item.label}}</h3>
+		<p style="padding-left: 30px;">{{item.teaser}}</p>
+	</td>
 	{# Forge link #}
 	<td class="center">
 		{% if item.forge is defined %}
