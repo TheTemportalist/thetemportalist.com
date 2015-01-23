@@ -6,10 +6,14 @@
 	{% endif %}
 	
 	{# The Title of the project #}
-	<td style="width: 50%">
-		<h3>{{item.label}}</h3>
-		{% setcontent modPage = item.path %}
-		<p style="padding-left: 30px;">{{modPage.teaser}}</p>
+	<td>
+		<table>
+			<tr><td><h3>{{item.label}}</h3></td></tr>
+			<tr><td>	
+				{% setcontent modPage = item.path %}
+				<p style="padding-left: 30px;">{{modPage.teaser}}</p>
+			</td></tr>
+		</table>
 	</td>
 	{# Forge link #}
 	<td class="center">
