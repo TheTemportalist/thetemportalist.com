@@ -7,9 +7,9 @@
 	
 	{# The Title of the project #}
 	<td class="left" style="width: 70%;">
-		<h3>{{item.label}}</h3>
+		<h3 style="text-align: left;">{{item.label}}</h3>
 		{% setcontent modPage = item.path %}
-		{{modPage.teaser}}
+		<div style="text-align: left;">{{modPage.teaser}}</div>
 	</td>
 	{#
 	<h3>{{item.label}}</h3>
