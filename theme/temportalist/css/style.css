@@ -44,3 +44,8 @@ div.project tr {
 	border-color: red;
 	border-width: 2px;
 }
+
+.flat {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}

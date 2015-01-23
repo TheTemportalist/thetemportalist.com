@@ -1,5 +1,5 @@
 {% macro display_list_item(item, loop) %}
-	<tr style="height: 40px; padding: 0 0 0 0; margin: 0 0 0 0;">
+	<tr style="height: 40px;" class="flat">
 	{# Get the current MCV #}
 	{% set mcv = app.request.get('mcv') %}
 	{% if mcv == "" %}
@@ -7,7 +7,7 @@
 	{% endif %}
 	
 	{# The Title of the project #}
-	<td><h3 style="text-align: left; padding: 0 0 0 0; margin: 0 0 0 0;" class="border">{{item.label}}</h3></td>
+	<td class="flat"><h3 style="text-align: left;" class="border flat">{{item.label}}</h3></td>
 	{#
 	<h3>{{item.label}}</h3>
 	{% setcontent modPage = item.path %}
