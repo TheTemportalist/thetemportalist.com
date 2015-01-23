@@ -38,3 +38,8 @@ div.project td {
 div.project tr {
 	width: 30%;
 }
+
+.border {
+	border-style: solid;
+	border-color: red;
+}

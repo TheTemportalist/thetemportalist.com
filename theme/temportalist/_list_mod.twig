@@ -6,15 +6,16 @@
 	{% endif %}
 	
 	{# The Title of the project #}
-	<td>
-		<table class="full">
-			<tr style="height: 75%;"><td><h3>{{item.label}}</h3></td></tr>
-			<tr style="height: 25%;"><td>	
-				{% setcontent modPage = item.path %}
-				<p style="padding-left: 30px;">{{modPage.teaser}}</p>
-			</td></tr>
-		</table>
+	<td class="border">
+		<div class="border">
+			<h3>{{item.label}}</h3>
+		</div>
 	</td>
+	{#
+	<h3>{{item.label}}</h3>
+	{% setcontent modPage = item.path %}
+	<p style="padding-left: 30px;">{{modPage.teaser}}</p>
+	#}
 	{# Forge link #}
 	<td class="center">
 		{% if item.forge is defined %}
