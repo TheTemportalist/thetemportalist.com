@@ -33,7 +33,7 @@
 		{% set mavenAr = details['maven']|split('|') %}
 		{% set mavenGroup = mavenAr[1]|split(':')[0] %}
 		{% set mavenURL = mavenAr[0] ~ mavenGroup|split('.')|join('/') %}
-		<a style="padding-left: 40px;" href="{{ mavenURL }}" target="_blank">Maven</a>
+		<a style="padding-left: 72px;" href="{{ mavenURL }}" target="_blank">Maven</a>
 		<br />
 	{% endif %}
 	{% if details['sourceLink'] is defined and details['sourceHost'] is defined %}
