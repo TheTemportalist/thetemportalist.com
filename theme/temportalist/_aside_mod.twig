@@ -14,19 +14,21 @@
 	<br />
 	<br />
 	Developer's Center:
-	<a href="{{ details['builds'] }}" target="_blank">
+	<br />
+	<a style="padding-left: 10px;" href="{{ details['builds'] }}" target="_blank">
 		<img src="{{ paths.theme ~ 'assets/' ~ details['buildserver'] ~ '.png' }}" alt="" style="width:32px;height:32px;" />
 		Builds
 	</a>
-	<a href="{{ details['javadoc'] }}" target="_blank">
+	<br />
+	<a style="padding-left: 10px;" href="{{ details['javadoc'] }}" target="_blank">
 		<img src="{{ paths.theme ~ 'assets/document.png' }}" alt="" style="width:32px;height:32px;" />
 		JavaDocs
 	</a>
-	
+	<br />
 	{% set mavenAr = details['maven']|split('|') %}
 	{% set mavenGroup = mavenAr[1]|split(':')[0] %}
 	{% set mavenURL = mavenAr[0] ~ mavenGroup|split('.')|join('/') %}
-	<a href="{{ mavenURL }}" target="_blank">Maven</a>
+	<a style="padding-left: 10px;" href="{{ mavenURL }}" target="_blank">Maven</a>
 
 
 
