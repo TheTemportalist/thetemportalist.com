@@ -7,7 +7,11 @@
 	{% endif %}
 	
 	{# The Title of the project #}
-	<td class="border"><h3 style="text-align: left;" class="border">{{item.label}}</h3></td>
+	<td class="border">
+		<h3 style="text-align: left;" class="border">{{item.label}}</h3>
+		{% setcontent modPage = item.path %}
+		{{modPage.teaser}}
+	</td>
 	{#
 	<h3>{{item.label}}</h3>
 	{% setcontent modPage = item.path %}
@@ -39,8 +43,7 @@
 	</td>
 	</tr>
 	<tr class="border"><td class="border" style="text-align: left;">
-		{% setcontent modPage = item.path %}
-		{{modPage.teaser}}
+		
 	</td></tr>
 {% endmacro %}
 
