@@ -32,11 +32,9 @@
 			</tr>
 		</table>
 
-		<div style="overflow: auto;">
-			{% if home.body is defined and home.body is not empty %}
-				{{ home.body }}
-			{% endif %}
-		</div>
+		{% if home.body is defined and home.body is not empty %}
+			{{ home.body }}
+		{% endif %}
 
 	{% endif %}
 
