@@ -6,7 +6,7 @@
 	{% endif %}
 	
 	{# The Title of the project #}
-	<td class="left border" style="width: 70%;">
+	<td class="left border" style="width: 80%;">
 		<h3 style="text-align: left; padding-left: 10px;">{{item.label}}</h3>
 		{% setcontent modPage = item.path %}
 		<div style="text-align: left; padding-left: 50px;">{{modPage.teaser}}</div>
@@ -47,7 +47,7 @@
     {% if item.label is defined %}
     	{# Link the entire block #}
 		<a href="{{ item.link }}" class="project">
-			<table class="project full"><tr style="height: 40px;">
+			<table class="project full"><tr style="width: 100%; height: 40px;">
 				{{ display_list_item(item, loop) }}
 			</tr></table>
 		</a>
