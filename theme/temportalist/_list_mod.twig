@@ -30,15 +30,15 @@
 			{# parse and create the link with an image inside #}
 			<a href="http://thetemportalist.dries007.net/mod-helper/{{ mcv }}/{{ cfname[1] }}/latest" target="_blank">
 				<div class="center" style="width: 35%; height: 100%;">
-					<img src="{{ paths.theme ~ 'assets/download.png' }}" alt="" style="width:32px;height:32px;" />
+					<img src="{{ paths.theme ~ 'assets/download.png' }}" alt="" style="width:64px;height:64px;" />
 				</div>
 			</a>
 		{% endif %}
 	</td>
 	</tr>
-	<tr><td style="text-align: left;">
+	<tr><td style="text-align: left; padding-left: 30px; padding: 0 0 0 0; margin: 0 0 0 0;">
 		{% setcontent modPage = item.path %}
-		<p style="padding-left: 30px; padding: 0 0 0 0; margin: 0 0 0 0;" class="border">ABC</p>
+		{{modPage.teaser}}
 	</td></tr>
 {% endmacro %}
 
