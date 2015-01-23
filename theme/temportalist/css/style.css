@@ -14,11 +14,11 @@
 table.project {
 	width: 100%;
 	height: 80px;
-	background-color: #525252;
+	background-color: #333333;
 }
 
 table.project:hover {
-	background-color: #7D7D7D;
+	background-color: #272727;
 }
 
 a.project {
