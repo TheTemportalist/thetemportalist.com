@@ -11,7 +11,7 @@
 	height: 100%;
 }
 
-div.project {
+table.project {
 	width: 100%;
 	height: 80px;
 	background-color: #7D7D7D;
@@ -27,16 +27,9 @@ a.project:hover {
 	text-decoration: none;
 }
 
-div.project td {
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
+table.project td {
 	text-align: center;
-	width: 30%;
 	height: 100%;
-}
-
-div.project tr {
-	width: 30%;
 }
 
 .border {

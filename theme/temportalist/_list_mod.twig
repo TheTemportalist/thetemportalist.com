@@ -47,10 +47,7 @@
     {% if item.label is defined %}
     	{# Link the entire block #}
 		<a href="{{ item.link }}" class="project">
-			<div class="project">
-				{# Table for the row (organization) #}
-				<table class="full flat">{{ display_list_item(item, loop) }}</table>
-			</div>
+			<table class="project full">{{ display_list_item(item, loop) }}</table>
 		</a>
 		<br />
     {% endif %}
