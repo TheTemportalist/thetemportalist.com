@@ -54,7 +54,7 @@ if (strcmp($rawStatus, "raw") == 0) {
 }
 else {
 	if (array_filter($matchedVersion)) {
-	
+		header('Location: ' . $matchedVersion['url']);
 	}
 	else {
 		header('Location: ' . $_SERVER['HTTP_REFERER']);
