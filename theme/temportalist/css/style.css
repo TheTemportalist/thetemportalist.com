@@ -50,3 +50,7 @@ table.project td {
 .tab {
 	padding-left: 2em;
 }
+
+.contentHeader {
+    font: bold 14px Arial;
+}
