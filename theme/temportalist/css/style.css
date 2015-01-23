@@ -46,3 +46,7 @@ table.project td {
 	padding: 0 0 0 0;
 	margin: 0 0 0 0;
 }
+
+.tab {
+	padding-left: 2em;
+}
