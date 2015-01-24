@@ -32,8 +32,8 @@
 			</tr>
 		</table>
 
-		{% set file = paths.files ~ 'modhtml/' ~ home.slug ~ '.twig' %}
-		{##}
+		{% set file = paths.files ~ 'modhtml/' ~ home.slug ~ '.html' %}
+		{#{% include file %}#}
 		{{ dump(paths) }}
 		{{ dump(file) }}
 		{% include file %}
