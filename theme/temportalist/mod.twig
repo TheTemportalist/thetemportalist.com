@@ -34,10 +34,12 @@
 
 		{% set file = 'modhtml/' ~ home.slug ~ '.html' %}
 		{#{% include file %}#}
+		{#
 		{{ dump(home) }}
 		{{ dump(paths) }}
 		{{ dump(file) }}
-		{% include file %}
+		#}
+		{% include file ignore missing %}
 
 		{% if False and home.body is defined and home.body is not empty %}
 			{{ home.body }}
