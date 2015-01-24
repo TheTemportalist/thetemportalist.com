@@ -32,7 +32,8 @@
 			</tr>
 		</table>
 
-		{% if home.body is defined and home.body is not empty %}
+		{{ dump(home) }}
+		{% if False and home.body is defined and home.body is not empty %}
 			{{ home.body }}
 		{% endif %}
 
