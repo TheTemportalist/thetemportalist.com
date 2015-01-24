@@ -1,7 +1,9 @@
 {% macro display_list_item(item, loop) %}
-	<td>
-		<h3>{{item.label}}</h3>
-		<p style="padding-left: 30px;">{{item.teaser}}</p>
+	{# The Title of the project #}
+	<td class="left full">
+		<h3 style="text-align: left; padding-left: 10px;">{{item.label}}</h3>
+		{% setcontent page = item.path %}
+		<div style="text-align: left; padding-left: 50px;">{{page.teaser}}</div>
 	</td>
 {% endmacro %}
 
@@ -10,14 +12,9 @@
     {% if item.label is defined %}
     	{# Link the entire block #}
 		<a href="{{ item.link }}" class="project">
-			<div class="project">
-				{# Table for the row (organization) #}
-				<table class="full">
-					<tr>
-	       				{{ display_list_item(item, loop) }}
-					</tr>
-				</table>
-			</div>
+			<table class="project full"><tr style="width: 100%; height: 40px;">
+				{{ display_list_item(item, loop) }}
+			</tr></table>
 		</a>
 		<br />
     {% endif %}
