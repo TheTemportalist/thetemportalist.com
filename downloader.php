@@ -40,9 +40,9 @@ if (strcmp($rawStatus, "raw") == 0) {
 	if (array_filter($matchedVersion)) {
 		out("{");
 		echo "<div style='padding-left:20px;'>";
-		out("\"name: \"" . $json['title'] . "\"");
-		out("\"mcv\": \"" . $mcv . "\"");
-		out("\"file\": \"" . $matchedVersion['name'] . "\"");
+		out("\"name: \"" . $json['title'] . "\",");
+		out("\"mcv\": \"" . $mcv . "\",");
+		out("\"file\": \"" . $matchedVersion['name'] . "\",");
 		out("\"url\": \"" . $matchedVersion['url'] . "\"");
 		echo "</div>";
 		out("}");
