@@ -32,9 +32,10 @@
 			</tr>
 		</table>
 
-		{% set file = '/files/modhtml/' ~ home.slug ~ '.twig' %}
+		{% set file = paths.filespath ~ '/modhtml/' ~ home.slug ~ '.twig' %}
 		{#{% include file %}#}
 		{{ dump(paths) }}
+		{% include file %}
 
 		{% if False and home.body is defined and home.body is not empty %}
 			{{ home.body }}
