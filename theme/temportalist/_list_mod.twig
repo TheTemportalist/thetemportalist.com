@@ -31,9 +31,9 @@
 	<td class="center" style="width: 20%;">
 		{% if item.curseforge is defined %}
 			{# parse the curseforge name for links #}
-			{% set cfname = item.curseforge|split('-', 1) %}
+			{% set cfname = item.curseforge|split('-', 2) %}
 			{# parse and create the link with an image inside #}
-			<a href="http://thetemportalist.dries007.net/mod-helper/{{ mcv }}/{{ cfname[1] }}/latest" target="_blank">
+			<a href="http://thetemportalist.dries007.net/curseforge/{{ cfname[1] }}/{{ mcv }}/latest" target="_blank">
 				<div class="center" style="width: 35%; height: 100%;">
 					<img src="{{ paths.theme ~ 'assets/download.png' }}" alt="" style="width:64px;height:64px;" />
 				</div>
