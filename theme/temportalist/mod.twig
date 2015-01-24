@@ -32,7 +32,7 @@
 			</tr>
 		</table>
 
-		{{ dump(home) }}
+		{{ include('/files/modhtml/' ~ home.slug ~ 'a.html') }}
 		{% if False and home.body is defined and home.body is not empty %}
 			{{ home.body }}
 		{% endif %}
