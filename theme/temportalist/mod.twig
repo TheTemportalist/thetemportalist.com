@@ -35,7 +35,7 @@
 		{% set file = paths.filespath ~ '/modhtml/' ~ home.slug ~ '.twig' %}
 		{#{% include file %}#}
 		{{ dump(paths) }}
-		{% include file %}
+		{{ dump(file) }}
 
 		{% if False and home.body is defined and home.body is not empty %}
 			{{ home.body }}
