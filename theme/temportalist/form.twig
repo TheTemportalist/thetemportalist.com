@@ -17,7 +17,7 @@
 			    {% if home.body is defined and home.body is not empty %}
 			    	<p>{{home.body}}</p>
 			    	{% set slug = app.request.pathInfo|split('/')[2] %}
-			    	{{ simpleforms(slug) }}
+			    	{{ simpleform(slug) }}
 			    {% endif %}
 			</div>
 
