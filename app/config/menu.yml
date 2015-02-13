@@ -24,6 +24,13 @@ main:
         submenu:
           - label: OriginGradle
           - label: Basic Setup
+  - label: Forms
+    title: Forms for people
+    submenu:
+      - label: Beta Testers
+        path: /page/beta
+      - label: Artists
+        path: /page/art
     class: last
 
 social:
