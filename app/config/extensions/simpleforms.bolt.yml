@@ -47,17 +47,17 @@ testmode_recipient: info@example.com
 # from_email and from_name can be set for picky SMTP servers
 
 beta:
-	insert_into_table: beta
-	fields:
-		name:
-			type: text
-			required: true
-			placeholder: You Name (Not real name!)
-		email:
-			type: email
-			label: Email
-			required: true
-			placeholder: Your email address...
+  insert_into_table: beta
+  fields:
+    name:
+      type: text
+      required: true
+      placeholder: You Name (Not real name!)
+    email:
+      type: email
+      label: Email
+      required: true
+      placeholder: Your email address...
 
 # A simple contact form. Use as {{ simpleform('contact') }} in your templates.
 contact:
