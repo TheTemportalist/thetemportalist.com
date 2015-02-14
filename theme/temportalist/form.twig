@@ -1,7 +1,7 @@
-{{ dump(app.request) }}
-{{ dump(app.request.request) }}
-{{ dump(app.request.request.parameters) }}
-{{ dump(app.request.get("email")) }}
+{% set email = app.request.get("email") %}
+{% if email is defined %}
+	{{ dump(email) }}
+{% endif %}
 {% include '_header.twig' %}
 
 	<div style="">
