@@ -1,4 +1,5 @@
-{% if app.request.get("submit") is defined %}
+{{ dump(app.request) }}
+{% if app.request.get("submit") %}
 	{% set email = app.request.get("email") %}
 	{{ dump(email) }}
 {% endif %}
