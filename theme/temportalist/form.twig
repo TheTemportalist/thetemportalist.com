@@ -1,6 +1,7 @@
-<pre>{{ dump(app.request) }}</pre>
-<pre>{{ dump(app.request.request) }}</pre>
-<pre>{{ dump(app.request.request.parameters) }}</pre>
+{{ dump(app.request) }}
+{{ dump(app.request.request) }}
+{{ dump(app.request.request.parameters) }}
+{{ dump(app.request.get("email")) }}
 {% include '_header.twig' %}
 
 	<div style="">
