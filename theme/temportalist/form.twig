@@ -18,8 +18,10 @@
 			    	<p>{{home.body}}</p>
 			    {% endif %}
 
-				{% set slug = app.request.pathInfo|split('/')[2] %}
+			    {{ boltforms('beta') }}
+			    {#}
 				{% if app.request.get("submit") %}
+					{% set slug = app.request.pathInfo|split('/')[2] %}
 					{% set email = app.request.get("email") %}
 					
 				{% endif %}
@@ -27,6 +29,7 @@
     				<input name="email" type="email" class="form-control" placeholder="email" required><br>
     				<input class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="Send">
     			</form>
+    			#}
 
 			</div>
 
