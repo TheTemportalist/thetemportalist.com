@@ -1,8 +1,3 @@
-{{ dump(app.request) }}
-{% if app.request.get("submit") %}
-	{% set email = app.request.get("email") %}
-	{{ dump(email) }}
-{% endif %}
 {% include '_header.twig' %}
 
 	<div style="">
@@ -24,12 +19,10 @@
 			    {% endif %}
 
 				{% set slug = app.request.pathInfo|split('/')[2] %}
-		    	{#{{ simpleform(slug) }}#}
-		    	{#
-		    	{% setcontent beta = 'page/beta' %}
-		    	{{ dump(beta) }}
-		    	#}
-		    	
+				{% if app.request.get("submit") %}
+					{% set email = app.request.get("email") %}
+					
+				{% endif %}
 		    	<form action="#" method="post">
     				<input name="email" type="email" class="form-control" placeholder="email" required><br>
     				<input class="btn btn-lg btn-success btn-block" type="submit" name="submit" value="Send">
