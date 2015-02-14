@@ -17,7 +17,10 @@
 			    {% if home.body is defined and home.body is not empty %}
 			    	<p>{{home.body}}</p>
 			    	{% set slug = app.request.pathInfo|split('/')[2] %}
-			    	{{ simpleform(slug) }}
+			    	{#{{ simpleform(slug) }}#}
+			    	{% setcontent beta = 'beta' %}
+			    	{{ dump(beta) }}
+
 			    {% endif %}
 			</div>
 
