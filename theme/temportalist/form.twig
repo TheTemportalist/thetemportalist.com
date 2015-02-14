@@ -2,7 +2,10 @@
 	if (isset($_POST['submit'])) {
 		$table = $_POST['submit'];
 		$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
-		echo $db;
+		$statement = $db->prepare("SELECT * FROM ? WHERE email=?");
+    	$statement->execute(array($table, $_POST['email']));
+    	$user = $stmt->fetch(PDO::FETCH_ASSOC);
+    	$email = $_POST['email'];
 	} 
 ?>
 {% include '_header.twig' %}
@@ -29,6 +32,7 @@
 			    	{% setcontent beta = 'page/beta' %}
 			    	{{ dump(beta) }}
 			    	#}
+			    	<? echo $email; ?>
 			    	<form class="form" role="form" action="?p=login" method="post">
         				<input name="email" type="email" class="form-control" placeholder="email" required><br>
         				<input class="btn btn-lg btn-success btn-block" type="submit" name="beta" value="Send">
