@@ -118,3 +118,7 @@ mc-mods:
     curseforge: 222818-owner-emitter
     sourceHost: github
     sourceLink: https://github.com/TheTemportalist/OwnerEmitter
+
+beta:
+  - label: Origin
+  - label: Compression

@@ -21,7 +21,7 @@ recaptcha_theme: clean
 # Enable CSRF protection for forms. You should leave this set to 'true', unless
 # you know what you're doing.
 csrf: true
-debugmode: true
+
 # Default fallback sender email
 # this is required because Swiftmailer will reject the message without one
 # please make this a sensible existing email address
@@ -33,6 +33,8 @@ from_name: TheTemportalist
 # recipient_cc_email: info@example.com
 # recipient_cc_name: Info
 
+debugmode: true
+
 # global bcc email address
 # set this value to an email address that will receive a blind copy of every email from simpleforms
 # recipient_bcc_email: info@example.com
@@ -41,7 +43,7 @@ from_name: TheTemportalist
 # for development all email will be sent to this address
 # all other recipient and cc addresses will be ignored
 # remove or set 'testmode' to false for a production site
-#testmode : true
+testmode : false
 #testmode_recipient: info@example.com
 
 # from_email and from_name can be set for picky SMTP servers
