@@ -21,7 +21,7 @@ recaptcha_theme: clean
 # Enable CSRF protection for forms. You should leave this set to 'true', unless
 # you know what you're doing.
 csrf: true
-
+debugmode: true
 # Default fallback sender email
 # this is required because Swiftmailer will reject the message without one
 # please make this a sensible existing email address
