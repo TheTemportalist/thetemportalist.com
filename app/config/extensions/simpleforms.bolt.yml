@@ -54,13 +54,6 @@ beta:
       label: Email
       required: true
       placeholder: Your email address...
-    jenkinMods:
-      type: choice
-      label: Mods
-      expanded: true
-      required: true
-      multiple: true
-      choices: [ "Origin", "Compression", "Morph Additions", "Races For Minecraft", "Tardis", "Weeping Angels" ]
 
 # A simple contact form. Use as {{ simpleform('contact') }} in your templates.
 contact:
