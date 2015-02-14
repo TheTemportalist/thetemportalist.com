@@ -1,5 +1,5 @@
-{% set email = app.request.get("email") %}
-{% if email is defined %}
+{% if app.request.get("submit") is defined %}
+	{% set email = app.request.get("email") %}
 	{{ dump(email) }}
 {% endif %}
 {% include '_header.twig' %}
