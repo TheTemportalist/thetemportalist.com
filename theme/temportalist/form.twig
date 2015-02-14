@@ -1,13 +1,4 @@
-<?
-	if (isset($_POST['submit'])) {
-		$table = $_POST['submit'];
-		$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
-		$statement = $db->prepare("SELECT * FROM ? WHERE email=?");
-    	$statement->execute(array($table, $_POST['email']));
-    	$user = $stmt->fetch(PDO::FETCH_ASSOC);
-    	$email = $_POST['email'];
-	} 
-?>
+{{ app.request.paramenter.get("page")['submit'] }}
 {% include '_header.twig' %}
 
 	<div style="">
@@ -26,19 +17,20 @@
 
 			    {% if home.body is defined and home.body is not empty %}
 			    	<p>{{home.body}}</p>
-			    	{% set slug = app.request.pathInfo|split('/')[2] %}
-			    	{#{{ simpleform(slug) }}#}
-			    	{#
-			    	{% setcontent beta = 'page/beta' %}
-			    	{{ dump(beta) }}
-			    	#}
-			    	<? echo $email; ?>
-			    	<form class="form" role="form" action="?p=login" method="post">
-        				<input name="email" type="email" class="form-control" placeholder="email" required><br>
-        				<input class="btn btn-lg btn-success btn-block" type="submit" name="beta" value="Send">
-        			</form>
-
 			    {% endif %}
+
+				{% set slug = app.request.pathInfo|split('/')[2] %}
+		    	{#{{ simpleform(slug) }}#}
+		    	{#
+		    	{% setcontent beta = 'page/beta' %}
+		    	{{ dump(beta) }}
+		    	#}
+		    	
+		    	<form class="form" role="form" action="#" method="post">
+    				<input name="email" type="email" class="form-control" placeholder="email" required><br>
+    				<input class="btn btn-lg btn-success btn-block" type="submit" name="{{ slug }}" value="Send">
+    			</form>
+
 			</div>
 
 		{% else %}
