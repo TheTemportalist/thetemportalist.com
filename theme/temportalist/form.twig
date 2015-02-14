@@ -18,7 +18,7 @@
 			    	<p>{{home.body}}</p>
 			    	{% set slug = app.request.pathInfo|split('/')[2] %}
 			    	{#{{ simpleform(slug) }}#}
-			    	{% setcontent beta = 'users' %}
+			    	{% setcontent beta = 'bolt_users' %}
 			    	{{ dump(beta) }}
 
 			    {% endif %}
