@@ -35,6 +35,8 @@ beta:
     subject: New Beta!
     to_name: TheTemportalist
     to_email: the.country.gamer@gmail.com
+    from_name: email               # A field name, specified in the fields: section below
+    from_email: email             # A field name, specified in the fields: section below
     attach_files: false
   feedback:
     success: Successfully editted your beta
