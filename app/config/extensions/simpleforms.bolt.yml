@@ -49,7 +49,7 @@ recipient_name: TheTemportalist
 # from_email and from_name can be set for picky SMTP servers
 
 beta:
-  insert_into_table: beta
+  #insert_into_table: beta
   fields:
     email:
       type: email
