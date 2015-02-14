@@ -43,8 +43,8 @@ recipient_name: TheTemportalist
 # for development all email will be sent to this address
 # all other recipient and cc addresses will be ignored
 # remove or set 'testmode' to false for a production site
-testmode : true
-testmode_recipient: info@example.com
+#testmode : true
+#testmode_recipient: info@example.com
 
 # from_email and from_name can be set for picky SMTP servers
 
