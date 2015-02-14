@@ -25,8 +25,10 @@ csrf: true
 # Default fallback sender email
 # this is required because Swiftmailer will reject the message without one
 # please make this a sensible existing email address
-from_email: default@example.org
-from_name: Default
+from_email: the.country.gamer@gmail.com
+from_name: TheTemportalist
+recipient_email: the.country.gamer@gmail.com
+recipient_name: TheTemportalist
 
 # global cc email address
 # set this value to an email address that will receive a copy of every email from simpleforms
