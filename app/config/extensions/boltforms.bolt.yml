@@ -30,8 +30,8 @@ debug:
 
 beta:
   notification:
-    enabled: false
-    debug: false
+    enabled: true
+    debug: true
     subject: Your message was submitted 
     to_name: The Temportalist              # Must be valid text
     to_email: the.country.gamer@gmail.com # Must be valid email address
