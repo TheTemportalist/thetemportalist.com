@@ -14,14 +14,14 @@ if (strlen($data) != 0) {
 	$number = $json['build']['number'];
 	$status = $json['build']['status'];
 
-	$fileName = $name . '_' . $number . '_' . $status;
-	file_put_contents($dir . $fileName . '_' . $date . '.txt', $data);
+	#$fileName = $name . '_' . $number . '_' . $status;
+	#file_put_contents($dir . $fileName . '_' . $date . '.txt', $data);
 	
-	if ($status === 'SUCCESS') {
-		$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
-		$log .= $db;
+	#if ($status === 'SUCCESS') {
+	#	$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
+	#	$log .= $db;
 		
-	}
+	#}
 
 }
 echo "End";
