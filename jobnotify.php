@@ -18,11 +18,11 @@ if (strlen($data) > 0) {
 	$fileName = $name . '_' . $number . '_' . $status;
 	file_put_contents($dir . $fileName . '_' . $date . '.txt', $data, FILE_APPEND);
 	
-	if ($status === 'SUCCESS') {
-		$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
-		$log = $log.PHP_EOL. $db;
+	#if ($status === 'SUCCESS') {
+	#	$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
 		
-	}
+		
+	#}
 
 }
 echo "End";
