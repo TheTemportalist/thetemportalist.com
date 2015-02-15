@@ -25,13 +25,13 @@ csrf: true
 # If enabled, ALL forms will go into debug mode.  However, when disabled an individual
 # form can still enable it's own debug — specific for and to that form
 debug:
-  enabled: true  
+  enabled: false  
   address: noreply@example.com
 
 beta:
   notification:
     enabled: true
-    debug: true
+    debug: false
     subject: Your message was submitted 
     to_name: The Temportalist              # Must be valid text
     to_email: the.country.gamer@gmail.com # Must be valid email address
