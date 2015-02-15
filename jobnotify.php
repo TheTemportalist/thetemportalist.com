@@ -21,7 +21,8 @@ if (strlen($data) > 0) {
 	
 	if ($status === 'SUCCESS') {
 		$log = $log.PHP_EOL. "Successful build, proceding to fetch database";
-		
+		makeConnection();
+		selectDB("thetemportalist");
 		
 	}
 
