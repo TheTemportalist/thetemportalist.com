@@ -8,22 +8,21 @@ $date = date("n.j.Y");
 $log = "Database Log:" . PHP_EOL . 'String length: ' . strlen($data);
 if (strlen($data) > 0) {
 	$json = json_decode($data, true);
-	$log = $log . PHP_EOL . $json['name'];
-	#$name = $json['name'];
-	#$url = $json['build']['full_url'];
-	#$number = $json['build']['number'];
-	#$status = $json['build']['status'];
+	$name = $json['name'];
+	$url = $json['build']['full_url'];
+	$number = $json['build']['number'];
+	$status = $json['build']['status'];
 
-	#$log = $log . 'Found data ' . $name . PHP_EOL;# . ' ' . $number . ' ' . $status; 
+	$log = $log . 'Found data ' . $name . ' ' . $number . ' ' . $status; 
 
-	#$fileName = $name . '_' . $number . '_' . $status;
-	#file_put_contents($dir . $fileName . '_' . $date . '.txt', $data, FILE_APPEND);
+	$fileName = $name . '_' . $number . '_' . $status;
+	file_put_contents($dir . $fileName . '_' . $date . '.txt', $data, FILE_APPEND);
 	
-	#if ($status === 'SUCCESS') {
-	#	$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
-	#	$log .= $db;
+	if ($status === 'SUCCESS') {
+		$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
+		$log .= $db;
 		
-	#}
+	}
 
 }
 echo "End";
