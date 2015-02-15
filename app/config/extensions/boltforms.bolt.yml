@@ -28,6 +28,25 @@ debug:
   enabled: true  
   address: noreply@example.com
 
+beta:
+  notification:
+    enabled: false
+  feedback:
+    success: Message submission sucessful
+    error: There are errors in the form, please fix before trying to resubmit
+  database:
+#    contenttype: mycontenttype  # Contenttype to create
+    table: beta    # Specific database table to write to
+  fields:
+    email:
+      type: email
+      options:
+        required: true
+        label: Email address
+        attr:
+          placeholder: Your email...
+        constraints: [ NotBlank, Email ]
+
 ## Example 1
 #
 # Contact Form
