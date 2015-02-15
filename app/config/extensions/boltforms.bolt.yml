@@ -27,7 +27,6 @@ csrf: true
 debug:
   enabled: true  
   address: noreply@example.com
-debug_show_loggedoff: true
 
 beta:
   notification:
