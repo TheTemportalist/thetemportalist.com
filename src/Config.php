@@ -361,6 +361,17 @@ class Config
                     }
                 }
 
+                // If field is a "Select" type, make sure the array is a "hash" (as opposed to a "map")
+                // For example: [ 'yes', 'no' ] => { 'yes': 'yes', 'no': 'no' }
+                // The reason that we do this, is because if you set values to ['blue', 'green'], that is
+                // what you'd expect to see in the database. Not '0' and '1', which is what would happen,
+                // if we didn't "correct" it here. 
+                // @see used hack: http://stackoverflow.com/questions/173400/how-to-check-if-php-array-is-associative-or-sequential
+                if ($temp['fields'][$key]['type'] == 'select' && is_array($temp['fields'][$key]['values']) && 
+                    array_values($temp['fields'][$key]['values']) === $temp['fields'][$key]['values'] ) {
+                    $temp['fields'][$key]['values'] = array_combine($temp['fields'][$key]['values'], $temp['fields'][$key]['values']);
+                }
+
                 // If the field has a 'group', make sure it's added to the 'groups' array, so we can turn
                 // them into tabs while rendering. This also makes sure that once you started with a group,
                 // all others have a group too.
@@ -375,8 +386,7 @@ class Config
 
             // Make sure the 'uses' of the slug is an array.
             if (isset($temp['fields']['slug']) && isset($temp['fields']['slug']['uses']) &&
-                !is_array($temp['fields']['slug']['uses'])
-            ) {
+                !is_array($temp['fields']['slug']['uses'])) {
                 $temp['fields']['slug']['uses'] = array($temp['fields']['slug']['uses']);
             }
 
@@ -881,7 +891,7 @@ class Config
      * Utility function to determine which 'end' we're using right now. Can be either "frontend", "backend", "async" or "cli".
      *
      * NOTE: We retain the $_SERVER global here as this method can get called very early and the Request object might not exist yet
-     * 
+     *
      * @param  string $mountpoint
      * @return string
      */
