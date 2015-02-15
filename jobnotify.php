@@ -4,9 +4,9 @@ echo "Notify me!<br />";
 $data = file_get_contents('php://input');
 #echo $entityBody;
 $dir = './jenkin_logs/';
-$date = date("j.n.Y");
+$date = date("n.j.Y");
 $log = "Database Log:" . PHP_EOL;
-$log = $log . 'String length: ' . (strlen($data) != 0);
+$log = $log . 'String length: ' . strlen($data);
 if (strlen($data) != 0) {
 	$json = json_decode($data);
 	$name = $json['name'];
