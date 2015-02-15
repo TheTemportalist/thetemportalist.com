@@ -46,8 +46,8 @@ beta:
         attr:
           placeholder: Your email...
         constraints: [ NotBlank, Email ]
-  submit:
-    type: submit
+    submit:
+      type: submit
 
 ## Example 1
 #
