@@ -46,7 +46,7 @@ beta:
       type: email
       options:
         required: true
-        label: Email Address
+        label: Email address
         attr:
           placeholder: Your email...
         constraints: [ NotBlank, Email ]
