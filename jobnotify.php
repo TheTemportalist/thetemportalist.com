@@ -5,14 +5,10 @@ $data = file_get_contents('php://input');
 #echo $entityBody;
 $dir = './jenkin_logs/';
 $date = date("n.j.Y");
-$log = "Database Log:";
-$log = $log . PHP_EOL . 'String length: ' . strlen($data);
-
-#file_put_contents($dir . 'Input.txt', ((strlen($data) > 0) ? 'true' : 'false') . strlen($data) . PHP_EOL . $data, FILE_APPEND);
-
+$log = "Database Log:" . PHP_EOL . 'String length: ' . strlen($data);
 if (strlen($data) > 0) {
 	$json = json_decode($data);
-	$log = $log . PHP_EOL . $json;
+	$log = $log . PHP_EOL . json_encode($json);
 	#$name = $json['name'];
 	#$url = $json['build']['full_url'];
 	#$number = $json['build']['number'];
