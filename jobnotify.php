@@ -3,6 +3,9 @@
 echo "Notify me!";
 $entityBody = file_get_contents('php://input');
 #echo $entityBody;
-file_put_contents('./jenkins_build_log_'.date("j.n.Y").'.txt', $entityBody, FILE_APPEND);
+if (strlen($str) != 0){
+	file_put_contents('./jenkin_logs/build_'.date("j.n.Y").'.txt', $entityBody, FILE_APPEND);
+	
+}
 
 ?>
