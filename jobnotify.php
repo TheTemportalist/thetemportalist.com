@@ -21,8 +21,10 @@ if (strlen($data) > 0) {
 	
 	if ($status === 'SUCCESS') {
 		$log = $log.PHP_EOL. "Successful build, proceding to fetch database";
-		makeConnection();
-		selectDB("thetemportalist");
+		$conn = makeConnection();
+        selectDB("thetemportalist");
+        $ret = query($conn, 'SELECT id, email, mods from beta group by email');
+		var_dump($ret);
 		
 	}
 
