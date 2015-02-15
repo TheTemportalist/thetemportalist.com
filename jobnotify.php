@@ -1,4 +1,5 @@
 <?php
+require('mysql.php');
 
 echo "Notify me!<br />";
 $data = file_get_contents('php://input');
@@ -18,11 +19,11 @@ if (strlen($data) > 0) {
 	$fileName = $name . '_' . $number . '_' . $status;
 	file_put_contents($dir . $fileName . '_' . $date . '.txt', $data, FILE_APPEND);
 	
-	#if ($status === 'SUCCESS') {
-	#	$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
+	if ($status === 'SUCCESS') {
+		$log = $log.PHP_EOL. "Successful build, proceding to fetch database";
 		
 		
-	#}
+	}
 
 }
 echo "End";
