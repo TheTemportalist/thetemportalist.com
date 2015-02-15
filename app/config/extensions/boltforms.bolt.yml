@@ -57,18 +57,33 @@ beta:
         attr:
           placeholder: Your email...
         constraints: [ NotBlank, Email ]
-    mods:
-      type: choice
-      options:
-        required: true
-        label: What do you want to subscribe to?
-        choices: [ Origin, Compression ]
-        multiple: true
+#    mods:
+#      type: choice
+#      options:
+#        required: true
+#        label: What do you want to subscribe to?
+#        choices: [ Origin, Compression ]
+#        multiple: true
     origin:
       type: checkbox
       options:
-        required: true
+        required: false
         label: Origin?
+    compression:
+      type: checkbox
+      options:
+        required: false
+        label: Compression?
+    weepingangels:
+      type: checkbox
+      options:
+        required: false
+        label: Weeping Angels?
+    tardis:
+      type: checkbox
+      options:
+        required: false
+        label: Tardis?
     submit:
       type: submit
 
