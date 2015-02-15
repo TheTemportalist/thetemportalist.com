@@ -12,12 +12,12 @@ $log = $log . 'String length: ' . strlen($data);
 
 if (strlen($data) > 0) {
 	$json = json_decode($data);
-	$name = $json['name'];
-	$url = $json['build']['full_url'];
-	$number = $json['build']['number'];
-	$status = $json['build']['status'];
+	#$name = $json['name'];
+	#$url = $json['build']['full_url'];
+	#$number = $json['build']['number'];
+	#$status = $json['build']['status'];
 
-	$log = $log . 'Found data ' . $name . ' ' . $number . ' ' . $status; 
+	#$log = $log . 'Found data ' . $name . ' ' . $number . ' ' . $status; 
 
 	#$fileName = $name . '_' . $number . '_' . $status;
 	#file_put_contents($dir . $fileName . '_' . $date . '.txt', $data, FILE_APPEND);
