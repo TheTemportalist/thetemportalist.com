@@ -25,36 +25,8 @@ csrf: true
 # If enabled, ALL forms will go into debug mode.  However, when disabled an individual
 # form can still enable it's own debug — specific for and to that form
 debug:
-  enabled: false  
+  enabled: true  
   address: noreply@example.com
-
-beta:
-  notification:
-    enabled: false
-    debug: false
-    subject: New Beta!
-    to_name: TheTemportalist
-    to_email: the.country.gamer@gmail.com
-    from_name: email               # A field name, specified in the fields: section below
-    from_email: email             # A field name, specified in the fields: section below
-    attach_files: false
-  database:
-    enabled: true
-    table: beta
-  feedback:
-    success: Successfully editted your beta
-    error: There were errors in the form. Please fix them.
-  fields:
-    email:
-      type: email
-      options:
-        required: true
-        label: Email address
-        attr:
-          placeholder: Your email...
-        constraints: [ NotBlank, Email ]
-    submit:
-      type: submit
 
 ## Example 1
 #
@@ -65,13 +37,13 @@ contact:
     debug: false
     subject: Your message was submitted 
     to_name: My Site              # Must be valid text
-    to_email: the.country.gamer@gmail.com # Must be valid email address
+    to_email: noreply@example.com # Must be valid email address
     from_name: name               # A field name, specified in the fields: section below
     from_email: email             # A field name, specified in the fields: section below
-#    cc_name: Info Person
-#    cc_email: info@example.com
-#    bcc_name: Manager Person
-#    bcc_email: manager@example.com
+    cc_name: Info Person
+    cc_email: info@example.com
+    bcc_name: Manager Person
+    bcc_email: manager@example.com
     attach_files: false
   feedback:
     success: Message submission sucessful
