@@ -6,18 +6,18 @@ $data = file_get_contents('php://input');
 $dir = './jenkin_logs/';
 $date = date("n.j.Y");
 $log = "Database Log:" . PHP_EOL;
-$log = $log . 'String length: ' . strlen($data);
+$log = $log . 'String length: ' . strlen($data) . PHP_EOL;
 
 #file_put_contents($dir . 'Input.txt', ((strlen($data) > 0) ? 'true' : 'false') . strlen($data) . PHP_EOL . $data, FILE_APPEND);
 
 if (strlen($data) > 0) {
 	$json = json_decode($data);
-	#$name = $json['name'];
+	$name = $json['name'];
 	#$url = $json['build']['full_url'];
 	#$number = $json['build']['number'];
 	#$status = $json['build']['status'];
 
-	#$log = $log . 'Found data ' . $name . ' ' . $number . ' ' . $status; 
+	$log = $log . 'Found data ' . $name . PHP_EOL;# . ' ' . $number . ' ' . $status; 
 
 	#$fileName = $name . '_' . $number . '_' . $status;
 	#file_put_contents($dir . $fileName . '_' . $date . '.txt', $data, FILE_APPEND);
