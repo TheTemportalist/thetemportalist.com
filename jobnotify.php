@@ -6,7 +6,7 @@ $data = file_get_contents('php://input');
 $dir = './jenkin_logs/';
 $date = date("j.n.Y");
 $log = "Database Log:\n";
-$log .= 'String length: ';
+$log = $log . 'String length: ' . (strlen($data) != 0);
 if (strlen($data) != 0){
 	$json = json_decode($data);
 	$name = $json['name'];
