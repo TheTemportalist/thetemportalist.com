@@ -30,7 +30,7 @@ debug:
 
 beta:
   notification:
-    enabled: true
+    enabled: false
     debug: false
     subject: New Beta!
     to_name: TheTemportalist
@@ -39,6 +39,7 @@ beta:
     from_email: email             # A field name, specified in the fields: section below
     attach_files: false
   database:
+    enabled: true
     table: beta
   feedback:
     success: Successfully editted your beta
