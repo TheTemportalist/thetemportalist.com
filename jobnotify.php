@@ -1,6 +1,6 @@
 <?php
 
-echo "Notify me!\n";
+echo "Notify me!<br />";
 $data = file_get_contents('php://input');
 #echo $entityBody;
 $dir = './jenkin_logs/';
