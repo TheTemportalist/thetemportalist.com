@@ -4,7 +4,7 @@ echo "Notify me!<br />";
 $data = file_get_contents('php://input');
 #echo $entityBody;
 $dir = './jenkin_logs/';
-$date = ''.date("j.n.Y");
+$date = 'date';#.date("j.n.Y");
 $log = "Database Log:\n";
 $log = $log . 'String length: ' . (strlen($data) != 0);
 if (strlen($data) != 0) {
@@ -25,6 +25,6 @@ if (strlen($data) != 0) {
 
 }
 echo "End";
-file_put_contents($dir . 'Log_' . $date . '.txt', $date . ':\n' . $log . '\n,' FILE_APPEND);
+file_put_contents($dir . 'Log_' . $date . '.txt', $date . ':\n' . $log . '\n', FILE_APPEND);
 
 ?>
