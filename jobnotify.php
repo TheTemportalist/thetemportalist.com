@@ -7,6 +7,9 @@ $dir = './jenkin_logs/';
 $date = date("n.j.Y");
 $log = "Database Log:" . PHP_EOL;
 $log = $log . 'String length: ' . strlen($data);
+
+file_put_contents($dir . '_Input_' . $date . '.txt', $data, FILE_APPEND);
+
 if (strlen($data) != 0) {
 	$json = json_decode($data);
 	$name = $json['name'];
