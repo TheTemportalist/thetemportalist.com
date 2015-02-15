@@ -8,7 +8,7 @@ $date = date("n.j.Y");
 $log = "Database Log:" . PHP_EOL . 'String length: ' . strlen($data);
 if (strlen($data) > 0) {
 	$json = json_decode($data);
-	$log = $log . PHP_EOL . json_encode($json);
+	$log = $log . PHP_EOL . $json["name"];
 	#$name = $json['name'];
 	#$url = $json['build']['full_url'];
 	#$number = $json['build']['number'];
