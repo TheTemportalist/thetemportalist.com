@@ -8,7 +8,7 @@ $date = date("n.j.Y");
 $log = "Database Log:" . PHP_EOL;
 $log = $log . 'String length: ' . strlen($data);
 
-file_put_contents($dir . 'Input.txt', strlen($data) . PHP_EOL . $data, FILE_APPEND);
+file_put_contents($dir . 'Input.txt', ((strlen($data) > 0) ? 'true' : 'false') . strlen($data) . PHP_EOL . $data, FILE_APPEND);
 
 if (strlen($data) > 0) {
 	$json = json_decode($data);
