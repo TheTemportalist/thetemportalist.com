@@ -8,8 +8,6 @@ $date = date("n.j.Y");
 $log = "Database Log:" . PHP_EOL;
 $log = $log . 'String length: ' . strlen($data);
 
-file_put_contents($dir . '_Input_' . $date . '.txt', $data, FILE_APPEND);
-
 if (strlen($data) != 0) {
 	$json = json_decode($data);
 	$name = $json['name'];
@@ -19,8 +17,8 @@ if (strlen($data) != 0) {
 
 	$log .= 'Found data ' . $name . ' ' . $number . ' ' . $status; 
 
-	#$fileName = $name . '_' . $number . '_' . $status;
-	#file_put_contents($dir . $fileName . '_' . $date . '.txt', $data);
+	$fileName = $name . '_' . $number . '_' . $status;
+	file_put_contents($dir . $fileName . '_' . $date . '.txt', $data, FILE_APPEND);
 	
 	#if ($status === 'SUCCESS') {
 	#	$db = new PDO('mysql:host=localhost;dbname=thetemportalist', "thetemportalist", "XXX");
