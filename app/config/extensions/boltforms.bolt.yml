@@ -57,6 +57,13 @@ beta:
         attr:
           placeholder: Your email...
         constraints: [ NotBlank, Email ]
+    mods:
+      type: choice
+      options:
+        required: true
+        label: What do you want to subscribe to?
+        choices: [ Origin, Compression ]
+        multiple: true
     submit:
       type: submit
 
