@@ -38,6 +38,8 @@ beta:
     from_name: email               # A field name, specified in the fields: section below
     from_email: email             # A field name, specified in the fields: section below
     attach_files: false
+  database:
+    table: beta
   feedback:
     success: Successfully editted your beta
     error: There were errors in the form. Please fix them.
