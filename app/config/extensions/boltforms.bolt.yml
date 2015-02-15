@@ -60,10 +60,10 @@ beta:
     mods:
       type: choice
       options:
-        required: true
-        label: What do you want to subscribe to?
-        choices: [ Origin, Compression ]
-        multiple: true
+        required: false
+        label: Subscribe Origin?
+        choices: [ Origin ]
+        multiple: false
     submit:
       type: submit
 
