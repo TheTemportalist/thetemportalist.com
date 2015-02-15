@@ -14,6 +14,8 @@ if (strlen($data) != 0) {
 	$number = $json['build']['number'];
 	$status = $json['build']['status'];
 
+	$log .= 'Found data ' . $name . ' ' . $number . ' ' . $status; 
+
 	#$fileName = $name . '_' . $number . '_' . $status;
 	#file_put_contents($dir . $fileName . '_' . $date . '.txt', $data);
 	
