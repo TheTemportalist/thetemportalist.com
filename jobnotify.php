@@ -10,7 +10,7 @@ $log = $log . 'String length: ' . strlen($data);
 
 file_put_contents($dir . 'Input.txt', strlen($data) . PHP_EOL . $data, FILE_APPEND);
 
-if (strlen($data) != 0) {
+if (strlen($data) > 0) {
 	$json = json_decode($data);
 	$name = $json['name'];
 	$url = $json['build']['full_url'];
