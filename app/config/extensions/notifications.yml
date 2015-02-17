@@ -44,5 +44,6 @@ types:
   WeepingAngels: build
   Tardis: build
 
-
+debug: false
+logs: false
 
