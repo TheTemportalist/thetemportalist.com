@@ -1,0 +1,3 @@
+[submodule "extensions/local/thetemportalist/Notifications"]
+	path = extensions/local/thetemportalist/Notifications
+	url = https://github.com/TheTemportalist/Bolt-Notifications.git
