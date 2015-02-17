@@ -35,14 +35,14 @@ path: /Notifications
 # for sample, see example below
 databaseTable: beta
 from:
-	email: the.country.gamer@gmail.com
-	name: The Temportaist
+  email: the.country.gamer@gmail.com
+  name: The Temportaist
 # These are used to match up the json, AND for email subjects
 types:
-	Origin: build
-	Compression: build
-	WeepingAngels: build
-	Tardis: build
+  Origin: build
+  Compression: build
+  WeepingAngels: build
+  Tardis: build
 
 
 
