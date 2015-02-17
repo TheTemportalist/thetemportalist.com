@@ -64,22 +64,22 @@ beta:
 #        label: What do you want to subscribe to?
 #        choices: [ Origin, Compression ]
 #        multiple: true
-    origin:
+    Origin:
       type: checkbox
       options:
         required: false
         label: Origin?
-    compression:
+    Compression:
       type: checkbox
       options:
         required: false
         label: Compression?
-    weepingangels:
+    WeepingAngels:
       type: checkbox
       options:
         required: false
         label: Weeping Angels?
-    tardis:
+    Tardis:
       type: checkbox
       options:
         required: false
