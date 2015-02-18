@@ -13,7 +13,7 @@
 
 .boltform form div label {
 	color: #ffffff;
-	width: 50%;
+	display: inline-block;
 }
 
 /*
