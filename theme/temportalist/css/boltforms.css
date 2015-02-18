@@ -1,5 +1,5 @@
 
-.boltform form div {
+.boltform form div input[type=text] {
 	/*
 	display: inline-block;
 	*/
