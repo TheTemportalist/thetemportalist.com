@@ -1,4 +1,8 @@
 
+.boltform form div {
+	display: inline-block;
+}
+
 .boltform form div input[type=text] {
 	/*
 	display: inline-block;
@@ -6,12 +10,9 @@
 	width: 100%;
 }
 
-.boltform form div {
-	display: inline-block;
-}
-
 .boltform form div label {
 	color: #ffffff;
+	width: 50%;
 }
 
 /*
