@@ -6,7 +6,7 @@
 	width: 100%;
 }
 
-.boltform form div input[type=text] {
+.boltform form div input[type=checkbox] {
 	display: inline-block;
 }
 
