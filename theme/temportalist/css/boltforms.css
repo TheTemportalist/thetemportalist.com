@@ -1,3 +1,15 @@
-.boltform label {
+
+.boltform form div {
+	display: inline-block;
+}
+
+.boltform form div label {
 	color: #ffffff;
 }
+
+/*
+.boltform form div input[type=checkbox] {
+
+}
+*/
+
