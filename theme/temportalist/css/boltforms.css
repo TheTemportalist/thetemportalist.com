@@ -6,6 +6,10 @@
 	width: 100%;
 }
 
+.boltform form div input[type=text] {
+	display: inline-block;
+}
+
 .boltform form div label {
 	color: #ffffff;
 }
