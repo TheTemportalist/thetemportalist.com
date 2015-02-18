@@ -1,6 +1,9 @@
 
 .boltform form div {
+	/*
 	display: inline-block;
+	*/
+	width: 100%;
 }
 
 .boltform form div label {
