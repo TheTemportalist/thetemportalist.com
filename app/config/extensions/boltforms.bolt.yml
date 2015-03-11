@@ -32,7 +32,7 @@ beta:
   notification:
     enabled: true
     debug: false
-    subject: Your message was submitted 
+    subject: Someone has subscribed
     to_name: The Temportalist              # Must be valid text
     to_email: the.country.gamer@gmail.com # Must be valid email address
     from_name: name               # A field name, specified in the fields: section below
