@@ -1,0 +1,27 @@
+{% include '_header.twig' %}
+
+	<div style="">
+		<div style="margin-left: 30px;">
+			<h1 style="color: white; text-align: left;">April Fools!</h1>
+			<div style="padding-left: 30px;">
+				{% if home.teaser is defined and home.teaser is not empty %}
+    			    <h3 style="color: white; text-align: left;">You did the thing, Zhu Li! :P</h3>
+    			{% endif %}
+			</div>
+
+		    <p>
+		    	Welcome to my April Fools page! I am glad you made it safely.
+		    	<br>
+		    	Whatever things you were promised, I lied. But I have a consolation prize for you!
+		    	<br>
+		    	{% set img = paths.theme ~ 'assets/petrockimage.png' %}
+           		<a href="https://edgecast.wizard101.com/image/free/Wizard/C/Promotions/petrockimage.gif?v=2"><img src="{{ img }}" alt="" /> {#style="width:32px;height:32px;" />#}</a>
+           		<br>
+           		His name is Sir Rockefeller the Great [sir rok-er-fel-er the greyt] and he is the best pet rock ever.
+           		<br>
+           		Feel free to stare at him as long as your heart desires and you technology permits!
+		    </p>
+		</div>
+	</div>
+
+{% include '_footer.twig' %}
