@@ -73,6 +73,8 @@ projects:
     path: /page/cf-helper
   - label: Standalone Games
     path: /page/my-games
+  - label: Tumblr Filter
+    path: /page/tumblr
 
 mc-mods:
   - label: Origin
