@@ -14,15 +14,10 @@
 	    			{% endif %}
 				</div>
 
-			    {% set client = new Tumblr/API/Client(tumblroauth, tumblrsecret) %}
+				{% set response = http_get("api.tumblr.com/v2/blog/temportalflux/info?api_key=" ~ config.get('general/tumblroauth')) %}
+				{{ response }}
 
 			</div>
-
-		{% else %}
-		    <p>
-		        {{ __('Content for home not found!') }} 
-		        {{ __("You should set 'homepage:' in your 'app/config/config.yml' to an existing record. Make sure that the content is published, otherwise it will not be shown.") }}
-		    </p>
 		{% endif %}
 	</div>
 
