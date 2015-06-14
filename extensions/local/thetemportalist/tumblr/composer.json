@@ -18,7 +18,7 @@
             "init.php"
         ],
         "psr-4": {
-            "Bolt\\Extension\\TheTemportalist\\Tumblr\\": "src",
+            "Bolt\\Extension\\TheTemportalist\\Tumblr\\": "",
             "Bolt\\Extension\\TheTemportalist\\Tumblr\\Tumblr\\API\\": "Tumblr/API/"
         }
     }
