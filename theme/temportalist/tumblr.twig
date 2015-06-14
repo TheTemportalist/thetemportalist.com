@@ -14,8 +14,7 @@
 	    			{% endif %}
 				</div>
 
-				{% set response = http_get("api.tumblr.com/v2/blog/temportalflux/info?api_key=" ~ config.get('general/tumblroauth')) %}
-				{{ response }}
+				{{ app.request.get("api.tumblr.com/v2/blog/temportalflux/info?api_key=" ~ config.get('general/tumblroauth')) }}
 
 			</div>
 		{% endif %}
