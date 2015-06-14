@@ -15,10 +15,11 @@
     ],
     "autoload": {
         "files": [
-            "init.php", "Tumblr/API/Client.php", "Tumblr/API/RequestException.php", "Tumblr/API/RequestHandler.php"
+            "init.php"
         ],
         "psr-4": {
-            "Bolt\\Extension\\MyName\\MyExtension\\": "src"
+            "Bolt\\Extension\\TheTemportalist\\Tumblr\\": "src",
+            "Bolt\\Extension\\TheTemportalist\\Tumblr\\Tumblr\\API\\": "Tumblr/API/"
         }
     }
 }
