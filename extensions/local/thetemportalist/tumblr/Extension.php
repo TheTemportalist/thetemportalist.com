@@ -19,7 +19,7 @@
 		}
 
 		function getUserInfo($hostname, $oauth, $secret) {
-			return "abc";//$this->app['guzzle.client']->get("api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
+			return $this->app['guzzle.client']->get("api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
 		}
 
 	}
