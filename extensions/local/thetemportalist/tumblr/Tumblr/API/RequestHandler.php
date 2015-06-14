@@ -1,6 +1,6 @@
 <?php
 
-namespace Tumblr\API;
+namespace Bolt\Extension\TheTemportalist\Tumblr\Tumblr\API;
 
 /**
  * A request handler for Tumblr authentication
