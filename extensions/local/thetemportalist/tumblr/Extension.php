@@ -14,7 +14,7 @@
 
 			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
 
-			$client = new Tumblr\API\Client("", "");
+			//$client = new Tumblr\API\Client("", "");
 			
 		}
 
