@@ -16,10 +16,11 @@
 			// get() post() or match() (for both)
 			// $this->config['path']
 
+			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
 			
 		}
 
-		public function getBlogInfo($hostname, $oauth, $secret) {
+		function getUserInfo($hostname, $oauth, $secret) {
 			echo $this->app->match("api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
 		}
 
