@@ -11,6 +11,6 @@ return array(
     $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
     $vendorDir . '/react/promise/src/functions_include.php',
     $vendorDir . '/siriusphp/validation/autoload.php',
-    $vendorDir . '/bolt/dumper/class.dumper.php',
     $vendorDir . '/siriusphp/upload/autoload.php',
+    $vendorDir . '/bolt/dumper/class.dumper.php',
 );

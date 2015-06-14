@@ -22,5 +22,5 @@ return array(
     'Cocur\\Slugify\\' => array($vendorDir . '/cocur/slugify/src'),
     'Bolt\\Thumbs\\Tests\\' => array($vendorDir . '/bolt/thumbs/tests'),
     'Bolt\\Thumbs\\' => array($vendorDir . '/bolt/thumbs/src'),
-    'Bolt\\' => array($baseDir . '/src'),
+    'Bolt\\' => array($vendorDir . '/bolt/bolt/src'),
 );
