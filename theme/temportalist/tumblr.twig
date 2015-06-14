@@ -1,0 +1,29 @@
+{% include '_header.twig' %}
+
+	<div style="">
+		{% if record is defined %}
+			{% set home = record %}
+
+			<div style="margin-left: 30px;">
+				{% if home.title is defined and home.title is not empty %}
+				    <h1 style="color: white; text-align: left;">{{ home.title }}</h1>
+				{% endif %}
+				<div style="padding-left: 30px;">
+					{% if home.teaser is defined and home.teaser is not empty %}
+	    			    <h3 style="color: white; text-align: left;">{{ home.teaser }}</h3>
+	    			{% endif %}
+				</div>
+
+			    
+			    
+			</div>
+
+		{% else %}
+		    <p>
+		        {{ __('Content for home not found!') }} 
+		        {{ __("You should set 'homepage:' in your 'app/config/config.yml' to an existing record. Make sure that the content is published, otherwise it will not be shown.") }}
+		    </p>
+		{% endif %}
+	</div>
+
+{% include '_footer.twig' %}
