@@ -12,16 +12,12 @@
 
 		public function initialize() {
 
-			// todo configged 'Notifications'
-			// get() post() or match() (for both)
-			// $this->config['path']
-
 			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
 			
 		}
 
 		function getUserInfo($hostname, $oauth, $secret) {
-			return $this->app->get("api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
+			return $this->app->get("thetemportalist.dries007.net");//"api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
 		}
 
 	}
