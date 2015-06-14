@@ -21,7 +21,7 @@
 		}
 
 		function getUserInfo($hostname, $oauth, $secret) {
-			return $this->app->match("api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
+			return $this->app->get("api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
 		}
 
 	}
