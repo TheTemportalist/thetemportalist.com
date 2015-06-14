@@ -22,6 +22,10 @@
 			return "abc";//$this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
 		}
 
+		function getPosts($hostname, $apiKey) {
+			return "api.tumblr.com/v2/blog/".$hostname."/posts?api_key=".$apiKey;
+		}
+
 	}
 
 ?>

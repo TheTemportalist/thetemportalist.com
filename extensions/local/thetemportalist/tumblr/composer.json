@@ -4,7 +4,8 @@
     "type": "bolt-extension",
     "keywords": ["thetemportalist", "tumblr", "temportal"],
     "require": {
-        "bolt/bolt": ">=2.0,<3.0"
+        "bolt/bolt": ">=2.0,<3.0",
+        "eher/oauth": "1.0.*"
     },
     "authors": [
         {
