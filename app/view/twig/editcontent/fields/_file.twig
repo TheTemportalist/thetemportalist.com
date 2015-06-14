@@ -5,6 +5,7 @@
     label:       field.label|default(''),
     extensions:  field.extensions|default([]),
     upload:      field.upload|default(''),
+    can_upload:  field.canUpload,
     info:        field.info|default('info.upload.file')
 } %}
 
@@ -13,10 +14,10 @@
 {% set attr_filepath = {
     class:       option.class ~ ' imageinput',
     id:          'field-' ~ key,
-    name:        key,
+    name:        name,
     type:        'text',
     placeholder: __('field.general.allowed-filetypes') ~ ' ' ~ option.extensions|join(', ') ~ ' …',
-    value:       context.content.get(key),
+    value:       context.content.get(contentkey),
 } %}
 
 {% set attr_upload = {
@@ -33,8 +34,8 @@
 {% import _self as block %}
 
 {% macro progress(key) %}
-    <div class="progress progress-striped active" id="progress-{{ key }}">
-        <div class="bar" style="width: 0%;"></div>
+    <div class="progress file-progress progress-striped active" id="progress-{{ key }}">
+        <div class="progress-bar" style="width: 0%;"></div>
     </div>
 {% endmacro %}
 
@@ -54,8 +55,8 @@
 
     <div class="col-sm-12 dropzone clearfix" id="dropzone-{{ key }}">
         <input{{ macro.attr(attr_filepath) }}>
-
-        {{ macro.upload_buttons('file', key, attr_upload, option.upload, context.canUpload) }}
+        {% set can_upload = context.can_upload and option.can_upload %}
+        {{ macro.upload_buttons('file', key, attr_upload, option.upload, can_upload) }}
         {{ block.progress(key) }}
         {{ block.serverselect(key, __('Cancel')) }}
 

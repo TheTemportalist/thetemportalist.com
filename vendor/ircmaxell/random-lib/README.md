@@ -127,8 +127,3 @@ Community
 
 If you have questions or want to help out, join us in the **#php.security**
 channel on **irc.freenode.net**.
-
-Security Vulnerabilities
-========================
-
-If you have found a security issue, please contact the author directly at [me@ircmaxell.com](mailto:me@ircmaxell.com).

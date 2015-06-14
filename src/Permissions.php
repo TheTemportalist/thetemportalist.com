@@ -9,10 +9,9 @@ use Bolt\Translation\Translator as Trans;
  */
 class Permissions
 {
-
     /**
      * Anonymous user: this role is automatically assigned to everyone,
-     * including "non-users" (not logged in)
+     * including "non-users" (not logged in).
      */
     const ROLE_ANONYMOUS = 'anonymous';
 
@@ -36,6 +35,7 @@ class Permissions
      */
     const ROLE_OWNER = 'owner';
 
+    /** @var \Silex\Application */
     private $app;
 
     // per-request permission cache
@@ -48,18 +48,15 @@ class Permissions
     }
 
     /**
-     * Write an entry to the permission audit log
+     * Write an entry to the permission audit log.
+     *
+     * @param string $msg
      */
     private function audit($msg)
     {
-        // For now, just log the message.
-        switch ($this->app['config']->get('general/debug_permission_audit_mode')) {
-            case 'error-log':
-                error_log($msg);
-                break;
-            default:
-                // ignore; no audit logging
-                break;
+        // Log the message if enabled
+        if ($this->app['config']->get('general/debug_permission_audit_mode', false)) {
+            $this->app['logger.system']->addInfo($msg, array('event' => 'authentication'));
         }
     }
 
@@ -68,14 +65,16 @@ class Permissions
      * This includes all the custom roles from permissions.yml, plus the
      * special 'root' role, but not the special roles 'anonymous', 'everyone',
      * and 'owner' (these are assigned automatically).
+     *
+     * @return array
      */
     public function getDefinedRoles()
     {
         $roles = $this->app['config']->get('permissions/roles');
         $roles[self::ROLE_ROOT] = array(
-            'label' => 'Root',
+            'label'       => 'Root',
             'description' => Trans::__('Built-in superuser role, automatically grants all permissions'),
-            'builtin' => true
+            'builtin'     => true
         );
 
         return $roles;
@@ -83,36 +82,38 @@ class Permissions
 
     /**
      * Gets meta-information on the specified role.
+     *
      * @param string $roleName
+     *
      * @return array An associative array describing the role. Keys are:
-     * - 'label': A human-readable role name, suitable as a label in the
-     *            backend
-     * - 'description': A description of what this role is supposed to do.
-     * - 'builtin': Optional; if present and true-ish, this is a built-in
-     *              role and cannot be overridden in permissions.yml.
+     *               - 'label': A human-readable role name, suitable as a label in the
+     *               backend
+     *               - 'description': A description of what this role is supposed to do.
+     *               - 'builtin': Optional; if present and true-ish, this is a built-in
+     *               role and cannot be overridden in permissions.yml.
      */
     public function getRole($roleName)
     {
         switch ($roleName) {
             case self::ROLE_ANONYMOUS:
                 return array(
-                    'label' => Trans::__('Anonymous'),
+                    'label'       => Trans::__('Anonymous'),
                     'description' => Trans::__('Built-in role, automatically granted at all times, even if no user is logged in'),
-                    'builtin' => true,
+                    'builtin'     => true,
                 );
 
             case self::ROLE_EVERYONE:
                 return array(
-                    'label' => Trans::__('Everybody'),
+                    'label'       => Trans::__('Everybody'),
                     'description' => Trans::__('Built-in role, automatically granted to every registered user'),
-                    'builtin' => true,
+                    'builtin'     => true,
                 );
 
             case self::ROLE_OWNER:
                 return array(
-                    'label' => Trans::__('Owner'),
+                    'label'       => Trans::__('Owner'),
                     'description' => Trans::__('Built-in role, only valid in the context of a resource, and automatically assigned to the owner of that resource.'),
-                    'builtin' => true,
+                    'builtin'     => true,
                 );
 
             default:
@@ -128,10 +129,13 @@ class Permissions
     /**
      * Gets the roles for a given user. If a content type is specified, the
      * "owner" role is added if appropriate.
-     * @param  array      $user    An array as returned by Users::getUser()
-     * @param  Content    $content An optional Content object to check ownership
+     *
+     * @param array   $user    An array as returned by Users::getUser()
+     * @param Content $content An optional Content object to check ownership
+     *
      * @throws \Exception
-     * @return array      An associative array of roles for the given user
+     *
+     * @return array An associative array of roles for the given user
      */
     public function getUserRoles($user, Content $content = null)
     {
@@ -145,56 +149,115 @@ class Permissions
         }
         $userRoleNames[] = self::ROLE_OWNER;
 
-        return
-            array_combine(
-                $userRoleNames,
-                array_map(
-                    function ($roleName) {
-                        return $this->getRole($roleName);
-                    },
-                    $userRoleNames
-                )
-            );
+        $self = $this;
+
+        return array_combine(
+            $userRoleNames,
+            array_map(
+                function ($roleName) use ($self) {
+                    return $self->getRole($roleName);
+                },
+                $userRoleNames
+            )
+        );
+    }
+
+    /**
+     * Gets the roles the current user can manipulate.
+     *
+     * @param array $currentUser
+     *
+     * @return string[] list of role names
+     */
+    public function getManipulatableRoles(array $currentUser)
+    {
+        $manipulatableRoles = array();
+
+        foreach ($this->getDefinedRoles() as $roleName => $role) {
+            if ($this->checkPermission($currentUser['roles'], 'manipulate', 'roles-hierarchy', $roleName)) {
+                $manipulatableRoles[] = $roleName;
+            }
+        }
+
+        return $manipulatableRoles;
+    }
+
+    /**
+     * Checks if the current user is able to manipulate the given user.
+     *
+     * @param array $user
+     * @param array $currentUser
+     *
+     * @return bool
+     */
+    public function isAllowedToManipulate(array $user, array $currentUser)
+    {
+        return $this->checkPermission($currentUser['roles'], 'manipulate', 'roles-hierarchy', $user);
     }
 
     /**
      * Low-level permission check. Given a set of available roles, a
      * permission, and an optional content type, this method checks whether
      * the permission may be granted.
-     * @param  array  $roleNames      An array of effective role names. This must
-     *                                include any of the appropriate automatic
-     *                                roles, as these are not added at this point.
-     * @param  string $permissionName Which permission to check
-     * @param  string $contenttype
-     * @return bool   TRUE if granted, FALSE if not.
+     *
+     * @param array  $roleNames      An array of effective role names. This must
+     *                               include any of the appropriate automatic
+     *                               roles, as these are not added at this point.
+     * @param string $permissionName Which permission to check
+     * @param string $type
+     * @param string $item
+     *
+     * @return bool TRUE if granted, FALSE if not.
      */
-    public function checkPermission($roleNames, $permissionName, $contenttype = null)
+    public function checkPermission($roleNames, $permissionName, $type = null, $item = null)
     {
+        // Handle BC
+        if ($type !== null && $item === null) {
+            $item = $type;
+            $type = 'contenttype';
+        }
+
+        if (is_array($item) && isset($item['username'])) {
+            $itemStr = sprintf(' for user "%s"', $item['username']);
+        } elseif ($item) {
+            $itemStr = " for $item";
+        } else {
+            $itemStr = '';
+        }
+
         $roleNames = array_unique($roleNames);
         if (in_array(Permissions::ROLE_ROOT, $roleNames)) {
-                $this->audit(
-                    "Granting '$permissionName' " .
-                    ($contenttype ? "for $contenttype " : "") .
-                    "to root user"
-                );
+            $this->audit(
+                sprintf(
+                    'Granting "%s"%s to root user',
+                    $permissionName,
+                    $itemStr
+                )
+            );
 
-                return true;
+            return true;
         }
         foreach ($roleNames as $roleName) {
-            if ($this->checkRolePermission($roleName, $permissionName, $contenttype)) {
+            if ($this->checkRolePermission($roleName, $permissionName, $type ?: 'global', $item)) {
                 $this->audit(
-                    "Granting '$permissionName' " .
-                    ($contenttype ? "for $contenttype " : "") .
-                    "based on role $roleName"
+                    sprintf(
+                        'Granting "%s"%s based on role %s',
+                        $permissionName,
+                        $itemStr,
+                        $roleName
+                    )
                 );
 
                 return true;
             }
         }
         $this->audit(
-            "Denying '$permissionName' " .
-            ($contenttype ? "for $contenttype" : "") .
-            "; available roles: " . implode(', ', $roleNames)
+            sprintf(
+                'Denying "%s"%s; available roles: %s',
+                $permissionName,
+                $itemStr,
+                implode(', ', $roleNames)
+            )
         );
 
         return false;
@@ -203,21 +266,40 @@ class Permissions
     /**
      * Checks whether the specified $roleName grants permission $permissionName
      * for the $contenttype in question (NULL for global permissions).
+     *
+     * @param string $roleName
+     * @param string $permissionName
+     * @param string $type
+     * @param mixed  $item
+     *
+     * @return bool
      */
-    private function checkRolePermission($roleName, $permissionName, $contenttype = null)
+    private function checkRolePermission($roleName, $permissionName, $type = 'global', $item = null)
     {
-        if ($contenttype === null) {
+        if ($type === 'global') {
             return $this->checkRoleGlobalPermission($roleName, $permissionName);
-        } else {
-            return $this->checkRoleContentTypePermission($roleName, $permissionName, $contenttype);
+        } elseif ($type === 'roles-hierarchy') {
+            return $this->checkRoleHierarchyPermission($roleName, $permissionName, $item);
+        } elseif ($type === 'contenttype') {
+            return $this->checkRoleContentTypePermission($roleName, $permissionName, $item);
         }
+
+        throw new \InvalidArgumentException('Unknown permission type to check');
     }
 
+    /**
+     * Check if a given role has the specified permission.
+     *
+     * @param string $roleName
+     * @param string $permissionName
+     *
+     * @return boolean
+     */
     private function checkRoleGlobalPermission($roleName, $permissionName)
     {
         $roles = $this->getRolesByGlobalPermission($permissionName);
         if (!is_array($roles)) {
-            error_log("Configuration error: $permissionName is not granted to any roles.");
+            $this->app['logger.system']->addInfo("Configuration error: $permissionName is not granted to any roles.", array('event' => 'authentication'));
 
             return false;
         }
@@ -225,6 +307,45 @@ class Permissions
         return in_array($roleName, $roles);
     }
 
+    /**
+     * Check if a hierarchy role has a sub-role.
+     *
+     * @param string       $roleName
+     * @param string       $permissionName
+     * @param string|array $role
+     *
+     * @return boolean
+     */
+    private function checkRoleHierarchyPermission($roleName, $permissionName, $role)
+    {
+        // Can current user manipulate role?
+        if (is_string($role)) {
+            $permissions = $this->app['config']->get("permissions/roles-hierarchy/$permissionName/$role", array());
+
+            return in_array($roleName, $permissions);
+        }
+
+        // Can current user manipulate user?
+        $user = $role;
+        foreach ($user['roles'] as $role) {
+            $permissions = $this->app['config']->get("permissions/roles-hierarchy/$permissionName/$role", array());
+            if (in_array($roleName, $permissions)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if a role has a specific Contenttype permission.
+     *
+     * @param string $roleName
+     * @param string $permissionName
+     * @param string $contenttype
+     *
+     * @return boolean
+     */
     private function checkRoleContentTypePermission($roleName, $permissionName, $contenttype)
     {
         $roles = $this->getRolesByContentTypePermission($permissionName, $contenttype);
@@ -234,6 +355,10 @@ class Permissions
 
     /**
      * Lists the roles that would grant the specified global permission.
+     *
+     * @param string $permissionName
+     *
+     * @return string[]
      */
     public function getRolesByGlobalPermission($permissionName)
     {
@@ -241,7 +366,9 @@ class Permissions
     }
 
     /**
-     * Gets the configured global roles.
+     * Gets the configured global permissions.
+     *
+     * @return array
      */
     public function getGlobalRoles()
     {
@@ -252,6 +379,11 @@ class Permissions
      * Lists the roles that would grant the specified permission for the
      * specified content type. Sort of a reverse lookup on the permission
      * check.
+     *
+     * @param string $permissionName
+     * @param string $contenttype
+     *
+     * @return array
      */
     public function getRolesByContentTypePermission($permissionName, $contenttype)
     {
@@ -280,9 +412,11 @@ class Permissions
      * Gets the effective roles for a given user.
      * The effective roles include the roles that were explicitly assigned,
      * as well as the built-in automatic roles.
-     * @param  mixed $user An array or array-access object that contains a
-     *                     'roles' key; if no user is given, "guest" access is
-     *                     assumed.
+     *
+     * @param mixed $user An array or array-access object that contains a
+     *                    'roles' key; if no user is given, "guest" access is
+     *                    assumed.
+     *
      * @return array A list of effective role names for this user.
      */
     public function getEffectiveRolesForUser($user)
@@ -303,7 +437,7 @@ class Permissions
      * the ':' character acts as a separator for dynamic parts and
      * sub-permissions.
      * Apart from the route-based rules defined in permissions.yml, the
-     * following special cases are available:
+     * following special cases are available:.
      *
      * "overview:$contenttype" - view the overview for the content type. Alias
      *                           for "contenttype:$contenttype:view".
@@ -328,14 +462,15 @@ class Permissions
      *
      * "contenttype:$contenttype:edit or contenttype:$contenttype:view"
      *
-     * @param  string $what        The desired permission, as elaborated upon above.
-     * @param  mixed  $user        The user to check permissions against.
-     * @param  string $contenttype Optional: Content type slug. If specified,
+     * @param string  $what        The desired permission, as elaborated upon above.
+     * @param mixed   $user        The user to check permissions against.
+     * @param string  $contenttype Optional: Content type slug. If specified,
      *                             $what is taken to be a relative permission (e.g. 'edit')
      *                             rather than an absolute one (e.g. 'contenttype:pages:edit').
-     * @param  int    $contentid   Only used if $contenttype is given, to further
+     * @param integer $contentid   Only used if $contenttype is given, to further
      *                             specifiy the content item.
-     * @return bool   TRUE if the permission is granted, FALSE if denied.
+     *
+     * @return boolean TRUE if the permission is granted, FALSE if denied.
      */
     public function isAllowed($what, $user, $contenttype = null, $contentid = null)
     {
@@ -369,6 +504,19 @@ class Permissions
         return $isAllowed;
     }
 
+    /**
+     * Check if a user is allowed a rule 'type'.
+     *
+     * @param array   $rule
+     * @param array   $user
+     * @param array   $userRoles
+     * @param string  $contenttype
+     * @param integer $contentid
+     *
+     * @throws \Exception
+     *
+     * @return boolean
+     */
     private function isAllowedRule($rule, $user, $userRoles, $contenttype, $contentid)
     {
         switch ($rule['type']) {
@@ -399,9 +547,20 @@ class Permissions
         }
     }
 
+    /**
+     * Check if a user has a specific role.
+     *
+     * @param string  $what
+     * @param array   $user
+     * @param array   $userRoles
+     * @param string  $contenttype
+     * @param integer $contentid
+     *
+     * @return boolean
+     */
     private function isAllowedSingle($what, $user, $userRoles, $contenttype = null, $contentid = null)
     {
-        if ($contenttype) {
+        if ($contenttype !== null) {
             $parts = array(
                         'contenttype',
                         $contenttype,
@@ -501,11 +660,14 @@ class Permissions
      * Gets the required permission for transitioning any content item from
      * one status to another. An empty status value indicates a non-existant
      * item (create/delete).
-     * @param $fromStatus
-     * @param $toStatus
+     *
+     * @param string $fromStatus
+     * @param string $toStatus
+     *
      * @throws \Exception
-     * @return mixed      The name of the required permission suffix (e.g.
-     *                    'publish'), or NULL if no permission is required.
+     *
+     * @return string|null The name of the required permission suffix (e.g.
+     *                     'publish'), or NULL if no permission is required.
      */
     public function getContentStatusTransitionPermission($fromStatus, $toStatus)
     {
@@ -530,6 +692,18 @@ class Permissions
         }
     }
 
+    /**
+     * Check to see if a user is allowed to change that status of a Contenttype
+     * record to a target status.
+     *
+     * @param string  $fromStatus
+     * @param string  $toStatus
+     * @param array   $user
+     * @param string  $contenttype
+     * @param integer $contentid
+     *
+     * @return boolean
+     */
     public function isContentStatusTransitionAllowed($fromStatus, $toStatus, $user, $contenttype, $contentid = null)
     {
         $perm = $this->getContentStatusTransitionPermission($fromStatus, $toStatus);

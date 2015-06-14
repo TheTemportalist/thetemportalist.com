@@ -4,19 +4,21 @@ namespace Bolt\Translation;
 
 use Bolt\Application;
 use Bolt\Configuration\ResourceManager;
+use Symfony\Component\Translation\Exception\InvalidResourceException;
 
 /**
- * Handles translation
+ * Handles translation.
  */
 class Translator
 {
-   /**
-    * Encode array values as html special chars
-    *
-    * @param array $params Parameter to encode
-    * @param string $removeKey If not empty the key is removed from result
-    * @return array
-    */
+    /**
+     * Encode array values as html special chars.
+     *
+     * @param array  $params    Parameter to encode
+     * @param string $removeKey If not empty the key is removed from result
+     *
+     * @return array
+     */
     private static function htmlencodeParams(array $params, $removeKey = '')
     {
         if ($removeKey) {
@@ -32,13 +34,14 @@ class Translator
     }
 
     /**
-     * Low level translation
+     * Low level translation.
      *
      * @param string $key
-     * @param array $params
+     * @param array  $params
      * @param string $domain
-     * @param mixed $locale
-     * @param mixed $default
+     * @param mixed  $locale
+     * @param mixed  $default
+     *
      * @return string
      */
     private static function trans($key, array $params = array(), $domain = 'messages', $locale = null, $default = null)
@@ -70,7 +73,7 @@ class Translator
             }
 
             return ($trans === $key && $default !== null) ? $default : $trans;
-        } catch (\Symfony\Component\Translation\Exception\InvalidResourceException $e) {
+        } catch (InvalidResourceException $e) {
             if (!isset($app['translationyamlerror']) && $app['request']->isXmlHttpRequest() === false) {
                 $app['session']->getFlashBag()->add(
                     'warning',
@@ -84,18 +87,19 @@ class Translator
     }
 
     /**
-     * Returns translated contenttype name with fallback to name/slug from 'contenttypes.yml'
+     * Returns translated contenttype name with fallback to name/slug from 'contenttypes.yml'.
      *
      * @param string $contenttype The contentype
-     * @param bool $singular Singular or plural requested?
-     * @param string $locale Translate to this locale
+     * @param bool   $singular    Singular or plural requested?
+     * @param string $locale      Translate to this locale
+     *
      * @return string
      */
     private static function transContenttypeName($contenttype, $singular, $locale)
     {
         $key = 'contenttypes.' . $contenttype . '.name.' . ($singular ? 'singular' : 'plural');
 
-        $name = static::trans($key, array(), 'contenttypes', $locale);
+        $name = self::trans($key, array(), 'contenttypes', $locale);
         if ($name === $key) {
             $app = ResourceManager::getApp();
 
@@ -116,24 +120,25 @@ class Translator
     }
 
     /**
-     * Translates contentype specific messages and falls back to building generic message or fallback locale
+     * Translates contentype specific messages and falls back to building generic message or fallback locale.
      *
-     * @param string $genericKey
-     * @param array $params
-     * @param string $id
+     * @param string  $genericKey
+     * @param array   $params
+     * @param string  $id
      * @param boolean $singular
-     * @param mixed $locale
+     * @param mixed   $locale
+     *
      * @return boolean
      */
     private static function transContenttype($genericKey, array $params, $id, $singular, $locale)
     {
         $contenttype = $params[$id];
-        $encParams = static::htmlencodeParams($params, $id);
+        $encParams = self::htmlencodeParams($params, $id);
         $key = 'contenttypes.' . $contenttype . '.text.' . substr($genericKey, 21);
 
         // Try to get a real translation from contenttypes.xx_XX.yml
-        $trans = static::trans($key, $encParams, 'contenttypes', $locale, false);
-        $transFallback = static::trans($key, $encParams, 'contenttypes', \Bolt\Application::DEFAULT_LOCALE, false);
+        $trans = self::trans($key, $encParams, 'contenttypes', $locale, false);
+        $transFallback = self::trans($key, $encParams, 'contenttypes', Application::DEFAULT_LOCALE, false);
 
         // We don't want fallback translation here
         if ($trans === $transFallback) {
@@ -143,18 +148,18 @@ class Translator
         // No translation found, build string from generic translation pattern
         if ($trans === false) {
             // Get generic translation with name replaced
-            $encParams[$id] = static::transContenttypeName($contenttype, $singular, $locale);
-            $transGeneric = static::trans($genericKey, $encParams, 'messages', $locale, false);
+            $encParams[$id] = self::transContenttypeName($contenttype, $singular, $locale);
+            $transGeneric = self::trans($genericKey, $encParams, 'messages', $locale, false);
         } else {
             $transGeneric = false;
         }
 
         // Return: translation => generic translation => fallback translation => key
-        if ($trans) {
+        if ($trans !== false) {
             return $trans;
-        } elseif ($transGeneric) {
+        } elseif ($transGeneric !== false) {
             return $transGeneric;
-        } elseif ($transFallback) {
+        } elseif ($transFallback !== false) {
             return $transFallback;
         } else {
             return $genericKey;
@@ -162,7 +167,7 @@ class Translator
     }
 
     /**
-     * i18n made right, third attempt…
+     * i18n made right, third attempt….
      *
      * Instead of calling directly $app['translator']->trans(), we check for the presence of a placeholder named
      * '%contenttype%'.
@@ -174,10 +179,11 @@ class Translator
      * 'DEFAULT': the value is returns instead of the key of no translation is found
      * 'NUMBER': transCjoice is triggered with the value as countvalue
      *
-     * @param mixed $key The messsage id. If an array is passed, an sanitized key is build
-     * @param array $params Parameter for string replacement and commands ('DEFAULT', 'NUMBER')
+     * @param mixed  $key    The messsage id. If an array is passed, an sanitized key is build
+     * @param array  $params Parameter for string replacement and commands ('DEFAULT', 'NUMBER')
      * @param string $domain
-     * @param mixed $locale
+     * @param mixed  $locale
+     *
      * @return string
      */
     public static function /*@codingStandardsIgnoreStart*/__/*@codingStandardsIgnoreEnd*/($key, array $params = array(), $domain = 'messages', $locale = null)
@@ -198,9 +204,9 @@ class Translator
             // Generic contenttypes
             if (substr($key, 13, 8) == 'generic.') {
                 if (isset($params['%contenttype%'])) {
-                    return static::transContenttype($key, $params, '%contenttype%', true, $locale);
+                    return self::transContenttype($key, $params, '%contenttype%', true, $locale);
                 } elseif (isset($params['%contenttypes%'])) {
-                    return static::transContenttype($key, $params, '%contenttypes%', false, $locale);
+                    return self::transContenttype($key, $params, '%contenttypes%', false, $locale);
                 }
             // Switch domain
             } elseif ($domain === 'messages') {
@@ -208,6 +214,6 @@ class Translator
             }
         }
 
-        return static::trans($key, static::htmlencodeParams($params), $domain, $locale);
+        return self::trans($key, self::htmlencodeParams($params), $domain, $locale);
     }
 }

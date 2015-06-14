@@ -58,11 +58,15 @@ This is a list of common pitfalls on using Composer, and how to avoid them.
    Use: `before_script: COMPOSER_ROOT_VERSION=dev-master composer install` to export
    the variable for the call to composer.
 
+## Package not found in a Jenkins-build
+
+1. Check the ["Package not found"](#package-not-found) item above.
+2. Reason for failing is similar to the problem which can occur on travis-ci.org: The git-clone / checkout within Jenkins leaves the branch in a "detached HEAD"-state. As a result, composer is not able to identify the version of the current checked out branch and may not be able to resolve a cyclic dependency. To solve this problem, you can use the "Additional Behaviours" -> "Check out to specific local branch" in your Git-settings for your Jenkins-job, where your "local branch" shall be the same branch as you are checking out. Using this, the checkout will not be in detached state any more and cyclic dependency is recognized correctly.
+
 ## Need to override a package version
 
-Let say your project depends on package A which in turn depends on a specific
-version of package B (say 0.1) and you need a different version of that
-package - version 0.11.
+Let's say your project depends on package A, which in turn depends on a specific
+version of package B (say 0.1). But you need a different version of said package B (say 0.11).
 
 You can fix this by aliasing version 0.11 to 0.1:
 
@@ -87,7 +91,7 @@ If composer shows memory errors on some commands:
 
 The PHP `memory_limit` should be increased.
 
-> **Note:** Composer internally increases the `memory_limit` to `512M`.
+> **Note:** Composer internally increases the `memory_limit` to `1G`.
 > If you have memory issues when using composer, please consider [creating
 > an issue ticket](https://github.com/composer/composer/issues) so we can look into it.
 
@@ -101,7 +105,7 @@ Try increasing the limit in your `php.ini` file (ex. `/etc/php5/cli/php.ini` for
 Debian-like systems):
 
 ```ini
-; Use -1 for unlimited or define an explicit value like 512M
+; Use -1 for unlimited or define an explicit value like 2G
 memory_limit = -1
 ```
 
@@ -114,8 +118,9 @@ php -d memory_limit=-1 composer.phar <...>
 ## "The system cannot find the path specified" (Windows)
 
 1. Open regedit.
-2. Search for an ```AutoRun``` key inside ```HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor```
-   or ```HKEY_CURRENT_USER\Software\Microsoft\Command Processor```.
+2. Search for an `AutoRun` key inside `HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor`,
+   `HKEY_CURRENT_USER\Software\Microsoft\Command Processor`
+   or `HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Command Processor`.
 3. Check if it contains any path to non-existent file, if it's the case, just remove them.
 
 ## API rate limit and OAuth tokens
