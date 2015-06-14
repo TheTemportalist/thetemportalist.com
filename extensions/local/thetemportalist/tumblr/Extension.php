@@ -13,6 +13,8 @@
 		public function initialize() {
 
 			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
+
+			$client = new Tumblr/API/Client("", "");
 			
 		}
 
