@@ -14,7 +14,7 @@
 	    			{% endif %}
 				</div>
 
-			    {{ client = new Tumblr/API/Client(tumblroauth, tumblrsecret) }}
+			    {% set client = new Tumblr/API/Client(tumblroauth, tumblrsecret) %}
 
 			</div>
 
