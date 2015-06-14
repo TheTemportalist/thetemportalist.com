@@ -14,7 +14,7 @@
 	    			{% endif %}
 				</div>
 
-				{{ dump(app.request.get("api.tumblr.com/v2/blog/temportalflux/info?api_key=" ~ config.get('general/tumblroauth'))) }}
+				{{ dump(app.request.get("api.tumblr.com/v2/blog/temportalflux.tumblr.com/info?api_key=" ~ config.get('general/tumblroauth'))) }}
 
 			</div>
 		{% endif %}
