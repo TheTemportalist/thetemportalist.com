@@ -33,6 +33,10 @@
 						{# TODO render posts #}
 			
 						{{ dump(posts) }}
+
+						{% for post in posts %}
+							{{ dump(post) }}
+						{% endfor %}
 					
 					{% else %}
 						Something went wrong. Try checking the inputted tumblr URL.
