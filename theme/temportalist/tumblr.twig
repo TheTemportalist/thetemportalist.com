@@ -20,6 +20,15 @@
 				</form>
 				<br />
 
+				{{ dump(app.request.get('hostOrUrl')) }}
+
+				{#
+					Valid hostnames:
+						temportalflux
+						-> temportalflux.tumblr.com
+						temportalflux.com
+				#}
+
 				{% set posts = tumblr_GetPosts("temportalflux.tumblr.com") %}
 				{{ dump(posts) }}
 
