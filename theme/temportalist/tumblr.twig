@@ -14,9 +14,11 @@
 	    			{% endif %}
 				</div>
 
+				{% set blogname = app.request.get('hostOrUrl') %}
+
 				<form>
 					Tumblr blog name (or url):
-					<input type="text" name="hostOrUrl" style="wdith: 40%;" />
+					<input type="text" name="hostOrUrl" style="wdith: 40%;" value={{blogname}} />
 					<input type="submit" value="Update" />
 				</form>
 				<br />
@@ -28,10 +30,10 @@
 						-> temportalflux.tumblr.com
 						temportalflux.com
 				#}
-
-				{% set blogname = app.request.get('hostOrUrl') %}
-				{% set posts = tumblr_GetPosts(blogname) %}
-				{{ dump(posts) }}
+				{% if blogname is defined %}
+					{% set posts = tumblr_GetPosts(blogname) %}
+					{{ dump(posts) }}
+				{% endif %}
 
 			</div>
 		{% endif %}
