@@ -74,8 +74,22 @@
 											<img class="post_avatar_image" src={{avatars[blogname]}} width="64" height="64">
 										</a>
 									</div>
-									<div class="post_content">
+									<div class="post_wrapper">
+										<div class="post_header">
+											<div class="post_info">
+												<a class="post_info_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank" style="background-image: url({{avatars[blogname]}});">{{blogname}}</a>
+												<span class="reblog_source">
+													<span class="reblog_icon" title="{{blogname}} reblogged {{post.reblogged_from_name}}">reblogged</span>
+													<a class="post_info_link" title="{{post.reblogged_from_name}}" href="http://{{post.reblogged_from_name}}.tumblr.com/post/{{post.reblogged_from_id}}">{{post.reblogged_from_name}}</a>
+												</span>
+											</div>
+											<div class="post_source">
 
+											</div>
+										</div>
+										<div class="post_content">
+
+										</div>
 									</div>
 								</div>
 							</li>
