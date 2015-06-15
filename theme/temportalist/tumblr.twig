@@ -14,7 +14,11 @@
 	    			{% endif %}
 				</div>
 
-				{{ dump(form) }}
+				<form>
+					Tumblr blog name (or url):
+					<input type="text" name="hostOrUrl">
+				</form>
+				<br />
 
 				{% set posts = tumblr_GetPosts("temportalflux.tumblr.com") %}
 				{{ dump(posts) }}
