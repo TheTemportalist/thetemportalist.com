@@ -15,7 +15,7 @@
 			return $this->app['config']->get('general/'.$name);
 		}
 
-		$client = NULL;
+		private $client;
 
 		public function initialize() {
 
