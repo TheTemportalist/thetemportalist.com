@@ -16,8 +16,8 @@
 
 				{% set oauth = config.get('general/tumblroauth') %}
 				{% set secret = config.get('general/tumblrsecret') %}
-				{{ tumblr_GetUserInfo("temportalflux.tumblr.com", oauth, secret) }}
-				{{ dump(tumblr_GetUserInfo("temportalflux.tumblr.com", oauth, secret)) }}
+				{{ tumblr_GetUserInfo("temportalflux.tumblr.com") }}
+				{{ dump(tumblr_GetUserInfo("temportalflux.tumblr.com")) }}
 
 			</div>
 		{% endif %}
