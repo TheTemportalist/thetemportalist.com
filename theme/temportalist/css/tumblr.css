@@ -20,6 +20,27 @@ div {
 	top: 0;
 }
 
+.post_avatar .post_avatar_link {
+	background: #36465d 50% 50% no-repeat;
+	display: block;
+	height: 100%;
+	width: 100%;
+	border-radius: 3px;
+	background-size: cover;
+	overflow: visible;
+}
+
+.post_avatar .post_avatar_wrapper {
+	height: 100%;
+	width: 100%;
+}
+
+.post_avatar .post_avatar_image, .post_avatar .post_sub_avatar_image {
+	display: block;
+	opacity: 0;
+	pointer-events: none;
+}
+
 .post.post_full {
 	width: 540px;
 	font-size: 14px;
@@ -63,24 +84,4 @@ div, span, applet, object, iframe {
 	top: 68px;
 }
 
-.post_avatar .post_avatar_wrapper {
-	height: 100%;
-	width: 100%;
-}
-
-.post_avatar .post_avatar_link {
-	background: #36465d 50% 50% no-repeat;
-	display: block;
-	height: 100%;
-	width: 100%;
-	border-radius: 3px;
-	background-size: cover;
-	overflow: visible;
-}
-
-.post_avatar .post_avatar_image, .post_avatar .post_sub_avatar_image {
-	display: block;
-	opacity: 0;
-	pointer-events: none;
-}
 */
