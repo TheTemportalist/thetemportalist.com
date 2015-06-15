@@ -7,6 +7,22 @@ div {
 	display: block;
 }
 
+.post {
+	position: relative;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+#posts.posts {
+	list-style-type: none;
+	margin: 0 0 0 85px;
+	padding: 0;
+}
+
+#posts.posts>.post_container {
+	margin: 0 0 20px 0;
+}
+
 .post_avatar {
 	border-radius: 3px;
 	background-color: #36465d;
@@ -50,23 +66,6 @@ div {
 	border-radius: 3px;
 }
 
-/*
-#posts.posts {
-	list-style-type: none;
-	margin: 0 0 0 85px;
-	padding: 0;
-}
-
-#posts.posts>.post_container {
-	margin: 0 0 20px 0;
-}
-
-.post {
-	position: relative;
-	font-size: 14px;
-	box-sizing: border-box;
-}
-
 div, span, applet, object, iframe, h1, h2 {
 	margin: 0;
 	padding: 0;
@@ -78,6 +77,8 @@ div, span, applet, object, iframe, h1, h2 {
 div, span, applet, object, iframe {
 	font-size: 100%;
 }
+
+/*
 
 .post_avatar.post-avatar--fixed {
 	position: fixed;
