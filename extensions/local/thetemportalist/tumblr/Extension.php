@@ -15,6 +15,8 @@
 			return $this->app['config']->get('general/'.$name);
 		}
 
+		$client = 0;
+
 		public function initialize() {
 
 			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
