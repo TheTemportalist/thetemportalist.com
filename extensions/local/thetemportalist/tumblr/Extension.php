@@ -25,6 +25,7 @@
 			$consumerSecret = $this->getConfigValue('tumblrsecret');
 			$this->client = new Client($oauth, $secret);
 			$this->client->setToken('t1', 't2');
+			$this->client->getUserInfo();
 			
 		}
 
