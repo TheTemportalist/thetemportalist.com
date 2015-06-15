@@ -20,6 +20,7 @@
 		public function initialize() {
 
 			$this->addTwigFunction('tumblr_GetPosts', 'getPosts');
+			//$this->addTwigFunction('tumblr_GetPosts', [$this, 'getPosts']);
 
 			$consumerKey = $this->getConfigValue('tumblroauth');
 			$consumerSecret = $this->getConfigValue('tumblrsecret');
@@ -65,9 +66,7 @@
 		}
 
 		function getPosts($hostname) {
-			//var_dump($this->client->getUserInfo());
-			var_dump($this->client->getBlogPosts($hostname));
-			return "abc";//$this->client->getBlogPosts($hostname);
+			return $this->client->getBlogPosts($hostname);
 		}
 
 	}
