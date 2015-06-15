@@ -34,7 +34,7 @@
 			//var_dump($req->body);
 			var_dump($result);
 			parse_str($result);
-			echo $oauth_token;
+			var_dump($oauth_token);
 			//$this->client->setToken($req->body['oauth_token'], $reg->body['oauth_token_secret']);
 			/*
 			$requestHandler = $this->client->getRequestHandler();
