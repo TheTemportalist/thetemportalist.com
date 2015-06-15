@@ -74,7 +74,7 @@
 			try {
 				$result = $this->client->getBlogPosts($hostname);
 			}
-			catch (Exception $e) {
+			catch (\Exception $e) {
 				echo "Something went wrong", $e->getMessage(), "\n";
 			}
 			return $result;
