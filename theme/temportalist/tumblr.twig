@@ -89,13 +89,13 @@
 												{# the immediate predecessor and link to their post #}
 												<a class="post_info_link" title="{{post.reblogged_from_name}}" href="http://{{post.reblogged_from_name}}.tumblr.com/post/{{post.reblogged_from_id}}" target="_blank">{{post.reblogged_from_name}}</a>
 											</div>
-											<div class="post_source">
-
-											</div>
+											<div class="post_source"></div>
 										</div>
 										{# the actual content of the post #}
 										<div class="post_content">
-
+											{% if post.type == "text" %}
+												{{ post.body }}
+											{% endif %}
 										</div>
 									</div>
 								</div>
