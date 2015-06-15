@@ -3,7 +3,7 @@
 	use Symfony\Component\HttpFoundation\Request;
 	use Bolt;
 	use Silex\Application;
-	use \Tumblr\API\Client;
+	use Tumblr\API\Client;
 
 	class Extension extends \Bolt\BaseExtension {
 
@@ -15,7 +15,7 @@
 
 			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
 
-			$client = new \Tumblr\API\Client("", "");
+			$client = new Client("", "");
 			
 		}
 
