@@ -71,7 +71,7 @@
 				$actualName = $hostname.".tumblr.com";
 			}
 			try {
-				return $this->client->getBlogPosts($hostname, $reblog_info = true);
+				return $this->client->getBlogPosts($hostname, {'reblog_info': true});
 			}
 			catch (\Exception $e) {
 				return array();
