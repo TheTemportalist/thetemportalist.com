@@ -42,7 +42,7 @@
 			parse_str($out, $data);
 			$token = $data['oauth_token'];
 			$secret = $data['oauth_token_secret'];
-			$this->client = new Tumblr\API\Client($consumerKey, $consumerSecret, $token, $secret);
+			$this->client = new Client($consumerKey, $consumerSecret, $token, $secret);
 			
 		}
 
