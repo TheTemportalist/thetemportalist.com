@@ -27,7 +27,7 @@
 				<br />
 				<br />
 
-				{% set avatars = array() %}
+				{% set avatars = {} %}
 				{% if blogname != "" %}
 					{% set data = tumblr_GetPosts(blogname) %}
 					{% if data is not empty %}
