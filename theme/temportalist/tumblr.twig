@@ -35,7 +35,7 @@
 				#}
 
 				{% if blogname != "" %}
-					{% set posts = tumblr_GetPosts("temportalflux.tumblr.com") %}
+					{% set posts = tumblr_GetPosts(blogname) %}
 					{{ dump(posts) }}
 				{% endif %}
 
