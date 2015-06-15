@@ -14,10 +14,7 @@
 	    			{% endif %}
 				</div>
 
-				{% set oauth = config.get('general/tumblroauth') %}
-				{% set secret = config.get('general/tumblrsecret') %}
 				{% set posts = tumblr_GetPosts("temportalflux.tumblr.com") %}
-				{{ posts }}
 				{{ dump(posts) }}
 
 			</div>
