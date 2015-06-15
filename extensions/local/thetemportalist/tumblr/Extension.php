@@ -65,7 +65,7 @@
 		}
 
 		function getPosts($hostname) {
-			var_dump($this->client->getUserInfo());
+			//var_dump($this->client->getUserInfo());
 			var_dump($this->client->getBlogPosts($hostname));
 			return "abc";//$this->client->getBlogPosts($hostname);
 		}
