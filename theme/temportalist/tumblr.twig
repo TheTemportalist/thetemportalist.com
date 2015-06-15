@@ -34,7 +34,7 @@
 			
 						{% for post in data.posts %}
 							{{ dump(post) }}
-							{% set isReblog = post.reblog is defined %}
+							{% set isReblog = post.reblogged_root_url is defined %}
 							{{ isReblog }}
 							<br />
 						{% endfor %}
