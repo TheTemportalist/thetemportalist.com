@@ -1,16 +1,10 @@
-/*
-#posts.posts {
-	list-style-type: none;
-	margin: 0 0 0 85px;
-	padding: 0;
-}
 
 ol, ul {
 	list-style: none;
 }
 
-#posts.posts>.post_container {
-	margin: 0 0 20px 0;
+div {
+	display: block;
 }
 
 .post.post_full {
@@ -20,6 +14,17 @@ ol, ul {
 	padding: 15px 0 0;
 	word-wrap: break-word;
 	border-radius: 3px;
+}
+
+/*
+#posts.posts {
+	list-style-type: none;
+	margin: 0 0 0 85px;
+	padding: 0;
+}
+
+#posts.posts>.post_container {
+	margin: 0 0 20px 0;
 }
 
 .post {
@@ -38,10 +43,6 @@ div, span, applet, object, iframe, h1, h2 {
 
 div, span, applet, object, iframe {
 	font-size: 100%;
-}
-
-div {
-	display: block;
 }
 
 .post_avatar.post-avatar--fixed {
