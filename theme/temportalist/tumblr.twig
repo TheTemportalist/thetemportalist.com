@@ -34,7 +34,9 @@
 			
 						{% for post in data.posts %}
 							{{ dump(post) }}
-							{{ post.source_url }}
+							{% set isReblog = post.source_url is defined %}
+							{{ isReblog }}
+							<br />
 						{% endfor %}
 					
 					{% else %}
