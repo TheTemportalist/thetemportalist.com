@@ -15,12 +15,12 @@
 
 			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
 
-			$client = new Client("", "");
+			$client = new Client($this->app->config['general/tumblroauth'], "");
 			
 		}
 
 		function getUserInfo($hostname, $oauth, $secret) {
-			return "abc";//$this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
+			return $this->app->config['general/tumblroauth'];//$this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
 		}
 
 		function getPosts($hostname, $apiKey) {
