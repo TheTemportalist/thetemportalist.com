@@ -32,7 +32,7 @@
 					{% if data is not empty %}
 						{# TODO render posts #}
 			
-						{{ dump(data) }}
+						{{ dump(data['posts']) }}
 
 						{% for post in data['posts'] %}
 							{{ dump(post) }}
