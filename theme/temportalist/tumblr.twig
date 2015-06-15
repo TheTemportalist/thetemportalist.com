@@ -57,7 +57,8 @@
 														<div class="post_info_fence">
 															<a class="post_info_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank" style="background-image: url({{avatars[blogname]}});">{{blogname}}</a>
 															<span class="reblog_source">
-																<span class="reblog_icon" title="{{blogname}} reblogged name here"></span>
+																<span class="reblog_icon" title="{{blogname}} reblogged name {{post.reblogged_from_name}}">reblogged</span>
+																<a class="post_info_link" title="{{post.reblogged_from_name}}" href="http://{{post.reblogged_from_name}}.tumblr.com/post/{{post.reblogged_from_id}}">{{post.reblogged_from_name}}</a>
 															</span>
 														</div>
 													</div>
