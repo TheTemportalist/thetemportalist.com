@@ -11,6 +11,7 @@ div {
 	position: relative;
 	font-size: 14px;
 	overflow: hidden;
+	width: 700px;
 }
 
 .post_avatar {
