@@ -3,6 +3,7 @@
 	use Symfony\Component\HttpFoundation\Request;
 	use Bolt;
 	use Silex\Application;
+	use \Tumblr\API\Client;
 
 	class Extension extends \Bolt\BaseExtension {
 
