@@ -27,7 +27,7 @@ div {
 	border-radius: 3px;
 	background-color: #36465d;
 	text-decoration: none;
-	position: absolute;
+	/*position: absolute;*/
 	overflow: visible;
 	display: block;
 	height: 64px;

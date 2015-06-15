@@ -38,35 +38,31 @@
 							{% set isReblog = post.reblogged_root_url is defined %}
 							
 							<li class="post_container">
-								<table>
-									<tr>
-										<td><div class="post_avatar" style="left: 200px;">
-											<div class="post_avatar_wrapper">
-												{% if avatars[blogname] is not defined %}
-													{% set avatars = avatars|merge({(blogname ~ ""): tumblr_GetAvatar(blogname, 64)}) %}
-												{% endif %}
-												<a class="post_avatar_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank" style="background-image: url({{avatars[blogname]}});">
-													<img class="post_avatar_image" src={{avatars[blogname]}} width="64" height="64">
-												</a>
-											</div>
-										</div></td>
-										<td><div class="post post_full">
-											<div class="post_wrapper">
-												<div class="post_header">
-													<div class="post_info">
-														<div class="post_info_fence">
-															<a class="post_info_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank" style="background-image: url({{avatars[blogname]}});">{{blogname}}</a>
-															<span class="reblog_source">
-																<span class="reblog_icon" title="{{blogname}} reblogged name {{post.reblogged_from_name}}">reblogged</span>
-																<a class="post_info_link" title="{{post.reblogged_from_name}}" href="http://{{post.reblogged_from_name}}.tumblr.com/post/{{post.reblogged_from_id}}">{{post.reblogged_from_name}}</a>
-															</span>
-														</div>
-													</div>
+								<div class="post post_full">
+									<div class="post_avatar" style="left: 200px;">
+										<div class="post_avatar_wrapper">
+											{% if avatars[blogname] is not defined %}
+												{% set avatars = avatars|merge({(blogname ~ ""): tumblr_GetAvatar(blogname, 64)}) %}
+											{% endif %}
+											<a class="post_avatar_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank" style="background-image: url({{avatars[blogname]}});">
+												<img class="post_avatar_image" src={{avatars[blogname]}} width="64" height="64">
+											</a>
+										</div>
+									</div>
+									<div class="post_wrapper">
+										<div class="post_header">
+											<div class="post_info">
+												<div class="post_info_fence">
+													<a class="post_info_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank" style="background-image: url({{avatars[blogname]}});">{{blogname}}</a>
+													<span class="reblog_source">
+														<span class="reblog_icon" title="{{blogname}} reblogged name {{post.reblogged_from_name}}">reblogged</span>
+														<a class="post_info_link" title="{{post.reblogged_from_name}}" href="http://{{post.reblogged_from_name}}.tumblr.com/post/{{post.reblogged_from_id}}">{{post.reblogged_from_name}}</a>
+													</span>
 												</div>
 											</div>
-										</div></td>
-									</tr>
-								</table>
+										</div>
+									</div>
+								</div>
 							</li>
 							{{ dump(post) }}
 
