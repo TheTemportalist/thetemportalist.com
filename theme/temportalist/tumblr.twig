@@ -37,12 +37,14 @@
 							{% set isReblog = post.reblogged_root_url is defined %}
 							
 							<li class="post_container">
-								<div class="post_avatar  show_user_menu post-avatar--fixed" style="left: 173px;">
-									<div class="post_avatar_wrapper">
-										<a class="post_avatar_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank" style="background-image: url(https://38.media.tumblr.com/avatar_132a74bdfd2c_64.png);">
-											{% set avater = tumblr_GetAvatar(blogname, 64) %}
-											<img class="post_avatar_image" src={{avater}} width="64" height="64">
-										</a>
+								<div class="post post_full">
+									<div class="post_avatar  show_user_menu post-avatar--fixed" style="left: 173px;">
+										<div class="post_avatar_wrapper">
+											<a class="post_avatar_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank" style="background-image: url(https://38.media.tumblr.com/avatar_132a74bdfd2c_64.png);">
+												{% set avater = tumblr_GetAvatar(blogname, 64) %}
+												<img class="post_avatar_image" src={{avater}} width="64" height="64">
+											</a>
+										</div>
 									</div>
 								</div>
 							</li>
