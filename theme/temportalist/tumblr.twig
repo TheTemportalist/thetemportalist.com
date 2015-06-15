@@ -29,7 +29,12 @@
 
 				{% if blogname != "" %}
 					{% set posts = tumblr_GetPosts(blogname) %}
-					{{ dump(posts) }}
+					{% if posts is not empty %}
+						{# TODO render posts #}
+			
+						{{ dump(posts) }}
+			
+					{% endif %}			
 				{% endif %}
 
 			</div>
