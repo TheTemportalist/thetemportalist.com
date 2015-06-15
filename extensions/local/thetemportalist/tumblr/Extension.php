@@ -12,7 +12,7 @@
 		}
 
 		function getConfigValue($name) {
-			return $this->app['config']->get['general/'.$name];
+			return $this->app['config']->get('general/'.$name);
 		}
 
 		public function initialize() {
