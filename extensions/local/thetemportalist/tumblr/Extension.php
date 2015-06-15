@@ -24,7 +24,7 @@
 		}
 
 		function getUserInfo($hostname, $oauth, $secret) {
-			return $this->getConfigValue('tumblroauth');//$this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
+			return $client->getUserInfo();//$this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
 		}
 
 		function getPosts($hostname, $apiKey) {
