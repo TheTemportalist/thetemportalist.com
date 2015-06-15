@@ -19,7 +19,7 @@
 
 		public function initialize() {
 
-			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
+			$this->addTwigFunction('tumblr_GetPosts', 'getPosts');
 
 			$consumerKey = $this->getConfigValue('tumblroauth');
 			$consumerSecret = $this->getConfigValue('tumblrsecret');
@@ -48,12 +48,8 @@
 			
 		}
 
-		function getUserInfo($hostname) {
-			return $this->client->getBlogPosts($hostname);//$this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
-		}
-
 		function getPosts($hostname, $apiKey) {
-			return "api.tumblr.com/v2/blog/".$hostname."/posts?api_key=".$apiKey;
+			return $this->client->getBlogPosts($hostname);
 		}
 
 	}
