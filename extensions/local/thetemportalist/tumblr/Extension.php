@@ -38,7 +38,7 @@
 			$this->client = new Client($consumerKey, $consumerSecret, $oauth_token, $oauth_token_secret);
 			
 			$info = $this->client->getUserInfo();
-			var_dump($info);
+			//var_dump($info);
 			
 			//$this->client->setToken($req->body['oauth_token'], $reg->body['oauth_token_secret']);
 			/*
