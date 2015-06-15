@@ -39,7 +39,7 @@
 							
 							<li class="post_container">
 								<div class="post post_full">
-									<div class="post_avatar  show_user_menu post-avatar--fixed" style="left: 173px;">
+									<div class="post_avatar">
 										<div class="post_avatar_wrapper">
 											{% if avatars[blogname] is not defined %}
 													{% set avatars = avatars|merge({(blogname ~ ""): tumblr_GetAvatar(blogname, 64)}) %}
