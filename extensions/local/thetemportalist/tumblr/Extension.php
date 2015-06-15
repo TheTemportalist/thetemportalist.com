@@ -62,7 +62,7 @@
 			
 		}
 
-		function getPosts($hostname, $apiKey) {
+		function getPosts($hostname) {
 			return "abc";//$this->client->getBlogPosts($hostname);
 		}
 
