@@ -32,8 +32,7 @@
 					{% set data = tumblr_GetPosts(blogname) %}
 					{% if data is not empty %}
 						{# TODO render posts #}
-						<ol id="posts" class="posts">
-						{% for post in data.posts %}
+						<ol id="posts" class="posts">{% for post in data.posts %}
 							{#{{ dump(post) }}#}
 							{% set isReblog = post.reblogged_root_url is defined %}
 							
@@ -65,39 +64,46 @@
 									</div>
 								</div>
 								#}
+								{# Whole body for each post #}
 								<div class="post">
+									{# The avatar of the post #}
 									<div class="post_avatar">
+										{# cache the image url #}
 										{% if avatars[blogname] is not defined %}
 											{% set avatars = avatars|merge({(blogname ~ ""): tumblr_GetAvatar(blogname, 64)}) %}
 										{% endif %}
+										{# create the image with a link #}
 										<a class="post_avatar_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank" style="background-image: url({{avatars[blogname]}});">
 											<img class="post_avatar_image" src={{avatars[blogname]}} width="64" height="64">
 										</a>
 									</div>
+									{# the content area, including a header #}
 									<div class="post_wrapper">
+										{# header: used for author, reblog, and source #}
 										<div class="post_header">
 											<div class="post_info">
+												{# the blog which did the reblogging #}
 												<a class="post_info_link" href="http://{{post.blog_name}}.tumblr.com/" target="_blank">{{blogname}}</a>
-												<span class="reblog_source">
-													<span class="reblog_icon" title="{{blogname}} reblogged {{post.reblogged_from_name}}">reblogged</span>
-													<a class="post_info_link" title="{{post.reblogged_from_name}}" href="http://{{post.reblogged_from_name}}.tumblr.com/post/{{post.reblogged_from_id}}">{{post.reblogged_from_name}}</a>
-												</span>
+												{# logo of reblog #}
+												<span class="reblog_icon" title="{{blogname}} reblogged {{post.reblogged_from_name}}">reblogged</span>
+												{# the immediate predecessor and link to their post #}
+												<a class="post_info_link" title="{{post.reblogged_from_name}}" href="http://{{post.reblogged_from_name}}.tumblr.com/post/{{post.reblogged_from_id}}" target="_blank">{{post.reblogged_from_name}}</a>
 											</div>
 											<div class="post_source">
 
 											</div>
 										</div>
+										{# the actual content of the post #}
 										<div class="post_content">
 
 										</div>
 									</div>
 								</div>
 							</li>
+							{# TODO remove the dump #}
 							{{ dump(post) }}
 
-							<br />
-						{% endfor %}
-						</ol>
+						{% endfor %}</ol>
 					
 					{% else %}
 						Something went wrong. Try checking the inputted tumblr URL.
