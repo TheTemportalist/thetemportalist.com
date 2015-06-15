@@ -74,7 +74,7 @@
 			try {
 				$result = $this->client->getBlogPosts($hostname);
 			}
-			catch (RequestException $e) {
+			catch (Exception $e) {
 				return "Invalid input";
 			}
 			return $result;
