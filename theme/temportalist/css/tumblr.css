@@ -27,7 +27,6 @@ div {
 	border-radius: 3px;
 	background-color: #36465d;
 	text-decoration: none;
-	/*position: absolute;*/
 	overflow: visible;
 	display: block;
 	height: 64px;
@@ -78,12 +77,3 @@ div, span, applet, object, iframe, h1, h2 {
 div, span, applet, object, iframe {
 	font-size: 100%;
 }
-
-/*
-
-.post_avatar.post-avatar--fixed {
-	position: fixed;
-	top: 68px;
-}
-
-*/
