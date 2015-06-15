@@ -113,7 +113,30 @@ div, span, applet, object, iframe {
 	padding-bottom: 0;
 }
 
+.post_full .post_header, .post_full .post_header .post_info .post_info_link {
+  color: #a1a1a1;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+
 a {
 	color: #444;
 	text-decoration: none;
+}
+
+.post_full .post_info .post_info_fence .reblog_source {
+  display: inline;
+}
+
+.post .post_info .reblog_icon {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  padding: 10px;
+  overflow: hidden;
+  background: -397px -93px url('/images/dashboard_master_sprite.png?v=cab1c7cbf936a1197c3521dd488703ff') no-repeat;
+  opacity: .31;
+  text-indent: -999em;
+  vertical-align: -5px;
+  margin: 0 2px;
 }
