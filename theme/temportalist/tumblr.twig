@@ -14,9 +14,10 @@
 	    			{% endif %}
 				</div>
 
-				{% set blogname = app.request.get('hostOrUrl') %}
-				{{ dump(app.request.get('hostOrUrl') is defined) }}
-				{{ dump(blogname is defined) }}
+				{% set blogname = "" %}
+				{% if app.request.get('hostOrUrl') is not empty %}
+					{% set blogname = app.request.get('hostOrUrl') %}
+				{% endif %}
 
 				<form>
 					Tumblr blog name (or url):
@@ -33,7 +34,7 @@
 						temportalflux.com
 				#}
 
-				{% if blogname is defined %}
+				{% if blogname != "" %}
 					{% set posts = tumblr_GetPosts("temportalflux.tumblr.com") %}
 					{{ dump(posts) }}
 				{% endif %}
