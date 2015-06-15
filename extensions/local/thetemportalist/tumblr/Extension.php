@@ -32,9 +32,11 @@
 			// Get the result
 			$result = $req->body->__toString();
 			//var_dump($req->body);
-			var_dump($result);
+			//var_dump($result);
 			parse_str($result);
-			var_dump($oauth_token);
+			//var_dump($oauth_token);
+			$this->client->setToken($oauth_token, $oauth_token_secret);
+			var_dump($this->client->getBlogPosts("temportalflux.tumblr.com"));
 			//$this->client->setToken($req->body['oauth_token'], $reg->body['oauth_token_secret']);
 			/*
 			$requestHandler = $this->client->getRequestHandler();
