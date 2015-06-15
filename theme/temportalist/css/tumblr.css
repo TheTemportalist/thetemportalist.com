@@ -77,3 +77,43 @@ div, span, applet, object, iframe, h1, h2 {
 div, span, applet, object, iframe {
 	font-size: 100%;
 }
+
+.post_full .post_info_fence {
+	max-width: 310px;
+}
+
+.post .post_info_fence, .post .post_moderation_flag {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.post .post_info_fence {
+	float: left;
+}
+
+.post_full .post_header, .post_full .post_header .post_info .post_info_link {
+	color: #a1a1a1;
+	word-wrap: normal;
+	white-space: nowrap;
+}
+
+.post_full.is_reblog .post_info_fence>a {
+	display: inline-block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: bottom;
+	max-width: 150px;
+}
+
+.post .post_header .post_info_link {
+	color: #a1a1a1;
+	text-decoration: none;
+	background-image: none;
+	padding-bottom: 0;
+}
+
+a {
+	color: #444;
+	text-decoration: none;
+}
