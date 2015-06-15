@@ -23,8 +23,26 @@
 
 			$consumerKey = $this->getConfigValue('tumblroauth');
 			$consumerSecret = $this->getConfigValue('tumblrsecret');
-			$this->client = new Client($oauth, $secret);
-			$this->client->setToken('t1', 't2');
+			$this->client = new Client($consumerKey, $consumerSecret);
+
+			$requestHandler = $this->client->getRequestHandler();
+			$requestHandler->setBaseUrl('https://www.tumblr.com/');
+			$resp = $requestHandler->request('POST', 'oauth/request_token', array());
+			$out = $result = $resp->body;
+			$data = array();
+			parse_str($out, $data);
+			$this->client->setToken($data['oauth_token'], $data['oauth_token_secret']);
+
+			$handle = fopen('php://stdin', 'r');
+			$line = fgets($handle);
+			$verifier = trim($line);
+			$resp = $requestHandler->request('POST', 'oauth/access_token', array('oauth_verifier' => $verifier));
+			$out = $result = $resp->body;
+			$data = array();
+			parse_str($out, $data);
+			$token = $data['oauth_token'];
+			$secret = $data['oauth_token_secret'];
+			$this->client = new Tumblr\API\Client($consumerKey, $consumerSecret, $token, $secret);
 			
 		}
 
