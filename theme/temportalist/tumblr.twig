@@ -27,13 +27,6 @@
 				<br />
 				<br />
 
-				{#
-					Valid hostnames:
-						temportalflux
-						-> temportalflux.tumblr.com
-						temportalflux.com
-				#}
-
 				{% if blogname != "" %}
 					{% set posts = tumblr_GetPosts(blogname) %}
 					{{ dump(posts) }}
