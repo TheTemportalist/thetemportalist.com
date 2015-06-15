@@ -20,6 +20,7 @@
 		public function initialize() {
 
 			$this->addTwigFunction('tumblr_GetPosts', 'getPosts');
+			$this->addTwigFunction('tumblr_GetAvatar', 'getAvatar');
 			//$this->addTwigFunction('tumblr_GetPosts', [$this, 'getPosts']);
 
 			$consumerKey = $this->getConfigValue('tumblroauth');
@@ -66,19 +67,34 @@
 		}
 
 		function getPosts($hostname) {
-			$actualName = $hostname;
-			if (!$this->endswith($hostname, ".tumblr.com") && !$this->endswith($hostname, ".com")) {
-				$actualName = $hostname.".tumblr.com";
-			}
+			$actualName = $this->hostToActualName($hostname);
 			try {
-				return $this->client->getBlogPosts($hostname, array('reblog_info' => true));
+				return $this->client->getBlogPosts($actualName, array('reblog_info' => true));
 			}
 			catch (\Exception $e) {
 				return array();
 			}
 		}
 
-		function endswith($string, $test) {
+		function getAvatar($hostname, $wxh) {
+			$actualName = $this->hostToActualName($hostname);
+			try {
+				return $this->client->getBlogAvatar($actualName, $size = $wxh);
+			}
+			catch (\Exception $e) {
+				return array();
+			}
+		}
+
+		private function hostToActualName($hostname) {
+			$actualName = $hostname;
+			if (!$this->endswith($hostname, ".tumblr.com") && !$this->endswith($hostname, ".com")) {
+				$actualName = $hostname.".tumblr.com";
+			}
+			return $actualName;
+		}
+
+		private function endswith($string, $test) {
 			$strlen = strlen($string);
 			$testlen = strlen($test);
 			if ($testlen > $strlen) return false;
