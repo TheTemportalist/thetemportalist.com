@@ -31,7 +31,9 @@
 			]);
 			// Get the result
 			$result = $req->body->__toString();
-			$this->client->setToken($req->body['oauth_token'], $reg->body['oauth_token_secret']);
+			var_dump($req->body);
+			var_dump($result);
+			//$this->client->setToken($req->body['oauth_token'], $reg->body['oauth_token_secret']);
 			/*
 			$requestHandler = $this->client->getRequestHandler();
 			$requestHandler->setBaseUrl('https://www.tumblr.com/');
