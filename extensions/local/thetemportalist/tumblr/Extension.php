@@ -23,7 +23,7 @@
 
 			$consumerKey = $this->getConfigValue('tumblroauth');
 			$consumerSecret = $this->getConfigValue('tumblrsecret');
-			//$this->client = new Client($consumerKey, $consumerSecret);
+			$this->client = new Client($consumerKey, $consumerSecret);
 
 			/*
 			$requestHandler = $this->client->getRequestHandler();
@@ -49,7 +49,7 @@
 		}
 
 		function getUserInfo($hostname) {
-			return $this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
+			return $this->client->getBlogPosts($hostname, $options = null);//$this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
 		}
 
 		function getPosts($hostname, $apiKey) {
