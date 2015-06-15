@@ -14,11 +14,7 @@
 	    			{% endif %}
 				</div>
 
-				<div>
-					{{ form_label(form.age) }}
-					{{ form_errors(form.age) }}
-					{{ form_widget(form.age) }}
-				</div>
+				{{ dump(form) }}
 
 				{% set posts = tumblr_GetPosts("temportalflux.tumblr.com") %}
 				{{ dump(posts) }}
