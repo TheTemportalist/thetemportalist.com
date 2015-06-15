@@ -66,7 +66,18 @@
 		}
 
 		function getPosts($hostname) {
+			$actualName = $hostname;
+			if (!$this->endswith($hostname, ".tumblr.com") && !$this->endswith($hostname, ".com")) {
+				$actualName = $hostname.".tumblr.com";
+			}
 			return $this->client->getBlogPosts($hostname);
+		}
+
+		function endswith($string, $test) {
+			$strlen = strlen($string);
+			$testlen = strlen($test);
+			if ($testlen > $strlen) return false;
+				return substr_compare($string, $test, $strlen - $testlen, $testlen) === 0;
 		}
 
 	}

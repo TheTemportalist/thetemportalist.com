@@ -20,8 +20,7 @@
 					<input type="submit" value="Update" />
 				</form>
 				<br />
-
-				{{ dump(app.request.get('hostOrUrl')) }}
+				<br />
 
 				{#
 					Valid hostnames:
@@ -30,7 +29,8 @@
 						temportalflux.com
 				#}
 
-				{% set posts = tumblr_GetPosts("temportalflux.tumblr.com") %}
+				{% set blogname = app.request.get('hostOrUrl') %}
+				{% set posts = tumblr_GetPosts(blogname) %}
 				{{ dump(posts) }}
 
 			</div>
