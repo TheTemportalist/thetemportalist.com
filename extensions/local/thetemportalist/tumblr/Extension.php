@@ -19,7 +19,10 @@
 
 			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
 
-			$client = new Client($this->getConfigValue('tumblroauth'), $this->getConfigValue('tumblrsecret'));
+			$consumerKey = $this->getConfigValue('tumblroauth');
+			$consumerSecret = $this->getConfigValue('tumblrsecret');
+			$client = new Client($oauth, $secret);
+			$client->setToken('t1', 't2');
 			
 		}
 
