@@ -70,14 +70,12 @@
 			if (!$this->endswith($hostname, ".tumblr.com") && !$this->endswith($hostname, ".com")) {
 				$actualName = $hostname.".tumblr.com";
 			}
-			$result = "Invalid Input";
 			try {
-				$result = $this->client->getBlogPosts($hostname);
+				return $this->client->getBlogPosts($hostname);
 			}
 			catch (\Exception $e) {
-				echo "Something went wrong", $e->getMessage(), "\n";
+				return "Invalid Input";
 			}
-			return $result;
 		}
 
 		function endswith($string, $test) {
