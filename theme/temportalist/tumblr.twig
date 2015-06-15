@@ -45,7 +45,6 @@
 												{% if avatars[blogname] is not defined %}
 													{% set avatars = avatars|merge({(blogname ~ ""): tumblr_GetAvatar(blogname, 64)}) %}
 												{% endif %}
-												{{ avatars[blogname] }}
 												<img class="post_avatar_image" src={{avatars[blogname]}} width="64" height="64">
 											</a>
 										</div>
