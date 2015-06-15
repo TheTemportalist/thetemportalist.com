@@ -45,6 +45,18 @@ div {
 	float: left;
 }
 
+a {
+	color: #444;
+	text-decoration: none;
+}
+
+.post .post_header .post_info_link {
+	color: #a1a1a1;
+	text-decoration: none;
+	background-image: none;
+	padding-bottom: 0;
+}
+
 .post .post_info .reblog_icon {
 	display: inline-block;
 	height: 0;
@@ -57,6 +69,8 @@ div {
 	vertical-align: -5px;
 	margin: 0 2px;
 }
+
+
 
 /*
 .post {
@@ -170,12 +184,7 @@ h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
 	max-width: 150px;
 }
 
-.post .post_header .post_info_link {
-	color: #a1a1a1;
-	text-decoration: none;
-	background-image: none;
-	padding-bottom: 0;
-}
+
 
 .post_full .post_header, .post_full .post_header .post_info .post_info_link {
 	color: #a1a1a1;
