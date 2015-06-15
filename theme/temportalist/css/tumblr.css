@@ -34,6 +34,16 @@ div {
 	overflow: visible;
 }
 
+.post_content {
+	color: #a1a1a1;
+	width: 540px;
+	font-size: 14px;
+	background: #fff;
+	padding: 15px 0 0;
+	word-wrap: break-word;
+	border-radius: 3px;
+}
+
 /*
 .post {
 	position: relative;
