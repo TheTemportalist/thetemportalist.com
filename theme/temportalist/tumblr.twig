@@ -28,13 +28,13 @@
 				<br />
 
 				{% if blogname != "" %}
-					{% set posts = tumblr_GetPosts(blogname) %}
-					{% if posts is not empty %}
+					{% set data = tumblr_GetPosts(blogname) %}
+					{% if data is not empty %}
 						{# TODO render posts #}
 			
-						{{ dump(posts) }}
+						{{ dump(data) }}
 
-						{% for post in posts %}
+						{% for post in data['posts'] %}
 							{{ dump(post) }}
 						{% endfor %}
 					
