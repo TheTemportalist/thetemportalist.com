@@ -11,16 +11,20 @@
 			return "tumblr";
 		}
 
+		function getConfigValue($name) {
+			return $this->app['config']->get['general/'.$name];
+		}
+
 		public function initialize() {
 
 			$this->addTwigFunction('tumblr_GetUserInfo', 'getUserInfo');
 
-			$client = new Client($this->app->config['general/tumblroauth'], "");
+			$client = new Client($this->getConfigValue('tumblroauth'), $this->getConfigValue('tumblrsecret'));
 			
 		}
 
 		function getUserInfo($hostname, $oauth, $secret) {
-			return $this->app->config['general/tumblroauth'];//$this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
+			return $this->getConfigValue('tumblroauth');//$this->app['guzzle.client']->get("google.com");//api.tumblr.com/v2/blog/".$hostname."/info?api_key=".$oauth);
 		}
 
 		function getPosts($hostname, $apiKey) {
