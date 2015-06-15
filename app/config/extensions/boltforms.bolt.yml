@@ -2,16 +2,11 @@
 ### Bolt Forms
 ###
 
-# Global templates used for rendering forms and emails.
-templates:
-    form: boltforms_form.twig
-    email: boltforms_email.twig
-    subject: boltforms_email_subject.twig
 
 # reCAPTCHa set up
 recaptcha:
   enabled: false
-  label: "Please enter the reCaptcha text to prove you're a human"
+  label: "Please enter the reCaptch text to prove you're a human"
   public_key: ''
   private_key: ''
   error_message: "The CAPTCHA wasn't entered correctly. Please try again."
@@ -30,8 +25,75 @@ csrf: true
 # If enabled, ALL forms will go into debug mode.  However, when disabled an individual
 # form can still enable it's own debug — specific for and to that form
 debug:
-  enabled: true  
+  enabled: false  
   address: noreply@example.com
+
+beta:
+  notification:
+    enabled: true
+    debug: false
+    subject: Someone has subscribed
+    to_name: The Temportalist              # Must be valid text
+    to_email: the.country.gamer@gmail.com # Must be valid email address
+    from_name: name               # A field name, specified in the fields: section below
+    from_email: email             # A field name, specified in the fields: section below
+    #cc_name: Info Person
+    #cc_email: info@example.com
+    #bcc_name: Manager Person
+    #bcc_email: manager@example.com
+    attach_files: false
+  feedback:
+    success: Message submission sucessful
+    error: There are errors in the form, please fix before trying to resubmit
+  database:
+#    contenttype: mycontenttype  # Contenttype to create
+    table: beta    # Specific database table to write to
+  fields:
+    name:
+      type: text
+      required: true
+      options:
+        label: Name
+        attr:
+          placeholder: Your name...
+        constraints: [ NotBlank, {Length: {'min': 3, 'max': 50}} ]
+    email:
+      type: email
+      options:
+        required: true
+        label: Email address
+        attr:
+          placeholder: Your email...
+        constraints: [ NotBlank, Email ]
+#    mods:
+#      type: choice
+#      options:
+#        required: true
+#        label: What do you want to subscribe to?
+#        choices: [ Origin, Compression ]
+#        multiple: true
+    Origin:
+      type: checkbox
+      options:
+        required: false
+        label: Origin?
+    Compression:
+      type: checkbox
+      options:
+        required: false
+        label: Compression?
+    WeepingAngels:
+      type: checkbox
+      options:
+        required: false
+        label: Weeping Angels?
+    Tardis:
+      type: checkbox
+      options:
+        required: false
+        label: Tardis?
+    submit:
+      type: submit
 
 ## Example 1
 #
@@ -108,10 +170,6 @@ Showcase:
     bcc_name: Manager Person
     bcc_email: manager@example.com
     attach_files: false
-  templates:                      # Over ride the global Twig templates for this form
-    form: boltforms_form.twig
-    email: boltforms_email.twig
-    subject: boltforms_email_subject.twig
   feedback:
     success: Form submission sucessful
     error: There are errors in the form, please fix before trying to resubmit
