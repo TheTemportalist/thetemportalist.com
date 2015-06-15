@@ -25,7 +25,14 @@
 			$consumerSecret = $this->getConfigValue('tumblrsecret');
 			$this->client = new Client($consumerKey, $consumerSecret);
 
-			///*
+			$this->client->getRequestHandler()->setBaseUrl('http://www.tumblr.com/');
+			$req = $this->client->getRequestHandler()->request('POST', 'oauth/request_token', [
+			  'oauth_callback' => '...',
+			]);
+			// Get the result
+			$result = $req->body->__toString();
+			$this->client->setToken($req->body['oauth_token'], $reg->body['oauth_token_secret']);
+			/*
 			$requestHandler = $this->client->getRequestHandler();
 			$requestHandler->setBaseUrl('https://www.tumblr.com/');
 			$resp = $requestHandler->request('POST', 'oauth/request_token', array());
@@ -44,7 +51,7 @@
 			$token = $data['oauth_token'];
 			$secret = $data['oauth_token_secret'];
 			$this->client = new Client($consumerKey, $consumerSecret, $token, $secret);
-			//*/
+			*/
 			
 		}
 
